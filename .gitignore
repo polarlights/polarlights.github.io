@@ -3,5 +3,6 @@ Thumbs.db
 *.log
 node_modules/
 _multiconfig.yml
+themes/next/
 public/
 .deploy*/
