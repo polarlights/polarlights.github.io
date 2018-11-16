@@ -6,3 +6,4 @@ _multiconfig.yml
 themes/next/
 public/
 .deploy*/
+db.json
