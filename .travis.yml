@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "8"
+  - "11.1.0"
 
 # 缓存依赖
 cache:
@@ -26,13 +26,12 @@ install:
 
 # 构建脚本
 script:
-    # 生成静态站点文件 使用主题自定义配置（高优先级） + 站点配置
-  - hexo generate --config _config.yml,source/_data/next.yml
+  - node_modules/hexo/bin/hexo generate
 
 # 分支白名单
 branches:
   only:
-    - hexo # 只对 hexo 分支进行构建
+    - source
 
 # GitHub Pages 部署
 deploy:
