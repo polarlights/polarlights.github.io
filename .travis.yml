@@ -3,43 +3,39 @@ language: node_js
 node_js:
   - "11.1.0"
 
-# 缓存依赖
+env:
+  - HEXO_CACHE_DIR=$HOME/hexo
+
 cache:
   directories:
-    - $HOME/.npm
+    - $HOME/.yarn
     - node_modules
-    - db.json
+    - $HOME/hexo
 
 before_install:
-  - export TZ='Asia/Shanghai' # 更改时区
+  - export TZ='Asia/Shanghai'
+  - find $HEXO_CACHE_DIR -name \*.json -exec cp {} ./ \;
 
-# 依赖安装
 install:
   - yarn install
   - yarn global add gulp
-  # 安装 NexT 主题
   - git clone https://github.com/polarlights/hexo-theme-next themes/next
-  # 安装主题需要的插件
   - git clone https://github.com/theme-next/theme-next-fancybox3 themes/next/source/lib/fancybox
   - git clone https://github.com/theme-next/theme-next-fastclick themes/next/source/lib/fastclick
   - git clone https://github.com/theme-next/theme-next-jquery-lazyload themes/next/source/lib/jquery_lazyload
 
-# 构建脚本
 script:
   - node_modules/hexo/bin/hexo generate
+  - cp ./db.json $HEXO_CACHE_DIR/db.json
 
-# 分支白名单
 branches:
   only:
     - source
 
-# GitHub Pages 部署
 deploy:
   provider: pages
   skip_cleanup: true
-  # 在项目仪表盘的 Settings -> Environment Variables 中配置
   github_token: $GITHUB_TOKEN
-  # 将 public 目录下的内容推送到 master 分支上（必须）
   local_dir: public
   target-branch: master
   on:
