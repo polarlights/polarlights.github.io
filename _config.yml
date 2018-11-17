@@ -97,7 +97,14 @@ symbols_count_time:
   total_symbols: true
   total_time: true
 
+leancloud_counter_security:
+  enable_sync: true
+  app_id: FOvKWHCKhols2pd6bP9bxbkW-gzGzoHsz
+  app_key: BovkYvCpL91iK34c0GwRcCwY
+  username: LEANCLOUD_USER
+  password: LEANCLOUD_PASSWORD
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+ - type: leancloud_counter_security_sync
