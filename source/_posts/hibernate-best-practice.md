@@ -10,6 +10,34 @@ tags:
 date: 2018-12-06 10:08:59
 ---
 
+## 1. 设置数据库存储时间的时区
+
+如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。
+
+Hibernate 在时间的存取的时候，会调用`PreparedStatement.setTimestamp()`/`ResultSet.getTimestamp`，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链接时区设置为 UTC 即可。即`spring.jpa.properties.hibernate.jdbc.time_zone=UTC`。
+
+需要注意的是，对于 MySQL 数据库，在连接 URL 上要添加上`useLegacyDatetimeCode=false`，否则会导致时间并不会被转换为 UTC 时间。
+
+当然，如果服务的时区是稳定的（比如固定在东八区），存储为服务当前时间服务也可以正常工作。
+
+## 2. 检查生成的 SQL 是否与预期中的一致
+
+在查询、更新、删除记录的时候，一并检查生成的 SQL 是否与预期一致，可以在早期发现并解决潜在的性能问题。
+
+JPA 开启打印日志的设置:
+```properties
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.type=trace
+spring.jpa.properties.hibernate.use_sql_comments=true
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.type.descriptor.sql=trace
+logging.level.org.hibernate.SQL=trace
+```
+
+打印日志还可以比较早地发现 N+1查询问题。
+
+**注意**：仅在非生产环境打印SQL。
+
 ## 如何懒加载某个属性
 
 ### 使用代码增强，并在属性上添加相应的注解：
@@ -174,6 +202,7 @@ public class Post {
 ```
 
 AUTO 会 fall back 为性能差的 TABLE 生成器，需要显式声明为 IDENTITY。
+
 
 ## 检查生成的 SQL 是否与预期中的一致
 
@@ -380,6 +409,23 @@ public class Tag {
 
 ![](15440817804559.png)
 
+## 只读查询添加上只读事务
+
+使用只读事务， detach 状态的记录不再被 Persistence Context保存，可以减少内存的使用和 GC 消耗的时间。
+
+## 适当设置 DB 连接池的大小
+
+数据库连接池太大或者太小都会影响性能。太小，会等待连接的获取消耗太多时间；太大，时间消耗在线程的上下文切换上。默认情况下，JPA 的数据库连接池大小为10（够用)，各位可以根据自身应用的情况，设置比较合适的大小。
+
+另外连接池的大小设置，要考虑到死锁的情况。之前我们遇到过这样的问题：我们使用了一个框架，除了在 Spring Boot 业务中使用了连接，在连接没有关闭的时候，框架又去申请了新的数据库连接。在框架处理完之后，两个连接会全部释放。假设现在，连接池有2个连接，在并发的时候，请求 A 和请求 B 同时获取了一个连接，这是 A 要调用框架，框架去连接池获取一个新的连接。这时数据库连接池的连接已经在使用了，请求 A 的处理线程只能等待；同样请求 B 的处理线程也只能等待。等待最终超时，程序报错。
+
+那么如何避免连接池出现死锁的情况呢?
+
+    pool_size = Tn x (Cm - 1) + 1
+    
+T 指得是程序的进程数；C 指的是每个进程执行的线程数。重点在于后面要有一个空余的连接。
+
+如何找到合适的连接池大小，请参考另外一篇文章: [TBD](#)
 
 ## 附录
 ### 从源码层面实现代码增强:
@@ -420,4 +466,7 @@ hibernate {
 * [The best way to implement equals, hashCode, and toString with JPA and Hibernate](https://vladmihalcea.com/the-best-way-to-implement-equals-hashcode-and-tostring-with-jpa-and-hibernate/)
 * [How to implement Equals and HashCode for JPA entities](https://vladmihalcea.com/hibernate-facts-equals-and-hashcode/)
 * [https://vladmihalcea.com/uuid-identifier-jpa-hibernate/](https://vladmihalcea.com/uuid-identifier-jpa-hibernate/)
+* [The Open Session In View Anti-Pattern](https://vladmihalcea.com/the-open-session-in-view-anti-pattern/)
+* [How to store date, time, and timestamps in UTC time zone with JDBC and Hibernate](https://vladmihalcea.com/how-to-store-date-time-and-timestamps-in-utc-time-zone-with-jdbc-and-hibernate/)
+* [About Pool Sizing](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing)
 * [The Open Session In View Anti-Pattern](https://vladmihalcea.com/the-open-session-in-view-anti-pattern/)
