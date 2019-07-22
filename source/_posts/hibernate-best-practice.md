@@ -204,6 +204,23 @@ public class Post {
 AUTO 会 fall back 为性能差的 TABLE 生成器，需要显式声明为 IDENTITY。
 
 
+## 检查生成的 SQL 是否与预期中的一致
+
+在查询、更新、删除记录的时候，一并检查生成的 SQL 是否与预期一致，可以在早期发现并解决潜在的性能问题。
+
+JPA 开启打印日志的设置:
+```properties
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.type=trace
+spring.jpa.properties.hibernate.use_sql_comments=true
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.type.descriptor.sql=trace
+logging.level.org.hibernate.SQL=trace
+```
+
+打印日志还可以比较早地发现 N+1查询问题。
+
+**注意**：仅在非生产环境打印SQL。
 
 ## EAGER 加载是一种 code Smell
 
@@ -452,3 +469,4 @@ hibernate {
 * [The Open Session In View Anti-Pattern](https://vladmihalcea.com/the-open-session-in-view-anti-pattern/)
 * [How to store date, time, and timestamps in UTC time zone with JDBC and Hibernate](https://vladmihalcea.com/how-to-store-date-time-and-timestamps-in-utc-time-zone-with-jdbc-and-hibernate/)
 * [About Pool Sizing](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing)
+* [The Open Session In View Anti-Pattern](https://vladmihalcea.com/the-open-session-in-view-anti-pattern/)
