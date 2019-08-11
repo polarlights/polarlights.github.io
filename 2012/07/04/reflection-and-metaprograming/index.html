@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="rSZ1lYxqQVOhFL9gu_R7E9OobC64Mq5WI5g4Mti9Clo">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/uploads/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="定义反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。 元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成">
+<meta name="keywords" content="Ruby,Metaprograming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby Reflection And Metaprograming">
+<meta property="og:url" content="https://polarlights.github.io/2012/07/04/reflection-and-metaprograming/index.html">
+<meta property="og:site_name" content="Polarlights">
+<meta property="og:description" content="定义反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。 元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-11T09:30:13.750Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby Reflection And Metaprograming">
+<meta name="twitter:description" content="定义反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。 元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Polarlights" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://polarlights.github.io/2012/07/04/reflection-and-metaprograming/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Ruby Reflection And Metaprograming | Polarlights</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-31475638-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-31475638-1');
+</script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Polarlights</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://polarlights.github.io/2012/07/04/reflection-and-metaprograming/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Wei">
+      <meta itemprop="description" content="Up like the sun.">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Polarlights">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Ruby Reflection And Metaprograming
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2012-07-04 20:00:00" itemprop="dateCreated datePublished" datetime="2012-07-04T20:00:00+08:00">2012-07-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-11 17:30:13" itemprop="dateModified" datetime="2019-08-11T17:30:13+08:00">2019-08-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2012/07/04/reflection-and-metaprograming/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2012/07/04/reflection-and-metaprograming/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2012/07/04/reflection-and-metaprograming/" class="leancloud_visitors" data-flag-title="Ruby Reflection And Metaprograming">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">17k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">31 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。</p>
+<p>元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成的工作。 编写元程序的语言被称为元语言，被操作的语言称为目标语言。一门语言同时也是自身的元语言的能力称为反射。</p>
+<p>Ruby的反射API大部分定义在Kernel、Module和Object中。反射的本质不是元编程，元编程通常要使用到若干反射机制。</p>
+<a id="more"></a>
+<h1 id="类型、类和模块Types-Classes-And-Modules"><a href="#类型、类和模块Types-Classes-And-Modules" class="headerlink" title="类型、类和模块Types,Classes And Modules"></a>类型、类和模块Types,Classes And Modules</h1><pre><code>module A      
+end
+
+module B; include A; end;
+
+class C; include B; end;
+
+C &lt; B #true
+B &lt; A #true
+C &lt; A #true
+
+Fixnum &lt; Integer #True
+Integer &lt; Fixnum #false not all integers are fixnums
+Integer &lt; Comparable #true
+String &lt; Numeric #nil, strings are not numbers
+
+A.ancestors #[A]
+B.ancestors #[B,A]
+C.ancestors #[C, B, A, Object, Kernel, BasicObject] 
+String.ancestors #[String, Comparable, Object, Kernel, BasicObject] 
+
+C.include?(B) #true
+C.include?(A) #true
+B.include?(A) #true
+A.include?(A) #false
+A.include?(B) #false
+
+A.included_modules #[]
+B.included_modules #[A]
+C.included_modules #[B,A,Kernel]
+</code></pre><blockquote>
+<p>include方法为Module模块的私有方法，所以只能在类或模块的定义中才可以使用。与include方法相关的是公开方法:extend。它可以将制定模块的实例方法作为调用对象的单键方法。</p>
+</blockquote>
+<h2 id="定义类和模块"><a href="#定义类和模块" class="headerlink" title="定义类和模块"></a>定义类和模块</h2><p>Ruby可以动态的创建一个匿名模块或类并赋值给一个常量，常量的名字就称为这个模块或类的名字:</p>
+<pre><code>M = Module.new #module M
+C = Class.new  #class C
+D = Class.new(C) { #D is a subclass of C that includes module M
+   include M
+}
+
+D.to_s #D
+</code></pre><h2 id="Evaluating-Strings-and-Blocks"><a href="#Evaluating-Strings-and-Blocks" class="headerlink" title="Evaluating Strings and Blocks"></a>Evaluating Strings and Blocks</h2><p>Ruby中最强大和最直接的反射特性之一就是eval方法，它可以对字符串进行求值。</p>
+<pre><code>x = 1; eval &quot;x + 1&quot; #2
+</code></pre><p>bingding方法返回一个实例变量的绑定状态。Bingding对象可以作为第二个参数传递给eval方法，指定的字符串就会在绑定的上下文中进行求值。  </p>
+<pre><code>class Object
+  def bingdings
+    bingding        
+  end
+end
+
+class Test
+  def initialize(x)
+    @x = x
+  end
+end
+
+t = Test.new(10)
+eval(&quot;@x&quot;, t.bingdings) #10
+</code></pre><h3 id="instance-eval和class-eval"><a href="#instance-eval和class-eval" class="headerlink" title="instance_eval和class_eval"></a>instance_eval和class_eval</h3><p>Object类定义了instance_eval方法，Module类定义了class_eval方法，这些方法都可以像eval一样对Ruby代码进行求值。但是和eval还是有些区别的。1.这些方法会在指定对象或模块的上下文中对代码进行求值，该对象或模块成为代码求值时self的值。</p>
+<p>instance_eval方法为某个对象创建了一个单键方法，而class_eval则定义了一个普通方法。</p>
+<p>2.它们可以对代码块进行求值。当参数是代码块而非字符串时，代码块中的代码会在适当的上下文中执行。</p>
+<pre><code>String.class_eval {
+  def len
+    size
+  end
+}
+</code></pre><h3 id="instance-exec和class-exec"><a href="#instance-exec和class-exec" class="headerlink" title="instance_exec和class_exec"></a>instance_exec和class_exec</h3><p>Ruby 1.9中还定义了instance_exec和class_exec两个求值方法，这些方法在接受者对象的上下文中对给定的代码块求值。与前面的class_eval等不同的的地方在于exec可以接收参数，并把参数传递给代码。这样给定的代码块会在给定对象的上下文中执行，并可以获得对象外的参数。</p>
+<pre><code>class Point; end
+x = 10
+p = Point.new
+p.instance_exec(x) { |x| puts x }
+</code></pre><h3 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h3><p>Kernel、Object和Module类定义了很多反射方法列出各种名字，包括所有定义的全局变量、局部变量、实例变量、类变量和常量。</p>
+<pre><code>global_variables #[:$;, :$-F, :$@, :$!, :$SAFE, :$~, :$&amp;, :$`, :$&apos;, :$+, :$=, :$KCODE, :$-K, :$,, :$/, :$-0, :$\, :$_, :$stdin, :$stdout, :$stderr, :$&gt;, :$&lt;, :$., :$FILENAME, :$-i, :$*, :$?, :$$, :$:, :$-I, :$LOAD_PATH, :$&quot;, :$LOADED_FEATURES, :$VERBOSE, :$-v, :$-w, :$-W, :$DEBUG, :$-d, :$0, :$PROGRAM_NAME, :$-p, :$-l, :$-a, :$binding, :$1, :$2, :$3, :$4, :$5, :$6, :$7, :$8, :$9] 
+x = 1
+local_variables #[:x,:_]
+
+class Point
+  def initialize(x,y)
+    @x,@y = x,y
+  end
+
+  @@n = 0
+  ORIGIN_POINT = Point.new(0,0)
+end
+
+Point::ORIGIN_POINT.instance_variables #[:@x, :@y] 
+Point.class_variables #[:@@n] 
+Point.constants #[:ORIGIN_POINT] 
+</code></pre><h3 id="查询、修改、检测变量"><a href="#查询、修改、检测变量" class="headerlink" title="查询、修改、检测变量"></a>查询、修改、检测变量</h3><p>Ruby有很多反射方法用于查询、设置和删除变量、类变量、常量。<br>    x = 1<br>    varname = &quot;x&quot;</p>
+<pre><code>eval(varname) #1
+eval(&quot;varname = &apos;$g&apos;&quot;) #$g
+eval(varname) #nil,because varname now is $g,so its eval is nil
+eval(&quot;#{varname} = x&quot;) #1
+</code></pre><p>eval可以任何对象的实例变量、任何类或模块的类变量和常量进行查询、设置和存在性检测操作:</p>
+<pre><code>o = Object.new
+o.instance_variable_set(:@x, 0) #require @ prefix
+o.instance_variable_get(:@x) #0
+o.instance_variable_defined?(:@x) #true
+
+Object.class_variable_set(:@@x, 1)
+Object.class_variable_get(:@@x) #1
+Object.class_variable_defined?(:@xx)
+
+Math.const_set(:EPI, Math::PI * Math::E) #8.539734222673566 
+Math.const_get(:EPI)
+Math.const_defined?(:EPI)
+</code></pre><p>在Ruby 1.9中如果把false作为const_get和const_defined?的第二个参数，则对应的变量是在当前类或模块中进行查找，不会去寻找父类或模块的常量。</p>
+<p>Object和Module对象中的一些私有方法被用来取消实例变量、类变量和常量的定义，它们都返回被删除变量或常量的值。因为这些方法都是私有的，所以不能直接用在对象、类和模块上，只能通过<code>eval</code>或<code>send</code>方法完成。</p>
+<pre><code>o.instance_eval { remove_instance_variable :@x }
+String.class_eval { remove_class_variable :@@x }
+Math.send :remove_const, :EPI
+</code></pre><p>如果一个模块定义了const_missing方法，当找不到该变量的时候，该方法就会被调用。</p>
+<pre><code>def Symbol.const_missing(name)
+  name #return the name of the missing Const
+end
+
+Symbol::TEST #:TEST
+</code></pre><h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><pre><code>o = &quot;hello world&quot;
+o.methods #all the public methods of String
+o.public_methods #the same as the above
+o.public_methods(false) #the inherited methods
+o.protected_methods #all the protected methods
+o.private_methods #all the private Methods
+o.private_methods(false) #inherited private methods
+def o.single; 1; end
+o.singleton_methods #:single
+
+#Query
+String.instance_methods == &quot;s&quot;.public_methods #true
+String.instance_methods(false) == &quot;s&quot;.public_methods(false) #true
+String.public_instance_methods == String.instance_methods #true
+String.protected_instance_methods #[]
+String.private_instance_methods(false) #[:initialize, :initialize_copy]
+
+#Check
+String.public_method_defined? :reverse #true
+String.protected_method_defined? :reverse #false
+String.private_method_defined? :initialize #true
+String.method_defined? :upcase #true
+</code></pre><p>Module.method_defined?方法用于检测给定的名称是否用于定义了一个公开或保护的方法，它与Object.respond_to?方法的功能基本类似。在Ruby 1.9中可以制定该方法的第二个参数为false表示不考虑继承方法。</p>
+<p>要查询某个特定名称的方法，可以在任意对象上调用<code>method</code>方法，或者在任意模块上调用<code>instance_method</code>方法。前者返回一个绑定于接收者的可调用Method对象，后者返回一个UnboundedMethod对象。在Ruby 1.9中，可以使用<code>public_method</code>和<code>public_instance_method</code>来获取对象的公开方法。</p>
+<pre><code>&quot;o&quot;.method(:reverse) #&lt;Method: String#reverse&gt;
+String.instance_method(:reverse) #&lt;UnboundMethod: String#reverse&gt; 
+</code></pre><p>通常调用一个有名字的方法使用<code>send</code>方法:</p>
+<pre><code>&quot;o&quot;.send :upcase #O
+Math.send(:sin, Math::PI / 2) #1
+</code></pre><p>send在接收者对象上调用名为第一个参数的方法，后面的其他参数作为调用方法的参数。方法名<code>send</code>来自于面向对象编程的术语，调用一个方法，即向对象&quot;发送&quot;一个消息。</p>
+<blockquote>
+<p>send方法可以调用一个对象的任意有名方法，也包括私有或保护方法。</p>
+</blockquote>
+<p>同样的在Ruby 1.9中定义了一个以<code>public</code>开头的方法，使send只调用公开的方法</p>
+<p>上面说到了如何调用一个方法，那么如何在一个类中添加、取消或者别名一个方法呢？</p>
+<p>如果想要定义一个新的实例方法，可以使用<code>define_method</code>方法，它是Module的实例方法，第一二参数是新方法的名字，方法体要使用Method对象或代码块作为第二个参数。define_method是一个私有方法，所以必须在类或模块中调用它。</p>
+<pre><code>def add_method(c, m, &amp;b)
+  c.class_eval{
+    define_method(m, &amp;b)
+  }
+end
+
+add_method(String, :greet) { &quot;Hello, &quot; + self }
+&quot;world&quot;.greet #hello world
+
+#define a class method 
+def add_class_method(c, m, &amp;b)
+  eigenclass = class &lt;&lt; c; self; end
+  eigenclass.class_eval {
+
+    define_method(m, &amp;b)
+  }
+end
+
+add_class_method(String, :greet) { |name| &quot;hello &quot; + name }
+
+String.greet(&quot;world&quot;) #hello world
+</code></pre><p>在Ruby 1.9中，可以直接使用<code>define_singleton_method</code>方法来定义一个类方法:</p>
+<pre><code>String.define_singleton_method(:greet) { |name| &quot;hello &quot; + name }
+</code></pre><blockquote>
+<p>define_method的缺点是不能定义方法体使用代码块的方法。</p>
+</blockquote>
+<p>如果想动态创建一个接受代码块的方法，需要联合使用def和class_eval方法。如果要创建的方法有足够的动态性，可能无法把一个代码块传给class_eval方法，这时则需要用一个字符串表示要定义的方法，然后对它进行求值。</p>
+<p>如果需要对方法创建同义或别名方法，可以使用<code>alias</code>语句:</p>
+<pre><code>alias plus +
+</code></pre><p>在动态编程时，有时需要使用<code>alias_method</code>方法。alias_method经常用于创建别名链。</p>
+<pre><code>def backup(c, m, prefix=&quot;orig&quot;)
+  n = :&quot;#{prefix}_#{m}&quot;
+  c.class_eval {
+     alias_method n, m
+  }
+end
+
+backup(String, upcase)
+&quot;o&quot;.orig_upcase #O
+</code></pre><blockquote>
+<p>undef方法用于取消一个方法的定义，但是这仅适用于硬编码标识符表示名字的方法。如果需要动态删除一个方法，可以使用<code>remove_method</code>或<code>undef_method</code>。它们都是Module类的私有方法，remove_method用于删除当前类中的方法定义，如果在父类中包含该方法，那么该方法会被继续继承下来，而undef_method则会不允许再次在实例上调用该方法。</p>
+</blockquote>
+<p>method_missing方法通常是在Ruby无法找到某个方法时所调用的方法，默认情况下method_missing只是抛出NoMethodError异常，如果不对异常进行捕获，那么整个程序就会退出。</p>
+<pre><code>class Hash
+  def method_missing(key, *args)
+    text = key.to_s
+
+    if text[-1,1] == &quot;=&quot; #if key ends with = set a value
+      self[text.chop.to_sym] = args[0]
+    else
+      self[key]
+    end
+  end
+end
+
+h = {}
+h.one = 1 #the same as h[:one] = 1
+puts h.one #1
+</code></pre><h2 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h2><p>Module、Class和Object类实现了若干回调方法，这些方法也被称为钩子方法。钩子方法并非默认定义的，在特定事件发生时会被调用。这样我们可以在定义子类、包含模块或定义方法时可以扩展Ruby的行为。它们通常以<code>ed</code>结尾。</p>
+<p>在一个类被继承的时候，通常会回调它的<code>inherited</code>方法，当模块被包含时，会调用它的<code>included</code>方法：</p>
+<pre><code>module Final
+  def self.included(c)
+    c.instance_eval do
+      def inherited(sub)
+        raise Exception, &quot;Attempt to create subclass #{sub} of Final class #{self}&quot;
+      end
+    end
+  end
+end
+</code></pre><p>如果一个模块定义了一个名为extended的类方法，那么它将在一个对象扩展该模块时被调用。</p>
+<p>除了有跟踪包含类和模块的钩子方法，还有用于跟踪类和模块的方法的钩子方法，以及跟踪任意单键方法的钩子方法。如果为人以类或模块定义了一个名为<code>method_added</code>的方法，它将在该类或模块定义一个实例方法时被调用。</p>
+<pre><code>def String.method_added(name)
+  puts &quot;New instance method #{name} added to String.&quot;
+end
+</code></pre><p>method_added方法会被子类所继承。但是因为这个钩子方法没有任何类信息的参数，所以在添加某个方法时，是无法直到是定义method_added方法所在的类添加的还是子类添加的。解决这个问题的方法是为定义method_added的类的同时定义inherited方法，然后在inherited方法为每个子类定义一个method_added方法。</p>
+<pre><code> class Strict 
+  def self.method_added(name)
+    STDERR.puts &quot;Warning: #{name} method added&quot;
+    remove_method name
+  end
+end
+
+class Strict
+  def a
+  end
+end  #Warning: a method added
+
+s = Strict.new
+s.a #NoMethodError: undefined method `a&apos;
+</code></pre><h1 id="ObjectSpace和GC"><a href="#ObjectSpace和GC" class="headerlink" title="ObjectSpace和GC"></a>ObjectSpace和GC</h1><p>ObjectSpace模块定义了一组方便的的低级方法，对调试和元编程有所帮助。最重要的方法为:each_object，它可以迭代解释器知道的每个对象。</p>
+<pre><code>ObjectSpace.each_object(Class) { |c| puts c } #in ruby 1.9 it will about 383 objects 
+</code></pre><p><code>_id2ref</code>是Object.object_id的反向方法，它的参数是一个对象ID，它返回相对应的对象；如果没有对应的对象，则抛出一个RangeError异常。</p>
+<p>ObjectSpace.define_finalizer可以注册一个Proc对象或一个代码块，它们在给定对象被垃圾收集时调用。任何用于终结(finalize)对象的值必须能够被finalizer块获得，这样它们无需通过被终结对象而使用。它的反向方法为undefine_finalizer。</p>
+<p>ObjectSpace.garbage_collect强制让Ruby运行垃圾收集器。垃圾收集功能也可以通过GC模块获得。GC.start是ObjectSpace.garbage_collect的同义方法，可以通过GC.disable方法临时关闭垃圾收集，用GC.enable使之再次生效。</p>
+<pre><code>class Object
+  def trace(name=&quot;&quot;, stream=STDERR)
+    TraceObject.new(self, name, stream)
+  end
+end
+
+class TraceObject
+  instance_methods.each do |m|
+    m = m.to_sym
+    next if m == :object_id || m == :__id__ || m == :__send__
+    undef_method m
+  end
+
+  def initialize(o, name, stream)
+    @o = o
+    @n = name
+    @trace = stream
+  end
+
+  def method_missing(*args, &amp;block)
+    m = args.shift #the method name
+    begin
+      arglist = args.map { |a| a.inspect }.join(&apos;, &apos;)
+      @trace &lt;&lt; &quot;Invoking: #{@n}.#{m}(#{arglist}) at #{caller[0]}\n&quot;
+      r = @o.send m, *args, &amp;block
+      @trace &lt;&lt; &quot;Returning: #{r.inspect} from #{@n}.#{m} to #{caller[0]}\n&quot;
+      r
+    rescue Exception =&gt; e 
+      @trace &lt;&lt; &quot;Rasing: #{e.class}:#{e} from #{@n}.#{m}\n&quot;
+      raise
+    end
+  end
+
+  def __delegate
+    @o
+  end
+end
+</code></pre><h2 id="动态创建方法"><a href="#动态创建方法" class="headerlink" title="动态创建方法"></a>动态创建方法</h2><pre><code>#Method 1: class_eval
+class Module
+  private 
+  def readonly(*syms)
+    return if syms.size == 0
+    code = &quot;&quot;
+    syms.each do |s|
+      code &lt;&lt; &quot;def #[s]; @#{s}; end\n&quot;
+    end
+    class_eval code
+  end
+
+  def readwrite(*syms)
+    return if syms.size == 0
+    code = &quot;&quot;
+    syms.each do |s|
+      code &lt;&lt; &quot;def #{s}; @#{s}; end\n&quot;
+      code &lt;&lt; &quot;def #{s}=(value); @#{s} = value; end\n&quot;
+    end
+
+    class_eval code
+  end
+end
+
+#Method 2:define_method
+class Module
+  def attributes(hash)
+    hash.each_pair do |sym, default|
+      getter = sym 
+      setter = :&quot;#{sym}&quot;
+      variable = :&quot;@#{sym}&quot;
+
+      define_method getter do
+        if instance_variable_defined? variable
+          instance_variable_get variable
+        else
+          default
+        end
+      end
+
+      define_method setter do |value|
+        instance_variable_set variable, value
+      end
+    end
+  end
+
+  def class_attrs(hash)
+    eigenclass = class &lt;&lt; self; self; end
+    eigenclass.class_eval { attributes(Hash) }
+  end
+
+  private :attributes, :class_attrs
+end
+</code></pre><h2 id="Alias-Chaining"><a href="#Alias-Chaining" class="headerlink" title="Alias Chaining"></a>Alias Chaining</h2><pre><code>module ClassTrace 
+  T = []
+
+  if x = ARGV.index(&quot;--traceout&quot;)
+    OUT = File.open(ARGV[x+1], &quot;w&quot;)
+    ARGV[x+2] = nil
+  else
+    OUT = STDERR
+  end
+end
+
+alias ori_load load
+alias ori_require require
+
+def require(file) 
+  ClassTrace::T &lt;&lt; [file, caller[0]]
+  ori_require file
+end
+
+def load(*args)
+  ClassTrace::T &lt;&lt; [args[0], caller[0]]
+  ori_load(*args)
+end
+
+def Object.inherited(c)
+  ClassTrace::T &lt;&lt; [c, caller[0]]
+end
+
+at_exit {
+  o = ClassTrace::OUT
+  o.puts &quot;=&quot;*60
+  o.puts &quot;Files loaded and Classes Defined:&quot;
+  o.puts &quot;=&quot;*60
+
+  ClassTrace::T.each do |what, where|
+    if what.is_a? Class 
+      o.puts &quot;Defined:#{what} at #{where}&quot;
+    else
+      o.puts &quot;Loaded:#{what} at #{where}&quot;
+    end
+  end
+}
+
+
+
+#Tracing Methods
+class Object
+  def trace!(*methods)
+    @_traced = @_traced || []
+    methods = public_methods(false) if methods.size == 0
+    methods.map! { |m| m.to_sym }
+    methods -= @_traced
+    return if methods.empty?
+    @_traced |= methods 
+
+    SDTERR &lt;&lt; &quot;Tracing #{methods.join(&apos;, &apos;)} on #{object_id}\n&quot;
+
+    eigenclass = class &lt;&lt; self; self; end
+
+    methods.each do |m|
+      eigenclass.class_eval %Q{
+         def #{m}(*args, &amp;block)
+           begin
+             STDERR &lt;&lt; &quot;Entering #{m}(\#{args.join(&apos;, &apos;)})\n&quot;
+             result = super
+             STDERR &lt;&lt; Exiting #{m} with \#{result}\n&quot;
+             result
+         rescue 
+           STDERR &lt;&lt; &quot;Aboring #{m}: \#{$!.class}, \#{$1.message}&quot;
+           raise
+         end
+      }
+    end
+  end
+
+  def untrace!(*methods)
+    if methods.size == 0
+      methods = @_traced
+      STDERR &lt;&lt; &quot;Untracing all methods on #{object_id}&quot;
+    else
+      methods.map! { |m| m.to_sym }
+      methods &amp;= @_traced
+      STDERR &lt;&lt; &quot;Untracing #{methods.join(&apos;, &apos;)} on #{object_id}\n&quot;
+    end
+
+    @_traced -= methods
+    (class &lt;&lt; self; self; end).class_eval do 
+      methods.each do |m|
+        remove_method m
+      end
+    end
+
+    if @_traced.empty?
+      remove_instance_variable @_traced
+    end
+  end
+end
+</code></pre><h2 id="DSL-Domain-Specific-Language"><a href="#DSL-Domain-Specific-Language" class="headerlink" title="DSL(Domain-Specific Language)"></a>DSL(Domain-Specific Language)</h2><p>领域特定语言是对Ruby句法或API的扩展，可以用更自然的方式处理问题或表现数据。</p>
+<pre><code>class XML
+  def initialize(out)
+    @out = out 
+  end
+
+  def context(text)
+    @out &lt;&lt; text.to_s
+  end
+
+  def comment(text)
+    @out &lt;&lt; &quot;&lt;!-- #{text} --&gt;&quot;
+    nil
+  end
+
+  def tag(tagname, attributes={})
+    @out &lt;&lt; &quot;&lt;#{tagname}&quot;
+
+    attributes.each {|attr,value| @out &lt;&lt; &quot; #{attr}=`#{value}`&quot;}
+
+    if block_given?
+      @out &lt;&lt; &apos;&gt;&apos;
+      content = yield
+      if content 
+        @out &lt;&lt; content.to_s
+      end
+      @out &lt;&lt; &quot;&lt;/#{tagname}&gt;&quot;
+    else
+      @out &lt;&lt; &apos;/&gt;&apos;
+    end
+    nil 
+  end
+
+  alias method_missing tag
+
+  def self.generate(out, &amp;block)
+    XML.new(out).instance_eval(&amp;block)
+  end
+end
+
+pagetitle = &quot;Test Page for XML.generate&quot;
+XML.generate(STDOUT) do
+  html do
+    head do
+      title { pagetitle }
+      comment &quot;This is a test&quot;
+    end
+    body do
+      ul :type =&gt; &quot;sequare&quot; do
+        li { Time.now }
+        li { RUBY_VERSION }
+      end
+    end
+  end
+end
+
+
+#Example 2
+
+class XMLGrammar
+  def initialize(out)
+    @out = out 
+  end
+
+  def self.generate(out, &amp;block)
+    new(out).instance_eval(&amp;block)
+  end
+
+  def self.element(tagname, attributes={})
+    @allowed_attributes ||= {}
+    @allowed_attributes[tagname] = attributes
+
+    class_eval %Q{
+       def #{tagname}(attributes={}, &amp;block)  
+         tag(:#{tagname}, attributes, &amp;block)
+       end
+    }
+  end
+
+  OPT = :opt
+  REQ = :req 
+  BOOL = :bool
+
+
+  def self.allowed_attributes
+    @allowed_attributes
+  end
+
+  def content(text)
+    @out &lt;&lt; text.to_s
+    nil
+  end
+
+  def comment(text)
+    @out &lt;&lt; &quot;&lt;!--#{text}--&gt;&quot;
+    nil
+  end
+
+  def tag(tagname, attributes={})
+    @out &lt;&lt; &quot;&lt;#{tagname}&quot;
+    allowed = self.class.allowed_attributes[tagname]
+
+    attributes.each_pair do |key, value|
+      raise &quot;unknown attributes:#{key}&quot; unless allowed.include?(key)
+      @out &lt;&lt; &quot; #{key}=&apos;#{value}&apos;&quot;
+    end
+
+    allowed.each_pair do |key, value|
+      next if attributes.has_key? key
+      if (value == REQ)
+        raise &quot;required attributes &apos;#{key}&apos; missing in &lt;#{tagname}&gt;&quot;
+      elsif value.is_a? String
+        @out &lt;&lt; &quot; #{key}=&apos;#{value}&apos;&quot;
+      end
+    end
+
+    if block_given?
+      @out &lt;&lt; &apos;&gt;&apos;
+      content = yield
+      if content
+        @out &lt;&lt; content.to_s 
+      end
+      @out &lt;&lt; &quot;&lt;/#{tagname}&gt;&quot;
+    else
+      @out &lt;&lt; &apos;/&gt;&apos;
+    end
+
+    nil
+  end    
+end
+
+class HTMLForm &lt; XMLGrammar
+  element :form, :action =&gt; REQ,
+                 :method =&gt; &quot;GET&quot;,
+                 :enctype =&gt; &quot;application/x-www-form-urlencoded&quot;,
+                 :name =&gt; OPT 
+  element :input, :type =&gt; &quot;text&quot;, :name =&gt; OPT, :value =&gt; OPT,
+                  :maxlength =&gt; OPT, :size =&gt; OPT, :src =&gt; OPT,
+                  :checked =&gt; BOOL, :disabled =&gt; BOOL, :readonly =&gt; BOOL
+  element :textarea, :rows =&gt; REQ, :cols =&gt; REQ, :name =&gt; OPT,
+                     :disabled =&gt; BOOL, :readonly =&gt; BOOL
+  element :button, :name =&gt; OPT, :value =&gt; OPT,
+                   :type =&gt; &quot;submit&quot;, :disabled =&gt; OPT
+end
+
+HTMLForm.generate(STDOUT) do
+  comment &quot;This is a simple HTML form&quot;
+  form :name =&gt; &quot;registration&quot;,
+       :action =&gt; &quot;http://test.cig&quot; do
+    content &quot;Name:&quot;
+    input :name =&gt; &quot;name&quot;
+    content &quot;Address:&quot;
+    textarea :name =&gt; &quot;address&quot;, :rows =&gt; 6, :cols =&gt; 40 do
+      &quot;Please enter your mailing address here&quot;
+    end
+    button { &quot;Submit&quot; }
+  end
+end
+</code></pre>
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2015/02/15/let-us-talk-about-exception-again/" rel="bookmark">再谈Ruby的异常处理(学习笔记)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2012/05/13/ruby-exception/" rel="bookmark">Ruby Exception——1</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2012/02/14/ruby-platform/" rel="bookmark">Ruby Platform</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2012/08/19/the-usage-of-spreadsheet-and-read-write-excel-files/" rel="bookmark">使用Spreadsheet读取和修改Excel文件</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2015/10/23/what-is-the-difference-in-to_s-to_str_inspect/" rel="bookmark">The Difference Of XX-like Methods In Ruby</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>David Wei</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="https://polarlights.github.io/2012/07/04/reflection-and-metaprograming/" title="Ruby Reflection And Metaprograming">https://polarlights.github.io/2012/07/04/reflection-and-metaprograming/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ruby/" rel="tag"><i class="fa fa-tag"></i> Ruby</a>
+          
+            <a href="/tags/Metaprograming/" rel="tag"><i class="fa fa-tag"></i> Metaprograming</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2012/06/23/methods-procs-lambdas-and-closures/" rel="next" title="Ruby中的方法、过程、Lambda和闭包(学习笔记)">
+                <i class="fa fa-chevron-left"></i> Ruby中的方法、过程、Lambda和闭包(学习笔记)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2012/07/29/notes-about-mongodb/" rel="prev" title="MongoDB Basic">
+                MongoDB Basic <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="David Wei">
+            
+              <p class="site-author-name" itemprop="name">David Wei</p>
+              <p class="site-description motion-element" itemprop="description">Up like the sun.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/polarlights" title="GitHub &rarr; https://github.com/polarlights" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:godhuyang@gmail.com" title="E-Mail &rarr; mailto:godhuyang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型、类和模块Types-Classes-And-Modules"><span class="nav-number">2.</span> <span class="nav-text">类型、类和模块Types,Classes And Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义类和模块"><span class="nav-number">2.1.</span> <span class="nav-text">定义类和模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluating-Strings-and-Blocks"><span class="nav-number">2.2.</span> <span class="nav-text">Evaluating Strings and Blocks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#instance-eval和class-eval"><span class="nav-number">2.2.1.</span> <span class="nav-text">instance_eval和class_eval</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instance-exec和class-exec"><span class="nav-number">2.2.2.</span> <span class="nav-text">instance_exec和class_exec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量和常量"><span class="nav-number">2.2.3.</span> <span class="nav-text">变量和常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询、修改、检测变量"><span class="nav-number">2.2.4.</span> <span class="nav-text">查询、修改、检测变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Methods"><span class="nav-number">2.2.5.</span> <span class="nav-text">Methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hooks"><span class="nav-number">2.3.</span> <span class="nav-text">Hooks</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ObjectSpace和GC"><span class="nav-number">3.</span> <span class="nav-text">ObjectSpace和GC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态创建方法"><span class="nav-number">3.1.</span> <span class="nav-text">动态创建方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alias-Chaining"><span class="nav-number">3.2.</span> <span class="nav-text">Alias Chaining</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DSL-Domain-Specific-Language"><span class="nav-number">3.3.</span> <span class="nav-text">DSL(Domain-Specific Language)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Wei</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">150k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="Reading time total">4:32</span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom"><a target="_blank" rel="sitemap" href="/sitemap.xml"><b>SiteMap</b></a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'polarlights',
+            repo: 'polarlights.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '9e2d8e0930203211048292a4182e502a78dfa1a7',
+            
+                client_id: 'acbac58a983e8f479b88'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "FOvKWHCKhols2pd6bP9bxbkW-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "FOvKWHCKhols2pd6bP9bxbkW-gzGzoHsz",
+                'X-LC-Key': "BovkYvCpL91iK34c0GwRcCwY",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 14983,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
+
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="rSZ1lYxqQVOhFL9gu_R7E9OobC64Mq5WI5g4Mti9Clo">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/uploads/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Strings1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001">
+<meta name="keywords" content="Ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby Platform">
+<meta property="og:url" content="https://polarlights.github.io/2012/02/14/ruby-platform/index.html">
+<meta property="og:site_name" content="Polarlights">
+<meta property="og:description" content="Strings1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-11T09:30:13.750Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby Platform">
+<meta name="twitter:description" content="Strings1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Polarlights" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://polarlights.github.io/2012/02/14/ruby-platform/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Ruby Platform | Polarlights</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-31475638-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-31475638-1');
+</script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Polarlights</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://polarlights.github.io/2012/02/14/ruby-platform/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="David Wei">
+      <meta itemprop="description" content="Up like the sun.">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Polarlights">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Ruby Platform
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2012-02-14 20:00:00" itemprop="dateCreated datePublished" datetime="2012-02-14T20:00:00+08:00">2012-02-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-11 17:30:13" itemprop="dateModified" datetime="2019-08-11T17:30:13+08:00">2019-08-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tech/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2012/02/14/ruby-platform/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count gitment-comments-count" data-xid="/2012/02/14/ruby-platform/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2012/02/14/ruby-platform/" class="leancloud_visitors" data-flag-title="Ruby Platform">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">4.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">9 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h1><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"hello"</span></span><br><span class="line">s.concat(<span class="string">" world"</span>) <span class="comment">#the same as &lt;&lt;</span></span><br><span class="line">s.insert(<span class="number">5</span>, <span class="string">" there"</span>) <span class="comment">#s[5] = " there"</span></span><br><span class="line">s.slice(<span class="number">0</span>,<span class="number">5</span>) <span class="comment">#the same as s[0,5]</span></span><br><span class="line">s.slice!(<span class="number">5</span>,<span class="number">6</span>) <span class="comment">#same as s[5,6] = ""</span></span><br><span class="line">s.eql?(<span class="string">"hello world"</span>) <span class="comment">#true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#the length of string </span></span><br><span class="line">s = <span class="string">"hello"</span></span><br><span class="line">s.length <span class="comment">#5</span></span><br><span class="line">s.bytesize <span class="comment">#5 中文为每字3byte,ASCII为1byte</span></span><br><span class="line">s.size <span class="comment"># 5</span></span><br><span class="line">s.empty? <span class="comment">#false</span></span><br><span class="line"><span class="string">""</span>.empty? <span class="comment">#true</span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"hello"</span></span><br><span class="line">s.index(<span class="string">'l'</span>) <span class="comment">#2</span></span><br><span class="line">s.index(<span class="string">?l</span>) <span class="comment">#2</span></span><br><span class="line">s.index(<span class="regexp">/l+/</span>) <span class="comment">#2</span></span><br><span class="line">s.index(<span class="string">'l'</span>,<span class="number">3</span>) <span class="comment">#the first position after position 3 of l</span></span><br><span class="line">s.index(<span class="string">'Ruby'</span>) <span class="comment">#nil</span></span><br><span class="line">s.rindex(<span class="string">'l'</span>) <span class="comment">#3</span></span><br><span class="line">s.rindex(<span class="string">'l'</span>,<span class="number">2</span>) <span class="comment">#2  index of rightmost l at or before position 2</span></span><br><span class="line"></span><br><span class="line">s.start_with? <span class="string">"hell"</span> <span class="comment">#true</span></span><br><span class="line">s.end_with? <span class="string">"bells"</span> <span class="comment">#false</span></span><br><span class="line"></span><br><span class="line">s.<span class="keyword">include</span>?(<span class="string">'ll'</span>) <span class="comment">#true</span></span><br><span class="line">s.<span class="keyword">include</span>?(<span class="string">?H</span>) <span class="comment">#false</span></span><br><span class="line"></span><br><span class="line">s =~ <span class="regexp">/[aeiou]&#123;2&#125;/</span> <span class="comment">#nil</span></span><br><span class="line">s.match(<span class="regexp">/[aeiou]/</span>) &#123;<span class="params">|m|</span> m.to_s&#125; <span class="comment">#e return first</span></span><br><span class="line"></span><br><span class="line"><span class="string">"this is it"</span>.split <span class="comment">#this is it </span></span><br><span class="line"><span class="string">"hello"</span>.split(<span class="string">'l'</span>) <span class="comment">#['he','','o']</span></span><br><span class="line"><span class="string">"1, 2,3"</span>.split(<span class="regexp">/,\s*/</span>) <span class="comment">#1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="string">"banana"</span>.partition(<span class="string">"an"</span>) <span class="comment">#["b", "an", "ana"] </span></span><br><span class="line"><span class="string">"banana"</span>.rpartition(<span class="string">"an"</span>) <span class="comment">#["ban", "an", "a"] </span></span><br><span class="line"><span class="string">"a123b"</span>.partition(<span class="regexp">/\d+/</span>) <span class="comment">#["a", "123", "b"] </span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"hello"</span></span><br><span class="line">s.sub(<span class="string">'l'</span>, <span class="string">'L'</span>) <span class="comment">#replace the first l to L</span></span><br><span class="line">s.gsub(<span class="string">"l"</span>, <span class="string">"L"</span>) <span class="comment">#replace all the l to L</span></span><br><span class="line">s.sub!(<span class="regexp">/(.)(.)/</span>, <span class="string">'\2\1'</span>) <span class="comment">#swap first character</span></span><br><span class="line">s.sub!(<span class="regexp">/(.)(.)/</span>, <span class="string">'\\2\\1'</span>) <span class="comment">#"ehllo" Double backslashes for double quotes</span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello world"</span>.gsub(<span class="regexp">/\b./</span>) &#123; <span class="params">|match|</span> match.upcase &#125; <span class="comment">#Hello World</span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"hello"</span></span><br><span class="line">s.upcase <span class="comment">#HELLO</span></span><br><span class="line">s.downcase <span class="comment">#hello</span></span><br><span class="line">s.capitalize <span class="comment">#Hello</span></span><br><span class="line">s.swapcase <span class="comment">#HELLO</span></span><br><span class="line"></span><br><span class="line">s.casecmp(<span class="string">"HELLO"</span>) <span class="comment">#0 case insensitive comparasion</span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"hello\r\n"</span></span><br><span class="line">s.chomp <span class="comment">#"hello"</span></span><br><span class="line">s.chomp(<span class="string">"o"</span>) <span class="comment">#hell </span></span><br><span class="line">$/ = <span class="string">";"</span> <span class="comment">#set global separator $/ to semicolon</span></span><br><span class="line"><span class="string">"hello;"</span>.chomp <span class="comment">#hello</span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"hello\n"</span></span><br><span class="line">s.chop <span class="comment">#hello  remove line terminator removed, redo will be hell </span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"\t hello \n"</span></span><br><span class="line">s.strip <span class="comment">#hello </span></span><br><span class="line">s.lstrip <span class="comment">#hello \n</span></span><br><span class="line">s.rstrip <span class="comment">#\t hello </span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"x"</span></span><br><span class="line">s.ljust(<span class="number">3</span>) <span class="comment">#"x  "</span></span><br><span class="line">s.rjust(<span class="number">3</span>) <span class="comment">#"  x"</span></span><br><span class="line">s.center(<span class="number">3</span>) <span class="comment">#" x "</span></span><br><span class="line">s.center(<span class="number">5</span>, <span class="string">'-'</span>) <span class="comment">#"--x--"</span></span><br><span class="line">s.center(<span class="number">7</span>, <span class="string">'-='</span>) <span class="comment">#"-=-x-=-"</span></span><br><span class="line"></span><br><span class="line">s = <span class="string">"A\nB"</span></span><br><span class="line">s.each_byte &#123; <span class="params">|b|</span> print b, <span class="string">" "</span> &#125; <span class="comment">#65 10 66</span></span><br><span class="line">s.each_line &#123; <span class="params">|l|</span> l.chomp &#125; <span class="comment">#AB</span></span><br><span class="line"></span><br><span class="line">s.each_char &#123; <span class="params">|c|</span> print c, <span class="string">" "</span> &#125; <span class="comment">#A \n B </span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span>.upto(s.length - <span class="number">1</span>) &#123;<span class="params">|n|</span> print s[n,<span class="number">1</span>], <span class="string">" "</span>&#125;</span><br><span class="line"><span class="string">"a"</span>.succ <span class="comment">#b</span></span><br><span class="line"><span class="string">"aaz"</span>.<span class="keyword">next</span> <span class="comment">#aba</span></span><br><span class="line"><span class="string">"a"</span>.upto(<span class="string">"e"</span>) &#123;<span class="params">|c|</span> print c&#125; <span class="comment">#abcde</span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello"</span>.reverse <span class="comment">#olleh</span></span><br><span class="line"><span class="string">"hello\n"</span>.dump <span class="comment">#escape special character "\"hello\\n\"" </span></span><br><span class="line"><span class="string">"hello\n"</span>.inspect <span class="comment">#the same as dump</span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello"</span>.tr(<span class="string">"aeiou"</span>, <span class="string">"AEIOU"</span>) <span class="comment">#hEllO capitalize vowels</span></span><br><span class="line"><span class="string">"head"</span>.tr_s(<span class="string">"aeiou"</span>, <span class="string">"*"</span>) <span class="comment">#h*d #remove duplicates</span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello"</span>.sum <span class="comment">#weak 16-bit checksum </span></span><br><span class="line"><span class="string">"hello"</span>.sum(<span class="number">8</span>) <span class="comment">#8 bit checksum </span></span><br><span class="line"><span class="string">"hello"</span>.crypt(<span class="string">"ab"</span>) <span class="comment">#crypt hello with salt ab。"abl0JrMf6tlhw" </span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello"</span>.count(<span class="string">'aeiou'</span>) <span class="comment">#2</span></span><br><span class="line"><span class="string">"hello"</span>.delete(<span class="string">'aeiou'</span>) <span class="comment">#hll</span></span><br><span class="line"><span class="string">"hello"</span>.squeeze(<span class="string">'a-z'</span>) <span class="comment">#helo remove runs of letters. </span></span><br><span class="line"><span class="string">"hello"</span>.count(<span class="string">'a-z'</span>, <span class="string">'^aeiou'</span>) <span class="comment">#3 str.count([other_str]+) Each other_str parameter defines a set of characters to count. The intersection of these sets defines the characters to count in str. Any other_str that starts with a caret (^) is negated. The sequence c1–c2 means all characters between c1 and c2.</span></span><br><span class="line"><span class="string">"hello"</span>.delete(<span class="string">'a-z'</span>, <span class="string">'^aeiou'</span>) <span class="comment">#eo str.delete([other_str]+) Returns a copy of str with all characters in the intersection of its arguments deleted. Uses the same rules for building the set of characters as String#count.</span></span><br></pre></td></tr></table></figure>
+<h1 id="正则表达式Regexpression"><a href="#正则表达式Regexpression" class="headerlink" title="正则表达式Regexpression"></a>正则表达式Regexpression</h1><h2 id="正则表达式修饰符"><a href="#正则表达式修饰符" class="headerlink" title="正则表达式修饰符"></a>正则表达式修饰符</h2><p>i:匹配时忽略大小写<br>m:跨行进行模式匹配，换行符被当做普通字符对待。<br>x:扩展句法，允许在整个表达式中放入空白符和注释。<br>u,s,e,n: 吧正则表达式解释为Unicode,SJIS,EUC或ASCII，如果没有这样的修饰符，对正则表达式使用源文件的编码方式。</p>
+<blockquote>
+<p>在正则表达式中<code>()</code>,<code>[]</code>,<code>{}</code>,<code>.</code>,<code>?</code>,<code>+</code>,<code>*</code>,<code>|</code>,<code>^</code>和<code>$</code>具有特殊意义，如果在某个匹配模式中包含这些字符的字面量，要用反斜杠进行转义。</p>
+</blockquote>
+<blockquote>
+<p>Ruby正则表达式中，字面量可以用<code>#{}</code>插入任意的Ruby表达式。</p>
+</blockquote>
+<h2 id="正则表达式工厂方法"><a href="#正则表达式工厂方法" class="headerlink" title="正则表达式工厂方法"></a>正则表达式工厂方法</h2><p>除了直接使用字面量，还可以使用<code>Regexp.new</code>或<code>Regexp.compile</code>来创建一个正则表达式。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Regexp.new(<span class="string">"Ruby?"</span>) <span class="comment">#/Ruby?/</span></span><br><span class="line">Regexp.compile(<span class="string">"Ruby"</span>, Regexp::IGNORECASE, <span class="string">"u"</span>)</span><br></pre></td></tr></table></figure>
+<p>在把一个字符串传递给Regexp的构造方法之前，可以使用Regexp.escape对字符串中的特殊字符进行转义。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">"[a-z]+"</span></span><br><span class="line">suffix = Regexp.escape(<span class="string">"()"</span>) <span class="comment">#treat these characters literally</span></span><br><span class="line">r = Regexp.new(pattern + suffix) <span class="comment">#/[a-z]+\(\)/</span></span><br><span class="line"></span><br><span class="line">/R(<span class="string">?i</span>)uby/ <span class="comment">#Ignore the case of 'uby'</span></span><br></pre></td></tr></table></figure>
+<p>$~是一个特殊的线程局部和方法局部变量，它在两个并行运行的线程中的值是不同的;使用了=~操作符的方法不会修改调用者方法中的$~变量。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"hello"</span> =~ <span class="regexp">/e\w&#123;2&#125;/</span></span><br><span class="line">$~.string <span class="comment">#hello</span></span><br><span class="line">$~.to_s <span class="comment">#ell</span></span><br><span class="line">$~.pre_match <span class="comment">#h</span></span><br><span class="line">$~.post_match <span class="comment">#o</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> /(?&lt;lang&gt;\w+) (?&lt;ver&gt;\d+(\.\d)+) (?&lt;review&gt;\w+)/ =~ <span class="string">"Ruby 1.9.3 Pre"</span></span><br><span class="line">  lang <span class="comment">#Ruby</span></span><br><span class="line">  ver <span class="comment">#1.9.3</span></span><br><span class="line">  review <span class="comment">#Pre</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>等价于</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$~</td>
+<td>RegExp.last_match</td>
+</tr>
+<tr>
+<td>$&amp;</td>
+<td>RegExp.last_match[0]</td>
+</tr>
+<tr>
+<td>$`</td>
+<td>RegExp.last_match.pre_match</td>
+</tr>
+<tr>
+<td>$&#39;</td>
+<td>RegExp.last_match.post_match</td>
+</tr>
+<tr>
+<td>$1</td>
+<td>RegExp.last_match[1]</td>
+</tr>
+<tr>
+<td>$2,etc</td>
+<td>RegExp.last_match[2]</td>
+</tr>
+<tr>
+<td>$+</td>
+<td>RegExp.last_match[-1]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串进行模式匹配"><a href="#字符串进行模式匹配" class="headerlink" title="字符串进行模式匹配"></a>字符串进行模式匹配</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"ruby123"</span>[<span class="regexp">/\d+/</span>]  <span class="comment">#123</span></span><br><span class="line"><span class="string">"ruby123"</span>[<span class="regexp">/([a-z]+)(\d+)/</span>, <span class="number">1</span>] <span class="comment">#ruby </span></span><br><span class="line"><span class="string">"ruby123"</span>[<span class="regexp">/([a-z]+)(\d+)/</span>, <span class="number">2</span>] <span class="comment">#123</span></span><br></pre></td></tr></table></figure>
+<p>slice方法是<code>[]</code>方法的同义词方法，不过slice!变体返回值与它相同，并且将从字符串中删除返回的匹配子字符串。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="string">"ruby123"</span></span><br><span class="line">r.slice!(<span class="regexp">/\d+/</span>) <span class="comment">#return 123 and r will be ruby </span></span><br><span class="line"></span><br><span class="line">pattern = <span class="regexp">/(['"])([^\1]*)\1/</span></span><br><span class="line">text = <span class="string">"He said: 'hello world'"</span></span><br><span class="line">text.gsub(pattern) <span class="keyword">do</span> </span><br><span class="line">  <span class="keyword">if</span> $1 == <span class="string">'"'</span></span><br><span class="line">    <span class="string">"'#$2'"</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="string">"\"#$2\""</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2015/02/15/let-us-talk-about-exception-again/" rel="bookmark">再谈Ruby的异常处理(学习笔记)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2012/05/13/ruby-exception/" rel="bookmark">Ruby Exception——1</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2012/08/19/the-usage-of-spreadsheet-and-read-write-excel-files/" rel="bookmark">使用Spreadsheet读取和修改Excel文件</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2015/10/23/what-is-the-difference-in-to_s-to_str_inspect/" rel="bookmark">The Difference Of XX-like Methods In Ruby</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/2012/06/23/methods-procs-lambdas-and-closures/" rel="bookmark">Ruby中的方法、过程、Lambda和闭包(学习笔记)</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>David Wei</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="https://polarlights.github.io/2012/02/14/ruby-platform/" title="Ruby Platform">https://polarlights.github.io/2012/02/14/ruby-platform/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ruby/" rel="tag"><i class="fa fa-tag"></i> Ruby</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2012/05/08/learn-to-markdown/" rel="prev" title="学习Markdown语法笔记">
+                学习Markdown语法笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="David Wei">
+            
+              <p class="site-author-name" itemprop="name">David Wei</p>
+              <p class="site-description motion-element" itemprop="description">Up like the sun.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/polarlights" title="GitHub &rarr; https://github.com/polarlights" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:godhuyang@gmail.com" title="E-Mail &rarr; mailto:godhuyang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Strings"><span class="nav-number">1.</span> <span class="nav-text">Strings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式Regexpression"><span class="nav-number">2.</span> <span class="nav-text">正则表达式Regexpression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式修饰符"><span class="nav-number">2.1.</span> <span class="nav-text">正则表达式修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式工厂方法"><span class="nav-number">2.2.</span> <span class="nav-text">正则表达式工厂方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串进行模式匹配"><span class="nav-number">2.2.1.</span> <span class="nav-text">字符串进行模式匹配</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Wei</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">150k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="Reading time total">4:32</span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom"><a target="_blank" rel="sitemap" href="/sitemap.xml"><b>SiteMap</b></a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'polarlights',
+            repo: 'polarlights.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '9e2d8e0930203211048292a4182e502a78dfa1a7',
+            
+                client_id: 'acbac58a983e8f479b88'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "FOvKWHCKhols2pd6bP9bxbkW-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "FOvKWHCKhols2pd6bP9bxbkW-gzGzoHsz",
+                'X-LC-Key': "BovkYvCpL91iK34c0GwRcCwY",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 14983,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.5.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.5.0"></script>
+
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
