@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Module on Polarlights</title>
+    <link>http://localhost:1313/tags/module/</link>
+    <description>Recent content in Module on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Mar 2016 20:22:28 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/module/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Class</title>
+      <link>http://localhost:1313/post/class-and-modules/</link>
+      <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sentry on Polarlights</title>
+    <link>http://localhost:1313/tags/sentry/</link>
+    <description>Recent content in sentry on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Nov 2018 21:24:39 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/sentry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Add release to sentry</title>
+      <link>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</link>
+      <pubDate>Mon, 12 Nov 2018 21:24:39 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</guid>
+      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错</description>
+    </item>
+    
+  </channel>
+</rss>

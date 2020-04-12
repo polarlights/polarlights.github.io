@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Polarlights</title>
+    <link>http://localhost:1313/categories/git/</link>
+    <description>Recent content in Git on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Feb 2015 19:20:32 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>版本控制概念</title>
+      <link>http://localhost:1313/post/pro-git-learning-notes/</link>
+      <pubDate>Wed, 04 Feb 2015 19:20:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pro-git-learning-notes/</guid>
+      <description>版本控制(Reversion Control)是一种记录文件若干文件内容变化，以便将来直接查阅特定版本的系统。 版本控制系统的发展本地版本控制系</description>
+    </item>
+    
+  </channel>
+</rss>

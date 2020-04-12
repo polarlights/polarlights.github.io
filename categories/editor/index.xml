@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>editor on Polarlights</title>
+    <link>http://localhost:1313/categories/editor/</link>
+    <description>Recent content in editor on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Sep 2018 23:20:49 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/editor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>idea popular plugins</title>
+      <link>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</link>
+      <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</guid>
+      <description>基本lombok pluginGenerateSerialVersionUID Adds a new action &#39;SerialVersionUID&#39; in the generate menu (alt + ins). The action adds an serialVersionUID field in the current class or updates it if it already exists, and assigns it the same value the standard &#39;serialver&#39; JDK tool would return. The action is only visible when IDEA is not rebuilding its indexes, the class is serializable and either no</description>
+    </item>
+    
+    <item>
+      <title>idea productive tips</title>
+      <link>http://localhost:1313/post/idea-productive-tips/</link>
+      <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/idea-productive-tips/</guid>
+      <description>This article is wroten according to a youtube video: https://www.youtube.com/watch?v=eq3KiAH4IBI.
+We use Idea programming everyday. How can we use it effectively, now let&amp;#8217;s reading it below:
+Close the tab list of IDE
+Preferences → Editor → Editor Tabs; Change Tab Placement from default Top to None.
+Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift).</description>
+    </item>
+    
+  </channel>
+</rss>

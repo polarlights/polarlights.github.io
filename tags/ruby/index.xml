@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Polarlights</title>
+    <link>http://localhost:1313/tags/ruby/</link>
+    <description>Recent content in Ruby on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 24 Mar 2016 06:32:49 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>how_to_test_class_and_module</title>
+      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+    </item>
+    
+    <item>
+      <title>Class</title>
+      <link>http://localhost:1313/post/class-and-modules/</link>
+      <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+    </item>
+    
+    <item>
+      <title>The Difference Of XX-like Methods In Ruby</title>
+      <link>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</link>
+      <pubDate>Fri, 23 Oct 2015 21:23:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</guid>
+      <description>今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end</description>
+    </item>
+    
+    <item>
+      <title>再谈Ruby的异常处理(学习笔记)</title>
+      <link>http://localhost:1313/post/let-us-talk-about-exception-again/</link>
+      <pubDate>Mon, 16 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/let-us-talk-about-exception-again/</guid>
+      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退</description>
+    </item>
+    
+    <item>
+      <title>Spreadsheet是神马</title>
+      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+    </item>
+    
+    <item>
+      <title>定义</title>
+      <link>http://localhost:1313/post/reflection-and-metaprograming/</link>
+      <pubDate>Thu, 05 Jul 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/reflection-and-metaprograming/</guid>
+      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列</description>
+    </item>
+    
+    <item>
+      <title>Method</title>
+      <link>http://localhost:1313/post/methods-procs-lambdas-and-closures/</link>
+      <pubDate>Sun, 24 Jun 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/methods-procs-lambdas-and-closures/</guid>
+      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最</description>
+    </item>
+    
+    <item>
+      <title>Strings</title>
+      <link>http://localhost:1313/post/ruby-platform/</link>
+      <pubDate>Wed, 15 Feb 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ruby-platform/</guid>
+      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true</description>
+    </item>
+    
+  </channel>
+</rss>

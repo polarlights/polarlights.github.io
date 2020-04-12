@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>定义 - Polarlights</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="polarlights" />
+  <meta name="description" content="反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列" />
+
+  <meta name="keywords" content="ruby, java, go, microservice, spring" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.67.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/reflection-and-metaprograming/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/prism.css">
+
+<link rel="stylesheet" href="/css/adoc.css">
+
+<link rel="stylesheet" href="/css/github.css">
+
+
+<meta property="og:title" content="定义" />
+<meta property="og:description" content="反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/reflection-and-metaprograming/" />
+<meta property="article:published_time" content="2012-07-05T04:00:00+08:00" />
+<meta property="article:modified_time" content="2012-07-05T04:00:00+08:00" />
+<meta itemprop="name" content="定义">
+<meta itemprop="description" content="反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列">
+<meta itemprop="datePublished" content="2012-07-05T04:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2012-07-05T04:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="5070">
+
+
+
+<meta itemprop="keywords" content="Ruby,Metaprograming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="定义"/>
+<meta name="twitter:description" content="反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-31475638-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Polarlights</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Polarlights
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">定义</h1>
+      
+      <div class="post-meta">
+        <time datetime="2012-07-05" class="post-time">
+          2012-07-05
+        </time>
+        <div class="post-category">
+            <a href="http://localhost:1313/categories/tech/"> Tech </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <section id="preamble" aria-label="Preamble"><p>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。</p>
+<p>元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成的工作。 编写元程序的语言被称为元语言，被操作的语言称为目标语言。一门语言同时也是自身的元语言的能力称为反射。</p>
+<p>Ruby的反射API大部分定义在Kernel、Module和Object中。反射的本质不是元编程，元编程通常要使用到若干反射机制。</p></section>
+<section class="doc-section level-1"><h2 id="_类型类和模块typesclasses_and_modules">类型、类和模块Types,Classes And Modules</h2><div class="example-block"><div class="example"><p>module A
+end</p>
+<p>module B; include A; end;</p>
+<p>class C; include B; end;</p>
+<p>C &lt; B #true
+B &lt; A #true
+C &lt; A #true</p>
+<p>Fixnum &lt; Integer #True
+Integer &lt; Fixnum #false not all integers are fixnums
+Integer &lt; Comparable #true
+String &lt; Numeric #nil, strings are not numbers</p>
+<p>A.ancestors #[A]
+B.ancestors #[B,A]
+C.ancestors #[C, B, A, Object, Kernel, BasicObject]
+String.ancestors #[String, Comparable, Object, Kernel, BasicObject]</p>
+<p>C.include?(B) #true
+C.include?(A) #true
+B.include?(A) #true
+A.include?(A) #false
+A.include?(B) #false</p>
+<p>A.included_modules #[]
+B.included_modules #[A]
+C.included_modules #[B,A,Kernel]</p></div></div>
+<div class="quote-block"><blockquote><p>include方法为Module模块的私有方法，所以只能在类或模块的定义中才可以使用。与include方法相关的是公开方法:extend。它可以将制定模块的实例方法作为调用对象的单键方法。</p></blockquote></div></section>
+<section class="doc-section level-1"><h2 id="_定义类和模块">定义类和模块</h2><p>Ruby可以动态的创建一个匿名模块或类并赋值给一个常量，常量的名字就称为这个模块或类的名字:</p>
+<div class="example-block"><div class="example"><p>M = Module.new #module M
+C = Class.new  #class C
+D = Class.new&#169; { #D is a subclass of C that includes module M
+   include M
+}</p>
+<p>D.to_s #D</p></div></div></section>
+<section class="doc-section level-1"><h2 id="_evaluating_strings_and_blocks">Evaluating Strings and Blocks</h2><p>Ruby中最强大和最直接的反射特性之一就是eval方法，它可以对字符串进行求值。</p>
+<div class="literal-block"><pre>x = 1; eval "x + 1" #2</pre></div>
+<p>bingding方法返回一个实例变量的绑定状态。Bingding对象可以作为第二个参数传递给eval方法，指定的字符串就会在绑定的上下文中进行求值。</p>
+<div class="example-block"><div class="example"><p>class Object
+  def bingdings
+    bingding
+  end
+end</p>
+<p>class Test
+  def initialize(x)
+    @x = x
+  end
+end</p>
+<p>t = Test.new(10)
+eval("@x", t.bingdings) #10</p></div></div>
+<section class="doc-section level-2"><h3 id="_instance_eval和class_eval">instance_eval和class_eval</h3><p>Object类定义了instance_eval方法，Module类定义了class_eval方法，这些方法都可以像eval一样对Ruby代码进行求值。但是和eval还是有些区别的。1.这些方法会在指定对象或模块的上下文中对代码进行求值，该对象或模块成为代码求值时self的值。</p>
+<p>instance_eval方法为某个对象创建了一个单键方法，而class_eval则定义了一个普通方法。</p>
+<p>2.它们可以对代码块进行求值。当参数是代码块而非字符串时，代码块中的代码会在适当的上下文中执行。</p>
+<div class="literal-block"><pre>String.class_eval {
+  def len
+    size
+  end
+}</pre></div></section>
+<section class="doc-section level-2"><h3 id="_instance_exec和class_exec">instance_exec和class_exec</h3><p>Ruby 1.9中还定义了instance_exec和class_exec两个求值方法，这些方法在接受者对象的上下文中对给定的代码块求值。与前面的class_eval等不同的的地方在于exec可以接收参数，并把参数传递给代码。这样给定的代码块会在给定对象的上下文中执行，并可以获得对象外的参数。</p>
+<div class="literal-block"><pre>class Point; end
+x = 10
+p = Point.new
+p.instance_exec(x) { |x| puts x }</pre></div></section>
+<section class="doc-section level-2"><h3 id="_变量和常量">变量和常量</h3><p>Kernel、Object和Module类定义了很多反射方法列出各种名字，包括所有定义的全局变量、局部变量、实例变量、类变量和常量。</p>
+<div class="literal-block"><pre>global_variables #[:$;, :$-F, :$@, :$!, :$SAFE, :$~, :$&amp;, :$`, :$', :$+, :$=, :$KCODE, :$-K, :$,, :$/, :$-0, :$\, :$_, :$stdin, :$stdout, :$stderr, :$&gt;, :$&lt;, :$., :$FILENAME, :$-i, :$*, :$?, :$$, :$:, :$-I, :$LOAD_PATH, :$", :$LOADED_FEATURES, :$VERBOSE, :$-v, :$-w, :$-W, :$DEBUG, :$-d, :$0, :$PROGRAM_NAME, :$-p, :$-l, :$-a, :$binding, :$1, :$2, :$3, :$4, :$5, :$6, :$7, :$8, :$9]
+x = 1
+local_variables #[:x,:_]
+
+class Point
+  def initialize(x,y)
+    @x,@y = x,y
+  end
+
+  @@n = 0
+  ORIGIN_POINT = Point.new(0,0)
+end
+
+Point::ORIGIN_POINT.instance_variables #[:@x, :@y]
+Point.class_variables #[:@@n]
+Point.constants #[:ORIGIN_POINT]</pre></div></section>
+<section class="doc-section level-2"><h3 id="_查询修改检测变量">查询、修改、检测变量</h3><p>Ruby有很多反射方法用于查询、设置和删除变量、类变量、常量。     x = 1     varname = "x"</p>
+<div class="literal-block"><pre>eval(varname) #1
+eval("varname = '$g'") #$g
+eval(varname) #nil,because varname now is $g,so its eval is nil
+eval("#{varname} = x") #1</pre></div>
+<p>eval可以任何对象的实例变量、任何类或模块的类变量和常量进行查询、设置和存在性检测操作:</p>
+<div class="literal-block"><pre>o = Object.new
+o.instance_variable_set(:@x, 0) #require @ prefix
+o.instance_variable_get(:@x) #0
+o.instance_variable_defined?(:@x) #true
+
+Object.class_variable_set(:@@x, 1)
+Object.class_variable_get(:@@x) #1
+Object.class_variable_defined?(:@xx)
+
+Math.const_set(:EPI, Math::PI * Math::E) #8.539734222673566
+Math.const_get(:EPI)
+Math.const_defined?(:EPI)</pre></div>
+<p>在Ruby 1.9中如果把false作为const_get和const_defined?的第二个参数，则对应的变量是在当前类或模块中进行查找，不会去寻找父类或模块的常量。</p>
+<p>Object和Module对象中的一些私有方法被用来取消实例变量、类变量和常量的定义，它们都返回被删除变量或常量的值。因为这些方法都是私有的，所以不能直接用在对象、类和模块上，只能通过<code>eval</code>或<code>send</code>方法完成。</p>
+<div class="literal-block"><pre>o.instance_eval { remove_instance_variable :@x }
+String.class_eval { remove_class_variable :@@x }
+Math.send :remove_const, :EPI</pre></div>
+<p>如果一个模块定义了const_missing方法，当找不到该变量的时候，该方法就会被调用。</p>
+<div class="literal-block"><pre>def Symbol.const_missing(name)
+  name #return the name of the missing Const
+end
+
+Symbol::TEST #:TEST</pre></div></section>
+<section class="doc-section level-2"><h3 id="_methods">Methods</h3><div class="literal-block"><pre>o = "hello world"
+o.methods #all the public methods of String
+o.public_methods #the same as the above
+o.public_methods(false) #the inherited methods
+o.protected_methods #all the protected methods
+o.private_methods #all the private Methods
+o.private_methods(false) #inherited private methods
+def o.single; 1; end
+o.singleton_methods #:single
+
+#Query
+String.instance_methods == "s".public_methods #true
+String.instance_methods(false) == "s".public_methods(false) #true
+String.public_instance_methods == String.instance_methods #true
+String.protected_instance_methods #[]
+String.private_instance_methods(false) #[:initialize, :initialize_copy]
+
+#Check
+String.public_method_defined? :reverse #true
+String.protected_method_defined? :reverse #false
+String.private_method_defined? :initialize #true
+String.method_defined? :upcase #true</pre></div>
+<p>Module.method_defined?方法用于检测给定的名称是否用于定义了一个公开或保护的方法，它与Object.respond_to?方法的功能基本类似。在Ruby 1.9中可以制定该方法的第二个参数为false表示不考虑继承方法。</p>
+<p>要查询某个特定名称的方法，可以在任意对象上调用<code>method</code>方法，或者在任意模块上调用<code>instance_method</code>方法。前者返回一个绑定于接收者的可调用Method对象，后者返回一个UnboundedMethod对象。在Ruby 1.9中，可以使用<code>public_method</code>和<code>public_instance_method</code>来获取对象的公开方法。</p>
+<div class="literal-block"><pre>"o".method(:reverse) #&lt;Method: String#reverse&gt;
+String.instance_method(:reverse) #&lt;UnboundMethod: String#reverse&gt;</pre></div>
+<p>通常调用一个有名字的方法使用<code>send</code>方法:</p>
+<div class="literal-block"><pre>"o".send :upcase #O
+Math.send(:sin, Math::PI / 2) #1</pre></div>
+<p>send在接收者对象上调用名为第一个参数的方法，后面的其他参数作为调用方法的参数。方法名<code>send</code>来自于面向对象编程的术语，调用一个方法，即向对象"发送"一个消息。</p>
+<div class="quote-block"><blockquote><p>send方法可以调用一个对象的任意有名方法，也包括私有或保护方法。</p></blockquote></div>
+<p>同样的在Ruby 1.9中定义了一个以<code>public</code>开头的方法，使send只调用公开的方法</p>
+<p>上面说到了如何调用一个方法，那么如何在一个类中添加、取消或者别名一个方法呢？</p>
+<p>如果想要定义一个新的实例方法，可以使用<code>define_method</code>方法，它是Module的实例方法，第一二参数是新方法的名字，方法体要使用Method对象或代码块作为第二个参数。define_method是一个私有方法，所以必须在类或模块中调用它。</p>
+<div class="literal-block"><pre>def add_method(c, m, &amp;b)
+  c.class_eval{
+    define_method(m, &amp;b)
+  }
+end
+
+add_method(String, :greet) { "Hello, " + self }
+"world".greet #hello world
+
+#define a class method
+def add_class_method(c, m, &amp;b)
+  eigenclass = class &lt;&lt; c; self; end
+  eigenclass.class_eval {
+
+    define_method(m, &amp;b)
+  }
+end
+
+add_class_method(String, :greet) { |name| "hello " + name }
+
+String.greet("world") #hello world</pre></div>
+<p>在Ruby 1.9中，可以直接使用<code>define_singleton_method</code>方法来定义一个类方法:</p>
+<div class="literal-block"><pre>String.define_singleton_method(:greet) { |name| "hello " + name }</pre></div>
+<div class="quote-block"><blockquote><p>define_method的缺点是不能定义方法体使用代码块的方法。</p></blockquote></div>
+<p>如果想动态创建一个接受代码块的方法，需要联合使用def和class_eval方法。如果要创建的方法有足够的动态性，可能无法把一个代码块传给class_eval方法，这时则需要用一个字符串表示要定义的方法，然后对它进行求值。</p>
+<p>如果需要对方法创建同义或别名方法，可以使用<code>alias</code>语句:</p>
+<div class="literal-block"><pre>alias plus +</pre></div>
+<p>在动态编程时，有时需要使用<code>alias_method</code>方法。alias_method经常用于创建别名链。</p>
+<div class="literal-block"><pre>def backup(c, m, prefix="orig")
+  n = :"#{prefix}_#{m}"
+  c.class_eval {
+     alias_method n, m
+  }
+end
+
+backup(String, upcase)
+"o".orig_upcase #O</pre></div>
+<div class="quote-block"><blockquote><p>undef方法用于取消一个方法的定义，但是这仅适用于硬编码标识符表示名字的方法。如果需要动态删除一个方法，可以使用<code>remove_method</code>或<code>undef_method</code>。它们都是Module类的私有方法，remove_method用于删除当前类中的方法定义，如果在父类中包含该方法，那么该方法会被继续继承下来，而undef_method则会不允许再次在实例上调用该方法。</p></blockquote></div>
+<p>method_missing方法通常是在Ruby无法找到某个方法时所调用的方法，默认情况下method_missing只是抛出NoMethodError异常，如果不对异常进行捕获，那么整个程序就会退出。</p>
+<div class="literal-block"><pre>class Hash
+  def method_missing(key, *args)
+    text = key.to_s
+
+    if text[-1,1] == "=" #if key ends with = set a value
+      self[text.chop.to_sym] = args[0]
+    else
+      self[key]
+    end
+  end
+end
+
+h = {}
+h.one = 1 #the same as h[:one] = 1
+puts h.one #1</pre></div></section></section>
+<section class="doc-section level-1"><h2 id="_hooks">Hooks</h2><p>Module、Class和Object类实现了若干回调方法，这些方法也被称为钩子方法。钩子方法并非默认定义的，在特定事件发生时会被调用。这样我们可以在定义子类、包含模块或定义方法时可以扩展Ruby的行为。它们通常以<code>ed</code>结尾。</p>
+<p>在一个类被继承的时候，通常会回调它的<code>inherited</code>方法，当模块被包含时，会调用它的<code>included</code>方法：</p>
+<div class="literal-block"><pre>module Final
+  def self.included(c)
+    c.instance_eval do
+      def inherited(sub)
+        raise Exception, "Attempt to create subclass #{sub} of Final class #{self}"
+      end
+    end
+  end
+end</pre></div>
+<p>如果一个模块定义了一个名为extended的类方法，那么它将在一个对象扩展该模块时被调用。</p>
+<p>除了有跟踪包含类和模块的钩子方法，还有用于跟踪类和模块的方法的钩子方法，以及跟踪任意单键方法的钩子方法。如果为人以类或模块定义了一个名为<code>method_added</code>的方法，它将在该类或模块定义一个实例方法时被调用。</p>
+<div class="literal-block"><pre>def String.method_added(name)
+  puts "New instance method #{name} added to String."
+end</pre></div>
+<p>method_added方法会被子类所继承。但是因为这个钩子方法没有任何类信息的参数，所以在添加某个方法时，是无法直到是定义method_added方法所在的类添加的还是子类添加的。解决这个问题的方法是为定义method_added的类的同时定义inherited方法，然后在inherited方法为每个子类定义一个method_added方法。</p>
+<div class="example-block"><div class="example"><div class="literal-block"><pre> class Strict
+  def self.method_added(name)
+    STDERR.puts "Warning: #{name} method added"
+    remove_method name
+  end
+end</pre></div>
+<p>class Strict
+  def a
+  end
+end  #Warning: a method added</p>
+<p>s = Strict.new
+s.a #NoMethodError: undefined method `a'</p></div></div></section>
+<section class="doc-section level-0"><h1 id="_objectspace和gc">ObjectSpace和GC</h1><div class="open-block partintro"><div class="content"><p>ObjectSpace模块定义了一组方便的的低级方法，对调试和元编程有所帮助。最重要的方法为:each_object，它可以迭代解释器知道的每个对象。</p>
+<div class="literal-block"><pre>ObjectSpace.each_object(Class) { |c| puts c } #in ruby 1.9 it will about 383 objects</pre></div>
+<p>`_id2ref`是Object.object_id的反向方法，它的参数是一个对象ID，它返回相对应的对象；如果没有对应的对象，则抛出一个RangeError异常。</p>
+<p>ObjectSpace.define_finalizer可以注册一个Proc对象或一个代码块，它们在给定对象被垃圾收集时调用。任何用于终结(finalize)对象的值必须能够被finalizer块获得，这样它们无需通过被终结对象而使用。它的反向方法为undefine_finalizer。</p>
+<p>ObjectSpace.garbage_collect强制让Ruby运行垃圾收集器。垃圾收集功能也可以通过GC模块获得。GC.start是ObjectSpace.garbage_collect的同义方法，可以通过GC.disable方法临时关闭垃圾收集，用GC.enable使之再次生效。</p>
+<div class="literal-block"><pre>class Object
+  def trace(name="", stream=STDERR)
+    TraceObject.new(self, name, stream)
+  end
+end
+
+class TraceObject
+  instance_methods.each do |m|
+    m = m.to_sym
+    next if m == :object_id || m == :__id__ || m == :__send__
+    undef_method m
+  end
+
+  def initialize(o, name, stream)
+    @o = o
+    @n = name
+    @trace = stream
+  end
+
+  def method_missing(*args, &amp;block)
+    m = args.shift #the method name
+    begin
+      arglist = args.map { |a| a.inspect }.join(', ')
+      @trace &lt;&lt; "Invoking: #{@n}.#{m}(#{arglist}) at #{caller[0]}\n"
+      r = @o.send m, *args, &amp;block
+      @trace &lt;&lt; "Returning: #{r.inspect} from #{@n}.#{m} to #{caller[0]}\n"
+      r
+    rescue Exception =&gt; e
+      @trace &lt;&lt; "Rasing: #{e.class}:#{e} from #{@n}.#{m}\n"
+      raise
+    end
+  end
+
+  def __delegate
+    @o
+  end
+end</pre></div></div></div>
+<section class="doc-section level-1"><h2 id="_动态创建方法">动态创建方法</h2><div class="literal-block"><pre>#Method 1: class_eval
+class Module
+  private
+  def readonly(*syms)
+    return if syms.size == 0
+    code = ""
+    syms.each do |s|
+      code &lt;&lt; "def #[s]; @#{s}; end\n"
+    end
+    class_eval code
+  end
+
+  def readwrite(*syms)
+    return if syms.size == 0
+    code = ""
+    syms.each do |s|
+      code &lt;&lt; "def #{s}; @#{s}; end\n"
+      code &lt;&lt; "def #{s}=(value); @#{s} = value; end\n"
+    end
+
+    class_eval code
+  end
+end
+
+#Method 2:define_method
+class Module
+  def attributes(hash)
+    hash.each_pair do |sym, default|
+      getter = sym
+      setter = :"#{sym}"
+      variable = :"@#{sym}"
+
+      define_method getter do
+        if instance_variable_defined? variable
+          instance_variable_get variable
+        else
+          default
+        end
+      end
+
+      define_method setter do |value|
+        instance_variable_set variable, value
+      end
+    end
+  end
+
+  def class_attrs(hash)
+    eigenclass = class &lt;&lt; self; self; end
+    eigenclass.class_eval { attributes(Hash) }
+  end
+
+  private :attributes, :class_attrs
+end</pre></div></section>
+<section class="doc-section level-1"><h2 id="_alias_chaining">Alias Chaining</h2><div class="literal-block"><pre>module ClassTrace
+  T = []
+
+  if x = ARGV.index("--traceout")
+    OUT = File.open(ARGV[x+1], "w")
+    ARGV[x+2] = nil
+  else
+    OUT = STDERR
+  end
+end
+
+alias ori_load load
+alias ori_require require
+
+def require(file)
+  ClassTrace::T &lt;&lt; [file, caller[0]]
+  ori_require file
+end
+
+def load(*args)
+  ClassTrace::T &lt;&lt; [args[0], caller[0]]
+  ori_load(*args)
+end
+
+def Object.inherited(c)
+  ClassTrace::T &lt;&lt; [c, caller[0]]
+end
+
+at_exit {
+  o = ClassTrace::OUT
+  o.puts "="*60
+  o.puts "Files loaded and Classes Defined:"
+  o.puts "="*60
+
+  ClassTrace::T.each do |what, where|
+    if what.is_a? Class
+      o.puts "Defined:#{what} at #{where}"
+    else
+      o.puts "Loaded:#{what} at #{where}"
+    end
+  end
+}
+
+
+
+#Tracing Methods
+class Object
+  def trace!(*methods)
+    @_traced = @_traced || []
+    methods = public_methods(false) if methods.size == 0
+    methods.map! { |m| m.to_sym }
+    methods -= @_traced
+    return if methods.empty?
+    @_traced |= methods
+
+    SDTERR &lt;&lt; "Tracing #{methods.join(', ')} on #{object_id}\n"
+
+    eigenclass = class &lt;&lt; self; self; end
+
+    methods.each do |m|
+      eigenclass.class_eval %Q{
+         def #{m}(*args, &amp;block)
+           begin
+             STDERR &lt;&lt; "Entering #{m}(\#{args.join(', ')})\n"
+             result = super
+             STDERR &lt;&lt; Exiting #{m} with \#{result}\n"
+             result
+         rescue
+           STDERR &lt;&lt; "Aboring #{m}: \#{$!.class}, \#{$1.message}"
+           raise
+         end
+      }
+    end
+  end
+
+  def untrace!(*methods)
+    if methods.size == 0
+      methods = @_traced
+      STDERR &lt;&lt; "Untracing all methods on #{object_id}"
+    else
+      methods.map! { |m| m.to_sym }
+      methods &amp;= @_traced
+      STDERR &lt;&lt; "Untracing #{methods.join(', ')} on #{object_id}\n"
+    end
+
+    @_traced -= methods
+    (class &lt;&lt; self; self; end).class_eval do
+      methods.each do |m|
+        remove_method m
+      end
+    end
+
+    if @_traced.empty?
+      remove_instance_variable @_traced
+    end
+  end
+end</pre></div></section>
+<section class="doc-section level-1"><h2 id="_dsldomain_specific_language">DSL(Domain-Specific Language)</h2><p>领域特定语言是对Ruby句法或API的扩展，可以用更自然的方式处理问题或表现数据。</p>
+<div class="literal-block"><pre>class XML
+  def initialize(out)
+    @out = out
+  end
+
+  def context(text)
+    @out &lt;&lt; text.to_s
+  end
+
+  def comment(text)
+    @out &lt;&lt; "&lt;!-- #{text} --&gt;"
+    nil
+  end
+
+  def tag(tagname, attributes={})
+    @out &lt;&lt; "&lt;#{tagname}"
+
+    attributes.each {|attr,value| @out &lt;&lt; " #{attr}=`#{value}`"}
+
+    if block_given?
+      @out &lt;&lt; '&gt;'
+      content = yield
+      if content
+        @out &lt;&lt; content.to_s
+      end
+      @out &lt;&lt; "&lt;/#{tagname}&gt;"
+    else
+      @out &lt;&lt; '/&gt;'
+    end
+    nil
+  end
+
+  alias method_missing tag
+
+  def self.generate(out, &amp;block)
+    XML.new(out).instance_eval(&amp;block)
+  end
+end
+
+pagetitle = "Test Page for XML.generate"
+XML.generate(STDOUT) do
+  html do
+    head do
+      title { pagetitle }
+      comment "This is a test"
+    end
+    body do
+      ul :type =&gt; "sequare" do
+        li { Time.now }
+        li { RUBY_VERSION }
+      end
+    end
+  end
+end
+
+
+#Example 2
+
+class XMLGrammar
+  def initialize(out)
+    @out = out
+  end
+
+  def self.generate(out, &amp;block)
+    new(out).instance_eval(&amp;block)
+  end
+
+  def self.element(tagname, attributes={})
+    @allowed_attributes ||= {}
+    @allowed_attributes[tagname] = attributes
+
+    class_eval %Q{
+       def #{tagname}(attributes={}, &amp;block)
+         tag(:#{tagname}, attributes, &amp;block)
+       end
+    }
+  end
+
+  OPT = :opt
+  REQ = :req
+  BOOL = :bool
+
+
+  def self.allowed_attributes
+    @allowed_attributes
+  end
+
+  def content(text)
+    @out &lt;&lt; text.to_s
+    nil
+  end
+
+  def comment(text)
+    @out &lt;&lt; "&lt;!--#{text}--&gt;"
+    nil
+  end
+
+  def tag(tagname, attributes={})
+    @out &lt;&lt; "&lt;#{tagname}"
+    allowed = self.class.allowed_attributes[tagname]
+
+    attributes.each_pair do |key, value|
+      raise "unknown attributes:#{key}" unless allowed.include?(key)
+      @out &lt;&lt; " #{key}='#{value}'"
+    end
+
+    allowed.each_pair do |key, value|
+      next if attributes.has_key? key
+      if (value == REQ)
+        raise "required attributes '#{key}' missing in &lt;#{tagname}&gt;"
+      elsif value.is_a? String
+        @out &lt;&lt; " #{key}='#{value}'"
+      end
+    end
+
+    if block_given?
+      @out &lt;&lt; '&gt;'
+      content = yield
+      if content
+        @out &lt;&lt; content.to_s
+      end
+      @out &lt;&lt; "&lt;/#{tagname}&gt;"
+    else
+      @out &lt;&lt; '/&gt;'
+    end
+
+    nil
+  end
+end
+
+class HTMLForm &lt; XMLGrammar
+  element :form, :action =&gt; REQ,
+                 :method =&gt; "GET",
+                 :enctype =&gt; "application/x-www-form-urlencoded",
+                 :name =&gt; OPT
+  element :input, :type =&gt; "text", :name =&gt; OPT, :value =&gt; OPT,
+                  :maxlength =&gt; OPT, :size =&gt; OPT, :src =&gt; OPT,
+                  :checked =&gt; BOOL, :disabled =&gt; BOOL, :readonly =&gt; BOOL
+  element :textarea, :rows =&gt; REQ, :cols =&gt; REQ, :name =&gt; OPT,
+                     :disabled =&gt; BOOL, :readonly =&gt; BOOL
+  element :button, :name =&gt; OPT, :value =&gt; OPT,
+                   :type =&gt; "submit", :disabled =&gt; OPT
+end
+
+HTMLForm.generate(STDOUT) do
+  comment "This is a simple HTML form"
+  form :name =&gt; "registration",
+       :action =&gt; "http://test.cig" do
+    content "Name:"
+    input :name =&gt; "name"
+    content "Address:"
+    textarea :name =&gt; "address", :rows =&gt; 6, :cols =&gt; 40 do
+      "Please enter your mailing address here"
+    end
+    button { "Submit" }
+  end
+end</pre></div></section></section>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">polarlights</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2012-07-05
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://localhost:1313/tags/ruby/">Ruby</a>
+          <a href="http://localhost:1313/tags/metaprograming/">Metaprograming</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/notes-about-mongodb/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">MongoDB特点</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/methods-procs-lambdas-and-closures/">
+            <span class="next-text nav-default">Method</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "http://localhost:1313/post/reflection-and-metaprograming/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'PolarLights';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:godhuyang@hotmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/polarlights" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        polarlights
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/prism.js"></script>
+
+  <script src="/js/fix-adoc.js"></script>
+
+
+</body>
+
+</html>

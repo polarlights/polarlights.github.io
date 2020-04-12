@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Polarlights</title>
+    <link>http://localhost:1313/categories/ruby/</link>
+    <description>Recent content in Ruby on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 24 Mar 2016 06:32:49 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>how_to_test_class_and_module</title>
+      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+    </item>
+    
+    <item>
+      <title>Class</title>
+      <link>http://localhost:1313/post/class-and-modules/</link>
+      <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+    </item>
+    
+    <item>
+      <title>How Minitest Works Part 2</title>
+      <link>http://localhost:1313/post/how_minitest_works_part_2/</link>
+      <pubDate>Sun, 21 Feb 2016 18:40:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how_minitest_works_part_2/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+    </item>
+    
+    <item>
+      <title>How Minitest Works Part 1</title>
+      <link>http://localhost:1313/post/how_minitest_works_part_1/</link>
+      <pubDate>Sun, 21 Feb 2016 03:02:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how_minitest_works_part_1/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+    </item>
+    
+    <item>
+      <title>写在前面</title>
+      <link>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</link>
+      <pubDate>Sat, 20 Feb 2016 03:19:33 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</guid>
+      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;</description>
+    </item>
+    
+    <item>
+      <title>再谈Ruby的异常处理(学习笔记)</title>
+      <link>http://localhost:1313/post/let-us-talk-about-exception-again/</link>
+      <pubDate>Mon, 16 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/let-us-talk-about-exception-again/</guid>
+      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退</description>
+    </item>
+    
+    <item>
+      <title>Spreadsheet是神马</title>
+      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+    </item>
+    
+    <item>
+      <title>Method</title>
+      <link>http://localhost:1313/post/methods-procs-lambdas-and-closures/</link>
+      <pubDate>Sun, 24 Jun 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/methods-procs-lambdas-and-closures/</guid>
+      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最</description>
+    </item>
+    
+    <item>
+      <title>Strings</title>
+      <link>http://localhost:1313/post/ruby-platform/</link>
+      <pubDate>Wed, 15 Feb 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ruby-platform/</guid>
+      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true</description>
+    </item>
+    
+  </channel>
+</rss>

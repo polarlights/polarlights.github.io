@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>live on Polarlights</title>
+    <link>http://localhost:1313/tags/live/</link>
+    <description>Recent content in live on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Feb 2015 04:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/live/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>bind,live,delegate还是on ？</title>
+      <link>http://localhost:1313/post/jquery-event/</link>
+      <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jquery-event/</guid>
+      <description>转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和</description>
+    </item>
+    
+  </channel>
+</rss>

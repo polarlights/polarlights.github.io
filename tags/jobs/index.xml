@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jobs on Polarlights</title>
+    <link>http://localhost:1313/tags/jobs/</link>
+    <description>Recent content in jobs on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 31 Aug 2015 04:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ctrl-C, Ctrl-D, Ctrl-Z 的区别</title>
+      <link>http://localhost:1313/post/linux-fg-bg-jobs/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-fg-bg-jobs/</guid>
+      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，C</description>
+    </item>
+    
+  </channel>
+</rss>

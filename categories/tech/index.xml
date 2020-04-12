@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on Polarlights</title>
+    <link>http://localhost:1313/categories/tech/</link>
+    <description>Recent content in Tech on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Mar 2016 20:22:28 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Class</title>
+      <link>http://localhost:1313/post/class-and-modules/</link>
+      <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+    </item>
+    
+    <item>
+      <title>当前 App 切换窗口</title>
+      <link>http://localhost:1313/post/mac-shortcut/</link>
+      <pubDate>Tue, 01 Sep 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/mac-shortcut/</guid>
+      <description>向后切换窗口： Ctrl + Tab；Cmd + Shift + ] 向前切换窗口： Ctrl + Shift + Tab；Cmd + Shift + [</description>
+    </item>
+    
+    <item>
+      <title>Ctrl-C, Ctrl-D, Ctrl-Z 的区别</title>
+      <link>http://localhost:1313/post/linux-fg-bg-jobs/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-fg-bg-jobs/</guid>
+      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，C</description>
+    </item>
+    
+    <item>
+      <title>du 的基本含义和参数</title>
+      <link>http://localhost:1313/post/linux-du/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-du/</guid>
+      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执</description>
+    </item>
+    
+    <item>
+      <title>Find</title>
+      <link>http://localhost:1313/post/linux-find/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-find/</guid>
+      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找</description>
+    </item>
+    
+    <item>
+      <title>netstat</title>
+      <link>http://localhost:1313/post/linux-netstat-lsof/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-netstat-lsof/</guid>
+      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all</description>
+    </item>
+    
+    <item>
+      <title>再谈Ruby的异常处理(学习笔记)</title>
+      <link>http://localhost:1313/post/let-us-talk-about-exception-again/</link>
+      <pubDate>Mon, 16 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/let-us-talk-about-exception-again/</guid>
+      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退</description>
+    </item>
+    
+    <item>
+      <title>bind,live,delegate还是on ？</title>
+      <link>http://localhost:1313/post/jquery-event/</link>
+      <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jquery-event/</guid>
+      <description>转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和</description>
+    </item>
+    
+    <item>
+      <title>jquery 获取兄弟节点</title>
+      <link>http://localhost:1313/post/jquery-selector-find-siblings/</link>
+      <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jquery-selector-find-siblings/</guid>
+      <description>之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当</description>
+    </item>
+    
+    <item>
+      <title>Jquery选择器简介</title>
+      <link>http://localhost:1313/post/jqurty-selector/</link>
+      <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jqurty-selector/</guid>
+      <description>(1) Jquery中的选择器完全继承了CSS的风格，利用Jquery选择器，可以非常便捷和快速的找出特定的Dom元素，然后为他们添加相应的行为，</description>
+    </item>
+    
+    <item>
+      <title>版本控制概念</title>
+      <link>http://localhost:1313/post/pro-git-learning-notes/</link>
+      <pubDate>Wed, 04 Feb 2015 19:20:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/pro-git-learning-notes/</guid>
+      <description>版本控制(Reversion Control)是一种记录文件若干文件内容变化，以便将来直接查阅特定版本的系统。 版本控制系统的发展本地版本控制系</description>
+    </item>
+    
+    <item>
+      <title>Spreadsheet是神马</title>
+      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+    </item>
+    
+    <item>
+      <title>定义</title>
+      <link>http://localhost:1313/post/reflection-and-metaprograming/</link>
+      <pubDate>Thu, 05 Jul 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/reflection-and-metaprograming/</guid>
+      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列</description>
+    </item>
+    
+    <item>
+      <title>Method</title>
+      <link>http://localhost:1313/post/methods-procs-lambdas-and-closures/</link>
+      <pubDate>Sun, 24 Jun 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/methods-procs-lambdas-and-closures/</guid>
+      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最</description>
+    </item>
+    
+    <item>
+      <title>修改Rails默认生成的Gemfile的source</title>
+      <link>http://localhost:1313/post/modify-the-gemfile-template/</link>
+      <pubDate>Tue, 05 Jun 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/modify-the-gemfile-template/</guid>
+      <description>由于大陆的&#34;`特殊情况`&#34;，rails默认生成的Gemfile的源 https://rubygems.org很慢甚至被重置，所以适应国情，要修</description>
+    </item>
+    
+    <item>
+      <title>Strings</title>
+      <link>http://localhost:1313/post/ruby-platform/</link>
+      <pubDate>Wed, 15 Feb 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ruby-platform/</guid>
+      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true</description>
+    </item>
+    
+  </channel>
+</rss>

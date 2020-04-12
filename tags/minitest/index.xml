@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>minitest on Polarlights</title>
+    <link>http://localhost:1313/tags/minitest/</link>
+    <description>Recent content in minitest on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 24 Mar 2016 06:32:49 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/minitest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>how_to_test_class_and_module</title>
+      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+    </item>
+    
+    <item>
+      <title>How Minitest Works Part 2</title>
+      <link>http://localhost:1313/post/how_minitest_works_part_2/</link>
+      <pubDate>Sun, 21 Feb 2016 18:40:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how_minitest_works_part_2/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+    </item>
+    
+    <item>
+      <title>How Minitest Works Part 1</title>
+      <link>http://localhost:1313/post/how_minitest_works_part_1/</link>
+      <pubDate>Sun, 21 Feb 2016 03:02:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how_minitest_works_part_1/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+    </item>
+    
+    <item>
+      <title>写在前面</title>
+      <link>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</link>
+      <pubDate>Sat, 20 Feb 2016 03:19:33 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</guid>
+      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;</description>
+    </item>
+    
+  </channel>
+</rss>

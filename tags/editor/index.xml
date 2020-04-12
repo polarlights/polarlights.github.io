@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>editor on Polarlights</title>
+    <link>http://localhost:1313/tags/editor/</link>
+    <description>Recent content in editor on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Sep 2018 23:20:49 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>idea productive tips</title>
+      <link>http://localhost:1313/post/idea-productive-tips/</link>
+      <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/idea-productive-tips/</guid>
+      <description>This article is wroten according to a youtube video: https://www.youtube.com/watch?v=eq3KiAH4IBI.
+We use Idea programming everyday. How can we use it effectively, now let&amp;#8217;s reading it below:
+Close the tab list of IDE
+Preferences → Editor → Editor Tabs; Change Tab Placement from default Top to None.
+Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift).</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>How Minitest Works Part 2 - Polarlights</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="polarlights" />
+  <meta name="description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour" />
+
+  <meta name="keywords" content="ruby, java, go, microservice, spring" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.67.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/how_minitest_works_part_2/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/prism.css">
+
+<link rel="stylesheet" href="/css/adoc.css">
+
+<link rel="stylesheet" href="/css/github.css">
+
+
+<meta property="og:title" content="How Minitest Works Part 2" />
+<meta property="og:description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/how_minitest_works_part_2/" />
+<meta property="article:published_time" content="2016-02-21T18:40:42+08:00" />
+<meta property="article:modified_time" content="2016-02-21T18:40:42+08:00" />
+<meta itemprop="name" content="How Minitest Works Part 2">
+<meta itemprop="description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour">
+<meta itemprop="datePublished" content="2016-02-21T18:40:42&#43;08:00" />
+<meta itemprop="dateModified" content="2016-02-21T18:40:42&#43;08:00" />
+<meta itemprop="wordCount" content="3403">
+
+
+
+<meta itemprop="keywords" content="Test,Minitest," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How Minitest Works Part 2"/>
+<meta name="twitter:description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-31475638-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Polarlights</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Polarlights
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">How Minitest Works Part 2</h1>
+      
+      <div class="post-meta">
+        <time datetime="2016-02-21" class="post-time">
+          2016-02-21
+        </time>
+        <div class="post-category">
+            <a href="http://localhost:1313/categories/ruby/"> Ruby </a>
+            <a href="http://localhost:1313/categories/test/"> Test </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <div class="quote-block"><blockquote><p>注：本文以 minitest 的最新master 分支 <a href="https://github.com/seattlerb/minitest/tree/baf6010053279f75f561f6a599d8837151327588">baf6010</a> ，版本为<code>5.8.4</code>为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到.</p></blockquote></div>
+<p>在上一节我们留下了以下几个问题，本节我们透过对Minitest源码的分析来一探究竟:</p>
+<div class="ulist"><ul><li><code>minitest/autorun</code> 到底做了什么？</li><li>继承<code>Minitest::Test</code>的目的何在，它内部有什么特殊方法？</li><li>为什么以<code>test_</code> 开头的方法执行了，而普通的方法没有执行？里面肯定有一个"惊天的阴谋"</li><li>Minitest 的结果是何时，如何打出来的？</li><li>Minitest有哪些钩子，调用顺序几何？</li></ul></div>
+<p>我们首先看<code>minitest/autorun</code>文件，里面只有简单几行：</p>
+<div class="listing-block"><pre class="highlight"><code class="language-ruby" data-lang="ruby">begin
+  require "rubygems"
+  gem "minitest"
+rescue Gem::LoadError
+  # do nothing
+end
+
+require "minitest"
+require "minitest/spec"
+require "minitest/mock"
+
+Minitest.autorun</code></pre></div>
+<section class="doc-section level-1"><h2 id="_minitest_autorun">Minitest.autorun</h2><p>它做了什么事情呢？加载 minitest 相关文件，最后调用<code>Minitest.autorun</code>方法，即Minitest的module方法<code>autorun</code>。 让我们继续顺藤摸瓜。它在哪里定义的呢？在 <a href="https://github.com/seattlerb/minitest/blob/baf6010053279f75f561f6a599d8837151327588/lib/minitest.rb#L45">minitest.rb#L45</a>:</p>
+<div class="listing-block"><pre class="highlight"><code class="language-ruby" data-lang="ruby">def self.autorun
+  at_exit {
+    next if $! and not ($!.kind_of? SystemExit and $!.success?)
+
+    exit_code = nil
+
+    at_exit {
+      @@after_run.reverse_each(&amp;:call)
+      exit exit_code || false
+    }
+
+    exit_code = Minitest.run ARGV
+  } unless @@installed_at_exit
+  @@installed_at_exit = true
+end</code></pre></div>
+<p>它的主要作用是在程序进程结束前注入Minitest，并执行。</p>
+<p>咦，<code>at_exit</code>是什么鬼？相信很多人很少见到它甚至是在阅读<code>Minitest</code>源码时第一次见到它。查询Ruby的文档，有下面这样的描述：</p>
+<div class="quote-block"><blockquote><p>Converts block to a Proc object (and therefore binds it at the point of call) and registers it for execution when the program exits.
+If multiple handlers are registered, they are executed in reverse order of registration.</p></blockquote></div>
+<p>它将代码块转为<code>Proc</code>对象，在程序退出时call这个Proc对象；如果注册了多个<code>at_exit</code>代码块，它会逆序执行。</p>
+<p>我们写一个测试代码:</p>
+<div class="listing-block"><pre class="highlight"><code class="language-ruby" data-lang="ruby"># at_exit.rb
+puts "Into program."
+
+at_exit do
+  puts "I'm executed at the end. start..."
+  at_exit { puts "I'm executed at last." }
+  puts "I'm executed at the end. end..."
+end
+
+at_exit { puts "I'm executed after the 'Exit program'." }
+
+puts "Exit program."</code></pre></div>
+<p>执行结果：</p>
+<div class="listing-block"><pre class="highlight"><code class="language-bash" data-lang="bash">$ ruby at_exit.rb
+Into program.
+Exit program.
+I'm executed after the 'Exit program'.
+I'm executed at the end. start...
+I'm executed at the end. end...
+I'm executed at last.</code></pre></div>
+<p>通过上面测试代码的执行结果，我们知道，<code>Minitest.autorun</code>会先后调用<code>Minitest.run</code>和Module变量<code>@@after_run</code>里的Proc对象。</p>
+<p>它们又分别做了什么呢？</p></section>
+<section class="doc-section level-1"><h2 id="_minitest_run">Minitest.run</h2><p><code>@@after_run</code>保存的是在所有test执行结束后执行的代码块, 我们可以调用通知程序将测试完成通知给其他程序 或者发送邮件等等。</p>
+<p><code>Minitest.run</code>加载Minitest的插件；初始化reporter；执行测试，输出结果；最后返回test的执行结果给上面的<code>exit_code</code></p>
+<section class="doc-section level-2"><h3 id="_minitest_load_plugins">Minitest.load_plugins</h3><p>Minitest的插件都是以<code><em>plugin.rb</code>结尾，放在<code>minitest</code>目录下。比如在Minitest中就有<code>pride_plugin.rb</code>，它就是Minitest默认的 插件。每个Minitest的插件都可以有(不是必须有)一个以该插件名命名的初始化方法<code>plugin</em>[插件名]_init</code>。 比如<code>pride_plugin.rb</code>的插件初始化方法为<code>plugin_pride_init</code>。Minitest的参数是用<code>optparse</code>解析的，它的插件也有一个支持<code>optparse</code>的方法: <code>plugin_pride_options</code>来做一些扩展。</p></section>
+<section class="doc-section level-2"><h3 id="_reporter">Reporter</h3><p>这期间还会初始化CompositeReporter、SummaryReporter和ProgressReporter 3 个reporter，并赋值给Minitest的reporter属性，它用来展示测试的结果；它只在<code>init_plugins</code>中可用，在初始化完plugin后就被置为空了。所以如果想要在测试结束后调用reporter相关的操作，可以自己编写plugin（后续文章我们会涉及）。</p>
+<p>上面说了3中Reporter。那么这三者有什么区别和联系呢？</p>
+<p>Reporter的继承结构是这样的:</p>
+<div class="literal-block"><pre>AbstractReporter
+|__Reporter
+|   |__ProgressReporter
+|   |__StatisticsReporter
+|      |__SummaryReporter
+|__CompositeReporter</pre></div>
+<p>所有的Reporter都是<code>AbstractReporter</code>子类，<code>AbstractReporter</code>定义了作为一个reporter应该有的方法，它们是<code>start</code>(在启动后开始记录测试结果),<code>record</code>(输出测试的结果；如果测试没有通过，会记录单个测试的结果),<code>report</code>(输出测试的概况),<code>passed?</code>(测试是否通过)。</p>
+<p><code>Reporter</code>默认将标准输出作为默认的输出。</p>
+<p><code>ProgressReporter</code>是一个很简单的reporter，他将测试用<strong>点</strong>打出.</p>
+<p><code>StatisticsReporter</code>收集单个测试的统计信息，并没有任何IO相关的操作。如果想定制输出类型（比如CI，HTML等等），可以通过修改这个类的一些方法来做到。该类因为是统计测试结果的，所以它里面包含了测试的数量、assert的数量、开始时间、总时间、失败的测试、报错的测试和跳过的测试数量。</p>
+<p><code>SummaryReporter</code>是<code>StatisticsReporter</code>的子类，分别在测试开始时和测试结束的时候打印参数信息和标题、概况、失败的细节信息,类似：</p>
+<div class="listing-block"><pre class="highlight"><code class="language-bash" data-lang="bash"># At the beginning
+Run options: --seed 13908
+
+# Running:
+
+# At the end
+Finished in 0.003004s, 665.8359 runs/s, 665.8359 assertions/s.
+
+2 runs, 2 assertions, 0 failures, 0 errors, 1 skips
+
+You have skipped tests. Run with --verbose for details.</code></pre></div>
+<p>最后一句只有test中有<code>skip</code>的结果才会输出。</p>
+<p><code>CompositeReporter</code>可以调度多个repoter,将调用<code>passed?</code>、<code>start</code>、<code>record</code>、<code>report</code>的方法代理给所有的reporter。可以认为它是所有reporter的顶级代理类。</p></section></section>
+<section class="doc-section level-1"><h2 id="_minitest_run_2">Minitest.__run</h2><p>在初始化完reporter和plugin后，开始跑测试。具体执行每个继承了<code>Mintest::Test</code>/<code>Minitest::Spec</code>/<code>Minitest::Benchmark</code>的子类。比如之前距离代码中的&#8217;DogTest'。</p>
+<p>但是我们发现继承了<code>Minitest::Test</code>的子类只有以<code>test_</code>开头的方法执行了，魔法在哪里？我们继续往下看。</p></section>
+<section class="doc-section level-1"><h2 id="_runnable">Runnable</h2><p><code>Runnable</code>是什么鬼？它表示任何<code>runnable</code>的父类，任何它的子类都会自动注册到<code>Runnable.runnables</code>。为甚么它会<strong>自动</strong>注册呢？因为它有一个Ruby的钩子：<code>inherited</code>,它会在任何继承了该类的时候调用，让我们来看看它的代码：</p>
+<div class="listing-block"><pre class="highlight"><code class="language-ruby" data-lang="ruby">def self.inherited klass
+  self.runnables &lt;&lt; klass
+  super
+end</code></pre></div>
+<p>Runnable的run方法</p>
+<section class="doc-section level-2"><h3 id="_runnable_run">runnable.run</h3><p>它可以按照用户输入的<code>--name</code>参数只跑符合对应正则的方法。里面定义了一个<code>runnable_methods</code>，它里面就会只保留满足子类定义的正则（不是用户输入的）的方法来一个个执行。比如<code>Minitest::Test</code>是<code>Runnable</code>的子类，它要求可执行方法是以<code>test_</code>开头；同样的<code>Minitest::Benchmark</code>要求方法以<code>bench_</code>开头.</p>
+<p>保留的测试方法，会逐个执行，调用<code>Minitest.run_one_method klass, method_name, reporter</code>。 它将调用Runnable的<code>initialize</code>方法，将<code>method_name</code>作为参数，作为要调用的方法名。</p></section>
+<section class="doc-section level-2"><h3 id="_runnable_new_run">runnable.new.run</h3><p>以<code>Minitest::Test</code>为例，执行前它会先后调用<code>before_setup</code>、<code>setup</code>、<code>after_setup</code>几个钩子方法，然后调用上面作为参数传入的<code>method_name</code>。以实例代码为例，就是调用了<code>DogTest.new.
+test_dog_should_spark</code>，它里面就执行了具体的assert_方法，同样asert的数量就是在此时增加的。方法执行结束后，会调用<code>before_teardown</code>、<code>teardown</code>和<code>after_teardown</code>这几个钩子，你可以做一些你想在测试结束后想做的事情。</p>
+<p>这里衍生出个问题：它是如何判断我是Skip还是报错的？</p>
+<p>如果正常执行，它会根据<code>test_</code>方法实际的<code>assert_</code>方法的数量增加asserts属性的值。那么如果报错了呢？比如抛了一个异常，如何保证程序不终止，而是继续执行其他的方法呢？</p>
+<p>答案是<code>rescue</code>，是的，对代码做保护,详见<code>lib/minitest/test.rb:L204</code>:</p>
+<div class="listing-block"><pre class="highlight"><code class="language-ruby" data-lang="ruby">def capture_exceptions # :nodoc:
+  yield
+rescue *PASSTHROUGH_EXCEPTIONS
+  raise
+rescue Assertion =&gt; e
+  self.failures &lt;&lt; e
+rescue Exception =&gt; e
+  self.failures &lt;&lt; UnexpectedError.new(e)
+end</code></pre></div>
+<p>Asesrtion的继承关系如下图:</p>
+<div class="literal-block"><pre>Exception
+|__Assertion
+   |__Skip
+   |__UnexpectedError</pre></div>
+<p>如果某个方法是被<code>skip</code>了，那么它会抛出Skip异常，由Assertion捕获；如果方法执行代码错误，则被Exception捕获，并用UnexceptedError包一下。</p></section></section>
+<section class="doc-section level-1"><h2 id="_总结">总结</h2><p>通过以上的分析，我们现在可以把整个的调用层级重新整理下：</p>
+<div class="literal-block"><pre>Minitest.autorun
+  Minitest.run(args)
+    Minitest.__run(reporter, options)
+      Runnable.runnables.each
+        runnable.run(reporter, options)
+          self.runnable_methods.each
+            self.run_one_method(self, runnable_method, reporter)
+              Minitest.run_one_method(klass, runnable_method)
+                klass.new(runnable_method).run</pre></div>
+<p>用我们案例代码，表示为:</p>
+<div class="literal-block"><pre>Minitest.autorun
+  Minitest.run(args)
+    Minitest.__run(reporter, options)
+      Runnable.runnables.each
+        DogTest.run(reporter, options)
+          [test_dog_should_spark].each
+            DogTest.run_one_method(DogTest, test_dog_should_spark, reporter)
+              Minitest.run_one_method(DogTest, test_dog_should_spark)
+                DogTest.new(test_dog_should_spark).run</pre></div>
+<p>参考文献:</p>
+<div class="ulist"><ul><li><a href="https://github.com/seattlerb/minitest">Minitest github repository</a></li><li><a href="http://mednoter.com/minitest-part-I-autorun.html">How minitest works</a></li><li><a href="http://chriskottom.com/minitestcookbook">The Minitest Cookbook</a></li></ul></div></section>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">polarlights</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2016-02-21
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://localhost:1313/tags/test/">Test</a>
+          <a href="http://localhost:1313/tags/minitest/">Minitest</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/class-and-modules/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Class</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/how_minitest_works_part_1/">
+            <span class="next-text nav-default">How Minitest Works Part 1</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "http://localhost:1313/post/how_minitest_works_part_2/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'PolarLights';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:godhuyang@hotmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/polarlights" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2012 -
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        polarlights
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/prism.js"></script>
+
+  <script src="/js/fix-adoc.js"></script>
+
+
+</body>
+
+</html>

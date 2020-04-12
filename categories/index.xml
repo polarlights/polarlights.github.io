@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Polarlights</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Aug 2019 23:50:02 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java</title>
+      <link>http://localhost:1313/categories/java/</link>
+      <pubDate>Sat, 03 Aug 2019 23:50:02 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hibernate</title>
+      <link>http://localhost:1313/categories/hibernate/</link>
+      <pubDate>Thu, 06 Dec 2018 18:08:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/hibernate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jpa</title>
+      <link>http://localhost:1313/categories/jpa/</link>
+      <pubDate>Thu, 06 Dec 2018 18:08:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/jpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>http://localhost:1313/categories/mac/</link>
+      <pubDate>Fri, 09 Nov 2018 10:05:12 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>editor</title>
+      <link>http://localhost:1313/categories/editor/</link>
+      <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>great tools</title>
+      <link>http://localhost:1313/categories/great-tools/</link>
+      <pubDate>Tue, 18 Sep 2018 20:03:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/great-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intellij</title>
+      <link>http://localhost:1313/categories/intellij/</link>
+      <pubDate>Sat, 06 Jan 2018 17:12:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/intellij/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>minitest</title>
+      <link>http://localhost:1313/categories/minitest/</link>
+      <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/minitest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>http://localhost:1313/categories/ruby/</link>
+      <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tech</title>
+      <link>http://localhost:1313/categories/tech/</link>
+      <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/categories/test/</link>
+      <pubDate>Sun, 21 Feb 2016 18:40:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/categories/linux/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://localhost:1313/categories/javascript/</link>
+      <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/categories/git/</link>
+      <pubDate>Wed, 04 Feb 2015 19:20:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/git/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

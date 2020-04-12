@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hibernate on Polarlights</title>
+    <link>http://localhost:1313/categories/hibernate/</link>
+    <description>Recent content in hibernate on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Dec 2018 18:08:59 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/hibernate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hibernate-best-practice</title>
+      <link>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</link>
+      <pubDate>Thu, 06 Dec 2018 18:08:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</guid>
+      <description>1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国</description>
+    </item>
+    
+  </channel>
+</rss>

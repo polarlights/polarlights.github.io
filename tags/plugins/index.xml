@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plugins on Polarlights</title>
+    <link>http://localhost:1313/tags/plugins/</link>
+    <description>Recent content in plugins on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Sep 2018 23:20:49 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/plugins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>idea popular plugins</title>
+      <link>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</link>
+      <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</guid>
+      <description>基本lombok pluginGenerateSerialVersionUID Adds a new action &#39;SerialVersionUID&#39; in the generate menu (alt + ins). The action adds an serialVersionUID field in the current class or updates it if it already exists, and assigns it the same value the standard &#39;serialver&#39; JDK tool would return. The action is only visible when IDEA is not rebuilding its indexes, the class is serializable and either no</description>
+    </item>
+    
+  </channel>
+</rss>

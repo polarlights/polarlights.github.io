@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on Polarlights</title>
+    <link>http://localhost:1313/tags/excel/</link>
+    <description>Recent content in Excel on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Aug 2012 04:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spreadsheet是神马</title>
+      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Polarlights</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Polarlights</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Aug 2019 23:50:02 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>bean validation tutorial</title>
+      <link>http://localhost:1313/post/bean-validation-tutorial/</link>
+      <pubDate>Sat, 03 Aug 2019 23:50:02 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/bean-validation-tutorial/</guid>
+      <description>Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接</description>
+    </item>
+    
+    <item>
+      <title>hibernate-best-practice</title>
+      <link>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</link>
+      <pubDate>Thu, 06 Dec 2018 18:08:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</guid>
+      <description>1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国</description>
+    </item>
+    
+    <item>
+      <title>Add release to sentry</title>
+      <link>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</link>
+      <pubDate>Mon, 12 Nov 2018 21:24:39 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</guid>
+      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错</description>
+    </item>
+    
+    <item>
+      <title>JPA stream query with java8</title>
+      <link>http://localhost:1313/post/jpa-stream-query/jpa-stream-query/</link>
+      <pubDate>Sun, 11 Nov 2018 16:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/jpa-stream-query/jpa-stream-query/</guid>
+      <description>最近有小伙伴在做批量导出数据的功能，原来是这样写的： image::15417517310823.jpg[] 后来在看其他代码的时候，有个类似功能，突然意识到那个代码在数据量很大的时候，会存在性能</description>
+    </item>
+    
+    <item>
+      <title>Mac mail app tricks</title>
+      <link>http://localhost:1313/post/mac-mail-tricks/mac-mail-tricks/</link>
+      <pubDate>Fri, 09 Nov 2018 10:05:12 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/mac-mail-tricks/mac-mail-tricks/</guid>
+      <description>常用设置1.修改邮件的一些默认设置 # Disable send and reply animations in Mail.app defaults write com.apple.mail DisableReplyAnimations -bool true defaults write com.apple.mail DisableSendAnimations -bool true # Copy email addresses as `foo@example.com` instead of `Foo Bar &amp;lt;foo@example.com&amp;gt;` in Mail.app defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app</description>
+    </item>
+    
+    <item>
+      <title>idea popular plugins</title>
+      <link>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</link>
+      <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</guid>
+      <description>基本lombok pluginGenerateSerialVersionUID Adds a new action &#39;SerialVersionUID&#39; in the generate menu (alt + ins). The action adds an serialVersionUID field in the current class or updates it if it already exists, and assigns it the same value the standard &#39;serialver&#39; JDK tool would return. The action is only visible when IDEA is not rebuilding its indexes, the class is serializable and either no</description>
+    </item>
+    
+    <item>
+      <title>idea productive tips</title>
+      <link>http://localhost:1313/post/idea-productive-tips/</link>
+      <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/idea-productive-tips/</guid>
+      <description>This article is wroten according to a youtube video: https://www.youtube.com/watch?v=eq3KiAH4IBI.
+We use Idea programming everyday. How can we use it effectively, now let&amp;#8217;s reading it below:
+Close the tab list of IDE
+Preferences → Editor → Editor Tabs; Change Tab Placement from default Top to None.
+Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift).</description>
+    </item>
+    
+    <item>
+      <title>那些好用的工具之 Tmux 篇</title>
+      <link>http://localhost:1313/post/tmux-tutorial/tmux-tutorial/</link>
+      <pubDate>Tue, 18 Sep 2018 20:03:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/tmux-tutorial/tmux-tutorial/</guid>
+      <description>工欲善其事，必先利其器。突然来了兴致，想利用一下睡觉前的时间，整理一下自己用过的，感觉很棒的命令行工具，作为一个系列。其中有的工具会比较复杂</description>
+    </item>
+    
+    <item>
+      <title>Enable reload chagned java and template files In IntelliJ</title>
+      <link>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</link>
+      <pubDate>Sat, 06 Jan 2018 17:12:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</guid>
+      <description>最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app</description>
+    </item>
+    
+    <item>
+      <title>how_to_test_class_and_module</title>
+      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+    </item>
+    
+    <item>
+      <title>Class</title>
+      <link>http://localhost:1313/post/class-and-modules/</link>
+      <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+    </item>
+    
+    <item>
+      <title>How Minitest Works Part 2</title>
+      <link>http://localhost:1313/post/how_minitest_works_part_2/</link>
+      <pubDate>Sun, 21 Feb 2016 18:40:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how_minitest_works_part_2/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+    </item>
+    
+    <item>
+      <title>How Minitest Works Part 1</title>
+      <link>http://localhost:1313/post/how_minitest_works_part_1/</link>
+      <pubDate>Sun, 21 Feb 2016 03:02:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/how_minitest_works_part_1/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+    </item>
+    
+    <item>
+      <title>写在前面</title>
+      <link>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</link>
+      <pubDate>Sat, 20 Feb 2016 03:19:33 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</guid>
+      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;</description>
+    </item>
+    
+    <item>
+      <title>The Difference Of XX-like Methods In Ruby</title>
+      <link>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</link>
+      <pubDate>Fri, 23 Oct 2015 21:23:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</guid>
+      <description>今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end</description>
+    </item>
+    
+    <item>
+      <title>当前 App 切换窗口</title>
+      <link>http://localhost:1313/post/mac-shortcut/</link>
+      <pubDate>Tue, 01 Sep 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/mac-shortcut/</guid>
+      <description>向后切换窗口： Ctrl + Tab；Cmd + Shift + ] 向前切换窗口： Ctrl + Shift + Tab；Cmd + Shift + [</description>
+    </item>
+    
+    <item>
+      <title>Ctrl-C, Ctrl-D, Ctrl-Z 的区别</title>
+      <link>http://localhost:1313/post/linux-fg-bg-jobs/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-fg-bg-jobs/</guid>
+      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，C</description>
+    </item>
+    
+    <item>
+      <title>du 的基本含义和参数</title>
+      <link>http://localhost:1313/post/linux-du/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-du/</guid>
+      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执</description>
+    </item>
+    
+    <item>
+      <title>Find</title>
+      <link>http://localhost:1313/post/linux-find/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-find/</guid>
+      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找</description>
+    </item>
+    
+    <item>
+      <title>netstat</title>
+      <link>http://localhost:1313/post/linux-netstat-lsof/</link>
+      <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux-netstat-lsof/</guid>
+      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all</description>
+    </item>
+    
+  </channel>
+</rss>
