@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour" />
+  <meta name="description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 在上一节我们留下了以下几个问题，本节我们透过对Minitest源码的分析来一探究竟: minitest/autorun 到底做了什么？继承Minitest::Test的目的何在，它内部有什么特殊方法？为什么以test_ 开头的方法执行了，而普通的方法没" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/how_minitest_works_part_2/" />
+<link rel="canonical" href="https://polarlights.github.io/post/how_minitest_works_part_2/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="How Minitest Works Part 2" />
-<meta property="og:description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour" />
+<meta property="og:description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 在上一节我们留下了以下几个问题，本节我们透过对Minitest源码的分析来一探究竟: minitest/autorun 到底做了什么？继承Minitest::Test的目的何在，它内部有什么特殊方法？为什么以test_ 开头的方法执行了，而普通的方法没" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/how_minitest_works_part_2/" />
+<meta property="og:url" content="https://polarlights.github.io/post/how_minitest_works_part_2/" />
 <meta property="article:published_time" content="2016-02-21T18:40:42+08:00" />
 <meta property="article:modified_time" content="2016-02-21T18:40:42+08:00" />
 <meta itemprop="name" content="How Minitest Works Part 2">
-<meta itemprop="description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour">
+<meta itemprop="description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 在上一节我们留下了以下几个问题，本节我们透过对Minitest源码的分析来一探究竟: minitest/autorun 到底做了什么？继承Minitest::Test的目的何在，它内部有什么特殊方法？为什么以test_ 开头的方法执行了，而普通的方法没">
 <meta itemprop="datePublished" content="2016-02-21T18:40:42&#43;08:00" />
 <meta itemprop="dateModified" content="2016-02-21T18:40:42&#43;08:00" />
 <meta itemprop="wordCount" content="3403">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Test,Minitest," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How Minitest Works Part 2"/>
-<meta name="twitter:description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour"/>
+<meta name="twitter:description" content="注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 在上一节我们留下了以下几个问题，本节我们透过对Minitest源码的分析来一探究竟: minitest/autorun 到底做了什么？继承Minitest::Test的目的何在，它内部有什么特殊方法？为什么以test_ 开头的方法执行了，而普通的方法没"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2016-02-21
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/ruby/"> Ruby </a>
-            <a href="http://localhost:1313/categories/test/"> Test </a>
+            <a href="https://polarlights.github.io/categories/ruby/"> Ruby </a>
+            <a href="https://polarlights.github.io/categories/test/"> Test </a>
             
           </div>
         
@@ -503,8 +503,8 @@ end</code></pre></div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/test/">Test</a>
-          <a href="http://localhost:1313/tags/minitest/">Minitest</a>
+          <a href="https://polarlights.github.io/tags/test/">Test</a>
+          <a href="https://polarlights.github.io/tags/minitest/">Minitest</a>
           
         </div>
 
@@ -564,7 +564,7 @@ end</code></pre></div>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/how_minitest_works_part_2/";
+      this.page.url = "https://polarlights.github.io/post/how_minitest_works_part_2/";
     };
     function load_disqus() {
       
@@ -619,7 +619,7 @@ end</code></pre></div>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

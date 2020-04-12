@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruby on Polarlights</title>
-    <link>http://localhost:1313/categories/ruby/</link>
+    <link>https://polarlights.github.io/categories/ruby/</link>
     <description>Recent content in Ruby on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Mar 2016 06:32:49 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>how_to_test_class_and_module</title>
-      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <link>https://polarlights.github.io/post/how-to-test-a-class/</link>
       <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
-      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+      <guid>https://polarlights.github.io/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都</description>
     </item>
     
     <item>
       <title>Class</title>
-      <link>http://localhost:1313/post/class-and-modules/</link>
+      <link>https://polarlights.github.io/post/class-and-modules/</link>
       <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/class-and-modules/</guid>
-      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+      <guid>https://polarlights.github.io/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法，所以不能显式的调用它。 class Point def initialize(x, y) @x = x @y = y end end p = Point.new(2, 4) 上面的实例p并不能直接访问里面的实例变量@x,@y，因为Ruby是面向对象的语言，所以访问这些实例变量实际上是访问与实例变量的方法而已。如果直接使用p.x，Ruby会告诉你:&#34;NoMethodError</description>
     </item>
     
     <item>
       <title>How Minitest Works Part 2</title>
-      <link>http://localhost:1313/post/how_minitest_works_part_2/</link>
+      <link>https://polarlights.github.io/post/how_minitest_works_part_2/</link>
       <pubDate>Sun, 21 Feb 2016 18:40:42 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how_minitest_works_part_2/</guid>
-      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+      <guid>https://polarlights.github.io/post/how_minitest_works_part_2/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 在上一节我们留下了以下几个问题，本节我们透过对Minitest源码的分析来一探究竟: minitest/autorun 到底做了什么？继承Minitest::Test的目的何在，它内部有什么特殊方法？为什么以test_ 开头的方法执行了，而普通的方法没</description>
     </item>
     
     <item>
       <title>How Minitest Works Part 1</title>
-      <link>http://localhost:1313/post/how_minitest_works_part_1/</link>
+      <link>https://polarlights.github.io/post/how_minitest_works_part_1/</link>
       <pubDate>Sun, 21 Feb 2016 03:02:42 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how_minitest_works_part_1/</guid>
-      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+      <guid>https://polarlights.github.io/post/how_minitest_works_part_1/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 一个简单的测试# 代码 1.1 # dog.rb class Dog def spark &#39;Spark!&#39; end end # dog_test.rb require &#39;minitest/autorun&#39; require_relative &#39;./dog&#39; class DogTest &amp;lt; Minitest::Test def setup @dog = Dog.new end def test_dog_should_spark assert_respond_to @dog, :spark assert_equal &#39;Spark!&#39;, @dog.spark end def ordiary_method assert true end end 如何执行测试呢？ $ ruby dog_test.rb Run options: --seed 24057 # Running: . Finished in 0.001039s, 962.5723 runs/s, 1925.1446 assertions/s. 1 runs, 2 assertions, 0 failures, 0 errors, 0 skips 如果我们把require &#39;minitest/autorun&#39; 这一行注释掉，然后</description>
     </item>
     
     <item>
       <title>写在前面</title>
-      <link>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</link>
+      <link>https://polarlights.github.io/post/introduction_to_minitest/introduction_to_minitest/</link>
       <pubDate>Sat, 20 Feb 2016 03:19:33 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</guid>
-      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;</description>
+      <guid>https://polarlights.github.io/post/introduction_to_minitest/introduction_to_minitest/</guid>
+      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;#8230;&amp;#8203;过了，可以放心继续下面的工作了。直到维护一个个前辈们的项目，而且功能不断添加，添加。问题接着出现了：按下葫芦浮起瓢，改了一个 Bug，引出了其它的 Bug。代码在修改过程中，越来越心里没底。更别说重构了。。。。 为什么要写测试？现在的 Coder 应该</description>
     </item>
     
     <item>
       <title>再谈Ruby的异常处理(学习笔记)</title>
-      <link>http://localhost:1313/post/let-us-talk-about-exception-again/</link>
+      <link>https://polarlights.github.io/post/let-us-talk-about-exception-again/</link>
       <pubDate>Mon, 16 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/let-us-talk-about-exception-again/</guid>
-      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退</description>
+      <guid>https://polarlights.github.io/post/let-us-talk-about-exception-again/</guid>
+      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退出的功能。 Throw和Catch与Break的区别：除了都可以从循环中退出外，前者还可以沿着调用栈向上传播，使一个位于调用方法中的代码块退出。 throw和catch与raise和recue还是不同的。前者只是进行退出，却不抛出异常；后者是抛出异常的。它们有着相</description>
     </item>
     
     <item>
       <title>Spreadsheet是神马</title>
-      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <link>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
       <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
-      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+      <guid>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spreadsheet基本使用的包括以下几部分(C表示类,M表示模块): Column: &amp;#169;用来指定列的格式化和提供了以列的形式遍历所有单元格的方法。Datatypes: (M)定义了可以将参数转换为Spreadsheet常用的属性的方法(boolean,colors,enu</description>
     </item>
     
     <item>
       <title>Method</title>
-      <link>http://localhost:1313/post/methods-procs-lambdas-and-closures/</link>
+      <link>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</link>
       <pubDate>Sun, 24 Jun 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/methods-procs-lambdas-and-closures/</guid>
-      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最</description>
+      <guid>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</guid>
+      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线</description>
     </item>
     
     <item>
       <title>Strings</title>
-      <link>http://localhost:1313/post/ruby-platform/</link>
+      <link>https://polarlights.github.io/post/ruby-platform/</link>
       <pubDate>Wed, 15 Feb 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/ruby-platform/</guid>
-      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true</description>
+      <guid>https://polarlights.github.io/post/ruby-platform/</guid>
+      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true s = &#34;hello&#34; s.index(&#39;l&#39;) #2 s.index(?l) #2 s.index(/l+/) #2 s.index(&#39;l&#39;,3) #the first position after position 3 of l s.index(&#39;Ruby&#39;) #nil s.rindex(&#39;l&#39;) #3 s.rindex(&#39;l&#39;,2) #2 index of rightmost l at or before position 2 s.start_with? &#34;hell&#34; #true s.end_with? &#34;bells&#34; #false s.include?(&#39;ll&#39;) #true s.include?(?H) #false s =~ /[aeiou]{2}/ #nil s.match(/[aeiou]/) {|m| m.to_s} #e return first &#34;this is it&#34;.split #this is it &#34;hello&#34;.split(&#39;l&#39;) #[&#39;he&#39;,&#39;&#39;,&#39;o&#39;] &#34;1, 2,3&#34;.split(/,\s*/) #1,2,3 &#34;banana&#34;.partition(&#34;an&#34;) #[&#34;b&#34;, &#34;an&#34;, &#34;ana&#34;] &#34;banana&#34;.rpartition(&#34;an&#34;) #[&#34;ban&#34;, &#34;an&#34;, &#34;a&#34;] &#34;a123b&#34;.partition(/\d+/) #[&#34;a&#34;, &#34;123&#34;, &#34;b&#34;] s = &#34;hello&#34; s.sub(&#39;l&#39;, &#39;L&#39;) #replace the first l to L s.gsub(&#34;l&#34;, &#34;L&#34;) #replace all the l to L s.sub!(/(.)(.)/, &#39;\2\1&#39;) #swap first character s.sub!(/(.)(.)/, &#39;\\2\\1&#39;) #&#34;ehllo&#34; Double backslashes for double quotes &#34;hello world&#34;.gsub(/\b./) { |match| match.upcase } #Hello World s = &#34;hello&#34; s.upcase #HELLO s.downcase #hello s.capitalize #Hello s.swapcase #HELLO s.casecmp(&#34;HELLO&#34;) #0 case</description>
     </item>
     
   </channel>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spreadsheet on Polarlights</title>
-    <link>http://localhost:1313/tags/spreadsheet/</link>
+    <link>https://polarlights.github.io/tags/spreadsheet/</link>
     <description>Recent content in Spreadsheet on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 20 Aug 2012 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/spreadsheet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/spreadsheet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Spreadsheet是神马</title>
-      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <link>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
       <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
-      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+      <guid>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spreadsheet基本使用的包括以下几部分(C表示类,M表示模块): Column: &amp;#169;用来指定列的格式化和提供了以列的形式遍历所有单元格的方法。Datatypes: (M)定义了可以将参数转换为Spreadsheet常用的属性的方法(boolean,colors,enu</description>
     </item>
     
   </channel>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>live on Polarlights</title>
-    <link>http://localhost:1313/tags/live/</link>
+    <link>https://polarlights.github.io/tags/live/</link>
     <description>Recent content in live on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 15 Feb 2015 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/live/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/live/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>bind,live,delegate还是on ？</title>
-      <link>http://localhost:1313/post/jquery-event/</link>
+      <link>https://polarlights.github.io/post/jquery-event/</link>
       <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jquery-event/</guid>
-      <description>转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和</description>
+      <guid>https://polarlights.github.io/post/jquery-event/</guid>
+      <description>转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和我有一样的疑惑，我正好梳理一下思路，写下本文。如果你也对jquery中眼花缭乱的事件绑定方法不太明白的话，你来对地方了。 继续阅读前，我认为你需要先知道以下几点基础知识： dom对象是树形结构的dom中的事件会从触发事件的目标节点开始逐级向上冒泡 每当我们想给某个元</description>
     </item>
     
   </channel>

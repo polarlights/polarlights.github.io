@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bean validation on Polarlights</title>
-    <link>http://localhost:1313/tags/bean-validation/</link>
+    <link>https://polarlights.github.io/tags/bean-validation/</link>
     <description>Recent content in bean validation on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 Aug 2019 23:50:02 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/bean-validation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/bean-validation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>bean validation tutorial</title>
-      <link>http://localhost:1313/post/bean-validation-tutorial/</link>
+      <link>https://polarlights.github.io/post/bean-validation-tutorial/</link>
       <pubDate>Sat, 03 Aug 2019 23:50:02 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/bean-validation-tutorial/</guid>
-      <description>Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接</description>
+      <guid>https://polarlights.github.io/post/bean-validation-tutorial/</guid>
+      <description>Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接口之外，我们写的方法、DAO 对象都有类似的需求。也就是校验的需求贯穿服务的各个层。 简单粗暴一点的可以在每一层这样写： if (param.getName() == null) { throw BadRequestException(&#34;name can not be null&#34;); } if (param.getAge() &amp;lt; 1) { throw BadRequestException(&#34;age can not less than 1&#34;); } 如果遇到错误，我想最后统一抛出，用户可以一次知道哪些输入是有问题。那么我们可以这样写: List&amp;lt;String&amp;gt; errorMessages = new</description>
     </item>
     
   </channel>

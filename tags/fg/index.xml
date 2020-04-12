@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>fg on Polarlights</title>
-    <link>http://localhost:1313/tags/fg/</link>
+    <link>https://polarlights.github.io/tags/fg/</link>
     <description>Recent content in fg on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Aug 2015 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/fg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/fg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ctrl-C, Ctrl-D, Ctrl-Z 的区别</title>
-      <link>http://localhost:1313/post/linux-fg-bg-jobs/</link>
+      <link>https://polarlights.github.io/post/linux-fg-bg-jobs/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-fg-bg-jobs/</guid>
-      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，C</description>
+      <guid>https://polarlights.github.io/post/linux-fg-bg-jobs/</guid>
+      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，Ctrl+D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl+Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl+D 是不起作用的，因为它的 应用场景不是这样的。被暂停的</description>
     </item>
     
   </channel>

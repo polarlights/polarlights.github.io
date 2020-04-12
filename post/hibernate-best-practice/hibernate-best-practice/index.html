@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国" />
+  <meta name="description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。 Hibernate 在时间的存取的时候，会调用PreparedStatement.setTimestamp()/ResultSet.getTimestamp，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/" />
+<link rel="canonical" href="https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="hibernate-best-practice" />
-<meta property="og:description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国" />
+<meta property="og:description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。 Hibernate 在时间的存取的时候，会调用PreparedStatement.setTimestamp()/ResultSet.getTimestamp，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/" />
+<meta property="og:url" content="https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/" />
 <meta property="article:published_time" content="2018-12-06T18:08:59+08:00" />
 <meta property="article:modified_time" content="2018-12-06T18:08:59+08:00" />
 <meta itemprop="name" content="hibernate-best-practice">
-<meta itemprop="description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国">
+<meta itemprop="description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。 Hibernate 在时间的存取的时候，会调用PreparedStatement.setTimestamp()/ResultSet.getTimestamp，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链">
 <meta itemprop="datePublished" content="2018-12-06T18:08:59&#43;08:00" />
 <meta itemprop="dateModified" content="2018-12-06T18:08:59&#43;08:00" />
 <meta itemprop="wordCount" content="3693">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="java,jpa," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="hibernate-best-practice"/>
-<meta name="twitter:description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国"/>
+<meta name="twitter:description" content="1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。 Hibernate 在时间的存取的时候，会调用PreparedStatement.setTimestamp()/ResultSet.getTimestamp，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,9 +306,9 @@ if (!doNotTrack) {
           2018-12-06
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/java/"> java </a>
-            <a href="http://localhost:1313/categories/hibernate/"> hibernate </a>
-            <a href="http://localhost:1313/categories/jpa/"> jpa </a>
+            <a href="https://polarlights.github.io/categories/java/"> java </a>
+            <a href="https://polarlights.github.io/categories/hibernate/"> hibernate </a>
+            <a href="https://polarlights.github.io/categories/jpa/"> jpa </a>
             
           </div>
         
@@ -657,8 +657,8 @@ hibernate {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/java/">java</a>
-          <a href="http://localhost:1313/tags/jpa/">jpa</a>
+          <a href="https://polarlights.github.io/tags/java/">java</a>
+          <a href="https://polarlights.github.io/tags/jpa/">jpa</a>
           
         </div>
 
@@ -718,7 +718,7 @@ hibernate {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/";
+      this.page.url = "https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/";
     };
     function load_disqus() {
       
@@ -773,7 +773,7 @@ hibernate {
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

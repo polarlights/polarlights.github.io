@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Proc on Polarlights</title>
-    <link>http://localhost:1313/tags/proc/</link>
+    <link>https://polarlights.github.io/tags/proc/</link>
     <description>Recent content in Proc on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 24 Jun 2012 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/proc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/proc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Method</title>
-      <link>http://localhost:1313/post/methods-procs-lambdas-and-closures/</link>
+      <link>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</link>
       <pubDate>Sun, 24 Jun 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/methods-procs-lambdas-and-closures/</guid>
-      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最</description>
+      <guid>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</guid>
+      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线</description>
     </item>
     
   </channel>

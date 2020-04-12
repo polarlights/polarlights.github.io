@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退" />
+  <meta name="description" content="Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退出的功能。 Throw和Catch与Break的区别：除了都可以从循环中退出外，前者还可以沿着调用栈向上传播，使一个位于调用方法中的代码块退出。 throw和catch与raise和recue还是不同的。前者只是进行退出，却不抛出异常；后者是抛出异常的。它们有着相" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/let-us-talk-about-exception-again/" />
+<link rel="canonical" href="https://polarlights.github.io/post/let-us-talk-about-exception-again/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="再谈Ruby的异常处理(学习笔记)" />
-<meta property="og:description" content="Throw &amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退" />
+<meta property="og:description" content="Throw &amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退出的功能。 Throw和Catch与Break的区别：除了都可以从循环中退出外，前者还可以沿着调用栈向上传播，使一个位于调用方法中的代码块退出。 throw和catch与raise和recue还是不同的。前者只是进行退出，却不抛出异常；后者是抛出异常的。它们有着相" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/let-us-talk-about-exception-again/" />
+<meta property="og:url" content="https://polarlights.github.io/post/let-us-talk-about-exception-again/" />
 <meta property="article:published_time" content="2015-02-16T04:00:00+08:00" />
 <meta property="article:modified_time" content="2015-02-16T04:00:00+08:00" />
 <meta itemprop="name" content="再谈Ruby的异常处理(学习笔记)">
-<meta itemprop="description" content="Throw &amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退">
+<meta itemprop="description" content="Throw &amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退出的功能。 Throw和Catch与Break的区别：除了都可以从循环中退出外，前者还可以沿着调用栈向上传播，使一个位于调用方法中的代码块退出。 throw和catch与raise和recue还是不同的。前者只是进行退出，却不抛出异常；后者是抛出异常的。它们有着相">
 <meta itemprop="datePublished" content="2015-02-16T04:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-02-16T04:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="2501">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Ruby,Exception," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="再谈Ruby的异常处理(学习笔记)"/>
-<meta name="twitter:description" content="Throw &amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退"/>
+<meta name="twitter:description" content="Throw &amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退出的功能。 Throw和Catch与Break的区别：除了都可以从循环中退出外，前者还可以沿着调用栈向上传播，使一个位于调用方法中的代码块退出。 throw和catch与raise和recue还是不同的。前者只是进行退出，却不抛出异常；后者是抛出异常的。它们有着相"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2015-02-16
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/tech/"> Tech </a>
-            <a href="http://localhost:1313/categories/ruby/"> Ruby </a>
+            <a href="https://polarlights.github.io/categories/tech/"> Tech </a>
+            <a href="https://polarlights.github.io/categories/ruby/"> Ruby </a>
             
           </div>
         
@@ -451,8 +451,8 @@ end</code></pre></div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/ruby/">Ruby</a>
-          <a href="http://localhost:1313/tags/exception/">Exception</a>
+          <a href="https://polarlights.github.io/tags/ruby/">Ruby</a>
+          <a href="https://polarlights.github.io/tags/exception/">Exception</a>
           
         </div>
 
@@ -512,7 +512,7 @@ end</code></pre></div>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/let-us-talk-about-exception-again/";
+      this.page.url = "https://polarlights.github.io/post/let-us-talk-about-exception-again/";
     };
     function load_disqus() {
       
@@ -567,7 +567,7 @@ end</code></pre></div>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

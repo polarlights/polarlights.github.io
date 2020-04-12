@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end" />
+  <meta name="description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end end david = David.new #inspect puts david #to_s print david #to_s p david #inspect 结论: 1. puts obj =&amp;gt; puts obj.to_s 2. p obj =&amp;gt; puts obj.inspect to_s和to_str的区别to_s和to_str在大部分时候是相同的，几乎每个对象都有to_s方法，(why?因为所有对象都继承自Object类)，但是不是每个对象都有to_str方法，这个方法只有在" />
 <meta name="keywords" content="Ruby, to_s, inspect" />
 
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/" />
+<link rel="canonical" href="https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="The Difference Of XX-like Methods In Ruby" />
-<meta property="og:description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end" />
+<meta property="og:description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end end david = David.new #inspect puts david #to_s print david #to_s p david #inspect 结论: 1. puts obj =&gt; puts obj.to_s 2. p obj =&gt; puts obj.inspect to_s和to_str的区别to_s和to_str在大部分时候是相同的，几乎每个对象都有to_s方法，(why?因为所有对象都继承自Object类)，但是不是每个对象都有to_str方法，这个方法只有在" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/" />
+<meta property="og:url" content="https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/" />
 <meta property="article:published_time" content="2015-10-23T21:23:20+08:00" />
 <meta property="article:modified_time" content="2015-10-23T21:23:20+08:00" />
 <meta itemprop="name" content="The Difference Of XX-like Methods In Ruby">
-<meta itemprop="description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end">
+<meta itemprop="description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end end david = David.new #inspect puts david #to_s print david #to_s p david #inspect 结论: 1. puts obj =&gt; puts obj.to_s 2. p obj =&gt; puts obj.inspect to_s和to_str的区别to_s和to_str在大部分时候是相同的，几乎每个对象都有to_s方法，(why?因为所有对象都继承自Object类)，但是不是每个对象都有to_str方法，这个方法只有在">
 <meta itemprop="datePublished" content="2015-10-23T21:23:20&#43;08:00" />
 <meta itemprop="dateModified" content="2015-10-23T21:23:20&#43;08:00" />
 <meta itemprop="wordCount" content="384">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Ruby," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Difference Of XX-like Methods In Ruby"/>
-<meta name="twitter:description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end"/>
+<meta name="twitter:description" content="今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end end david = David.new #inspect puts david #to_s print david #to_s p david #inspect 结论: 1. puts obj =&gt; puts obj.to_s 2. p obj =&gt; puts obj.inspect to_s和to_str的区别to_s和to_str在大部分时候是相同的，几乎每个对象都有to_s方法，(why?因为所有对象都继承自Object类)，但是不是每个对象都有to_str方法，这个方法只有在"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -386,7 +386,7 @@ to_a vs to_ary</p></section>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/ruby/">Ruby</a>
+          <a href="https://polarlights.github.io/tags/ruby/">Ruby</a>
           
         </div>
 
@@ -446,7 +446,7 @@ to_a vs to_ary</p></section>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/";
+      this.page.url = "https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/";
     };
     function load_disqus() {
       
@@ -501,7 +501,7 @@ to_a vs to_ary</p></section>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

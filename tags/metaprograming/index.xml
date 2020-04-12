@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Metaprograming on Polarlights</title>
-    <link>http://localhost:1313/tags/metaprograming/</link>
+    <link>https://polarlights.github.io/tags/metaprograming/</link>
     <description>Recent content in Metaprograming on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 05 Jul 2012 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/metaprograming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/metaprograming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>定义</title>
-      <link>http://localhost:1313/post/reflection-and-metaprograming/</link>
+      <link>https://polarlights.github.io/post/reflection-and-metaprograming/</link>
       <pubDate>Thu, 05 Jul 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/reflection-and-metaprograming/</guid>
-      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列</description>
+      <guid>https://polarlights.github.io/post/reflection-and-metaprograming/</guid>
+      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。 元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成的工作</description>
     </item>
     
   </channel>

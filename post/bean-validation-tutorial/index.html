@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接" />
+  <meta name="description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接口之外，我们写的方法、DAO 对象都有类似的需求。也就是校验的需求贯穿服务的各个层。 简单粗暴一点的可以在每一层这样写： if (param.getName() == null) { throw BadRequestException(&#34;name can not be null&#34;); } if (param.getAge() &amp;lt; 1) { throw BadRequestException(&#34;age can not less than 1&#34;); } 如果遇到错误，我想最后统一抛出，用户可以一次知道哪些输入是有问题。那么我们可以这样写: List&amp;lt;String&amp;gt; errorMessages = new" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/bean-validation-tutorial/" />
+<link rel="canonical" href="https://polarlights.github.io/post/bean-validation-tutorial/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="bean validation tutorial" />
-<meta property="og:description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接" />
+<meta property="og:description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接口之外，我们写的方法、DAO 对象都有类似的需求。也就是校验的需求贯穿服务的各个层。 简单粗暴一点的可以在每一层这样写： if (param.getName() == null) { throw BadRequestException(&#34;name can not be null&#34;); } if (param.getAge() &lt; 1) { throw BadRequestException(&#34;age can not less than 1&#34;); } 如果遇到错误，我想最后统一抛出，用户可以一次知道哪些输入是有问题。那么我们可以这样写: List&lt;String&gt; errorMessages = new" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/bean-validation-tutorial/" />
+<meta property="og:url" content="https://polarlights.github.io/post/bean-validation-tutorial/" />
 <meta property="article:published_time" content="2019-08-03T23:50:02+08:00" />
 <meta property="article:modified_time" content="2019-08-03T23:50:02+08:00" />
 <meta itemprop="name" content="bean validation tutorial">
-<meta itemprop="description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接">
+<meta itemprop="description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接口之外，我们写的方法、DAO 对象都有类似的需求。也就是校验的需求贯穿服务的各个层。 简单粗暴一点的可以在每一层这样写： if (param.getName() == null) { throw BadRequestException(&#34;name can not be null&#34;); } if (param.getAge() &lt; 1) { throw BadRequestException(&#34;age can not less than 1&#34;); } 如果遇到错误，我想最后统一抛出，用户可以一次知道哪些输入是有问题。那么我们可以这样写: List&lt;String&gt; errorMessages = new">
 <meta itemprop="datePublished" content="2019-08-03T23:50:02&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-03T23:50:02&#43;08:00" />
 <meta itemprop="wordCount" content="2450">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="bean validation," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="bean validation tutorial"/>
-<meta name="twitter:description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接"/>
+<meta name="twitter:description" content="Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接口之外，我们写的方法、DAO 对象都有类似的需求。也就是校验的需求贯穿服务的各个层。 简单粗暴一点的可以在每一层这样写： if (param.getName() == null) { throw BadRequestException(&#34;name can not be null&#34;); } if (param.getAge() &lt; 1) { throw BadRequestException(&#34;age can not less than 1&#34;); } 如果遇到错误，我想最后统一抛出，用户可以一次知道哪些输入是有问题。那么我们可以这样写: List&lt;String&gt; errorMessages = new"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,7 +306,7 @@ if (!doNotTrack) {
           2019-08-03
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/java/"> java </a>
+            <a href="https://polarlights.github.io/categories/java/"> java </a>
             
           </div>
         
@@ -470,7 +470,7 @@ validator.validate(instantce, constraintGroups);</code></pre></div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/bean-validation/">bean validation</a>
+          <a href="https://polarlights.github.io/tags/bean-validation/">bean validation</a>
           
         </div>
 
@@ -517,7 +517,7 @@ validator.validate(instantce, constraintGroups);</code></pre></div>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/bean-validation-tutorial/";
+      this.page.url = "https://polarlights.github.io/post/bean-validation-tutorial/";
     };
     function load_disqus() {
       
@@ -572,7 +572,7 @@ validator.validate(instantce, constraintGroups);</code></pre></div>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

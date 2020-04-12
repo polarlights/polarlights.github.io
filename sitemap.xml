@@ -1,666 +1,666 @@
-<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://polarlights.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/tags/bean-validation/</loc>
+    <loc>https://polarlights.github.io/tags/bean-validation/</loc>
     <lastmod>2019-08-03T23:50:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/bean-validation-tutorial/</loc>
+    <loc>https://polarlights.github.io/post/bean-validation-tutorial/</loc>
     <lastmod>2019-08-03T23:50:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://polarlights.github.io/categories/</loc>
     <lastmod>2019-08-03T23:50:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/java/</loc>
+    <loc>https://polarlights.github.io/categories/java/</loc>
     <lastmod>2019-08-03T23:50:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://polarlights.github.io/</loc>
     <lastmod>2019-08-03T23:50:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>https://polarlights.github.io/post/</loc>
     <lastmod>2019-08-03T23:50:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://polarlights.github.io/tags/</loc>
     <lastmod>2019-08-03T23:50:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/hibernate/</loc>
+    <loc>https://polarlights.github.io/categories/hibernate/</loc>
     <lastmod>2018-12-06T18:08:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</loc>
+    <loc>https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/</loc>
     <lastmod>2018-12-06T18:08:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/java/</loc>
+    <loc>https://polarlights.github.io/tags/java/</loc>
     <lastmod>2018-12-06T18:08:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/jpa/</loc>
+    <loc>https://polarlights.github.io/tags/jpa/</loc>
     <lastmod>2018-12-06T18:08:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/jpa/</loc>
+    <loc>https://polarlights.github.io/categories/jpa/</loc>
     <lastmod>2018-12-06T18:08:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</loc>
+    <loc>https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/</loc>
     <lastmod>2018-11-12T21:24:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/sentry/</loc>
+    <loc>https://polarlights.github.io/tags/sentry/</loc>
     <lastmod>2018-11-12T21:24:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/jpa-stream-query/jpa-stream-query/</loc>
+    <loc>https://polarlights.github.io/post/jpa-stream-query/jpa-stream-query/</loc>
     <lastmod>2018-11-11T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/mac/</loc>
+    <loc>https://polarlights.github.io/tags/mac/</loc>
     <lastmod>2018-11-09T10:05:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/mac/</loc>
+    <loc>https://polarlights.github.io/categories/mac/</loc>
     <lastmod>2018-11-09T10:05:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/mac-mail-tricks/mac-mail-tricks/</loc>
+    <loc>https://polarlights.github.io/post/mac-mail-tricks/mac-mail-tricks/</loc>
     <lastmod>2018-11-09T10:05:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/mail/</loc>
+    <loc>https://polarlights.github.io/tags/mail/</loc>
     <lastmod>2018-11-09T10:05:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/tricks/</loc>
+    <loc>https://polarlights.github.io/tags/tricks/</loc>
     <lastmod>2018-11-09T10:05:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/editor/</loc>
+    <loc>https://polarlights.github.io/tags/editor/</loc>
     <lastmod>2018-09-19T23:20:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/editor/</loc>
+    <loc>https://polarlights.github.io/categories/editor/</loc>
     <lastmod>2018-09-19T23:20:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/idea/</loc>
+    <loc>https://polarlights.github.io/tags/idea/</loc>
     <lastmod>2018-09-19T23:20:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</loc>
+    <loc>https://polarlights.github.io/post/idea-popular-plugins/idea-popular-plugins/</loc>
     <lastmod>2018-09-19T23:20:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/idea-productive-tips/</loc>
+    <loc>https://polarlights.github.io/post/idea-productive-tips/</loc>
     <lastmod>2018-09-19T23:20:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/plugins/</loc>
+    <loc>https://polarlights.github.io/tags/plugins/</loc>
     <lastmod>2018-09-19T23:20:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/great-tools/</loc>
+    <loc>https://polarlights.github.io/categories/great-tools/</loc>
     <lastmod>2018-09-18T20:03:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/tools/</loc>
+    <loc>https://polarlights.github.io/tags/tools/</loc>
     <lastmod>2018-09-18T20:03:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/tmux-tutorial/tmux-tutorial/</loc>
+    <loc>https://polarlights.github.io/post/tmux-tutorial/tmux-tutorial/</loc>
     <lastmod>2018-09-18T20:03:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</loc>
+    <loc>https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/</loc>
     <lastmod>2018-01-06T17:12:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/intellij/</loc>
+    <loc>https://polarlights.github.io/categories/intellij/</loc>
     <lastmod>2018-01-06T17:12:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/how-to-test-a-class/</loc>
+    <loc>https://polarlights.github.io/post/how-to-test-a-class/</loc>
     <lastmod>2016-03-24T06:32:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/minitest/</loc>
+    <loc>https://polarlights.github.io/tags/minitest/</loc>
     <lastmod>2016-03-24T06:32:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/minitest/</loc>
+    <loc>https://polarlights.github.io/categories/minitest/</loc>
     <lastmod>2016-03-24T06:32:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/ruby/</loc>
+    <loc>https://polarlights.github.io/tags/ruby/</loc>
     <lastmod>2016-03-24T06:32:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/ruby/</loc>
+    <loc>https://polarlights.github.io/categories/ruby/</loc>
     <lastmod>2016-03-24T06:32:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/class/</loc>
+    <loc>https://polarlights.github.io/tags/class/</loc>
     <lastmod>2016-03-23T20:22:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/class-and-modules/</loc>
+    <loc>https://polarlights.github.io/post/class-and-modules/</loc>
     <lastmod>2016-03-23T20:22:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/module/</loc>
+    <loc>https://polarlights.github.io/tags/module/</loc>
     <lastmod>2016-03-23T20:22:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/tech/</loc>
+    <loc>https://polarlights.github.io/categories/tech/</loc>
     <lastmod>2016-03-23T20:22:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/how_minitest_works_part_2/</loc>
+    <loc>https://polarlights.github.io/post/how_minitest_works_part_2/</loc>
     <lastmod>2016-02-21T18:40:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/test/</loc>
+    <loc>https://polarlights.github.io/tags/test/</loc>
     <lastmod>2016-02-21T18:40:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/test/</loc>
+    <loc>https://polarlights.github.io/categories/test/</loc>
     <lastmod>2016-02-21T18:40:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/how_minitest_works_part_1/</loc>
+    <loc>https://polarlights.github.io/post/how_minitest_works_part_1/</loc>
     <lastmod>2016-02-21T03:02:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</loc>
+    <loc>https://polarlights.github.io/post/introduction_to_minitest/introduction_to_minitest/</loc>
     <lastmod>2016-02-20T03:19:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://polarlights.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2016-02-20T03:19:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</loc>
+    <loc>https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/</loc>
     <lastmod>2015-10-23T21:23:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/shortcuts/</loc>
+    <loc>https://polarlights.github.io/tags/shortcuts/</loc>
     <lastmod>2015-09-01T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/mac-shortcut/</loc>
+    <loc>https://polarlights.github.io/post/mac-shortcut/</loc>
     <lastmod>2015-09-01T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bash/</loc>
+    <loc>https://polarlights.github.io/tags/bash/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bg/</loc>
+    <loc>https://polarlights.github.io/tags/bg/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/linux-fg-bg-jobs/</loc>
+    <loc>https://polarlights.github.io/post/linux-fg-bg-jobs/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/du/</loc>
+    <loc>https://polarlights.github.io/tags/du/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/linux-du/</loc>
+    <loc>https://polarlights.github.io/post/linux-du/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/fg/</loc>
+    <loc>https://polarlights.github.io/tags/fg/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/linux-find/</loc>
+    <loc>https://polarlights.github.io/post/linux-find/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/find/</loc>
+    <loc>https://polarlights.github.io/tags/find/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/jobs/</loc>
+    <loc>https://polarlights.github.io/tags/jobs/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://polarlights.github.io/tags/linux/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/linux/</loc>
+    <loc>https://polarlights.github.io/categories/linux/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/lsof/</loc>
+    <loc>https://polarlights.github.io/tags/lsof/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/netstat/</loc>
+    <loc>https://polarlights.github.io/tags/netstat/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/linux-netstat-lsof/</loc>
+    <loc>https://polarlights.github.io/post/linux-netstat-lsof/</loc>
     <lastmod>2015-08-31T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/exception/</loc>
+    <loc>https://polarlights.github.io/tags/exception/</loc>
     <lastmod>2015-02-16T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/let-us-talk-about-exception-again/</loc>
+    <loc>https://polarlights.github.io/post/let-us-talk-about-exception-again/</loc>
     <lastmod>2015-02-16T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bind/</loc>
+    <loc>https://polarlights.github.io/tags/bind/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/jquery-event/</loc>
+    <loc>https://polarlights.github.io/post/jquery-event/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/delegate/</loc>
+    <loc>https://polarlights.github.io/tags/delegate/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/javascript/</loc>
+    <loc>https://polarlights.github.io/categories/javascript/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/jquery/</loc>
+    <loc>https://polarlights.github.io/tags/jquery/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/jquery-selector-find-siblings/</loc>
+    <loc>https://polarlights.github.io/post/jquery-selector-find-siblings/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/jqurty-selector/</loc>
+    <loc>https://polarlights.github.io/post/jqurty-selector/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/live/</loc>
+    <loc>https://polarlights.github.io/tags/live/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/selector/</loc>
+    <loc>https://polarlights.github.io/tags/selector/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/sibling-node/</loc>
+    <loc>https://polarlights.github.io/tags/sibling-node/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/true/</loc>
+    <loc>https://polarlights.github.io/tags/true/</loc>
     <lastmod>2015-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/git/</loc>
+    <loc>https://polarlights.github.io/tags/git/</loc>
     <lastmod>2015-02-04T19:20:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/git/</loc>
+    <loc>https://polarlights.github.io/categories/git/</loc>
     <lastmod>2015-02-04T19:20:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/pro-git-learning-notes/</loc>
+    <loc>https://polarlights.github.io/post/pro-git-learning-notes/</loc>
     <lastmod>2015-02-04T19:20:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/git-resources/</loc>
+    <loc>https://polarlights.github.io/post/git-resources/</loc>
     <lastmod>2015-01-30T20:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/excel/</loc>
+    <loc>https://polarlights.github.io/tags/excel/</loc>
     <lastmod>2012-08-20T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/spreadsheet/</loc>
+    <loc>https://polarlights.github.io/tags/spreadsheet/</loc>
     <lastmod>2012-08-20T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</loc>
+    <loc>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</loc>
     <lastmod>2012-08-20T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/mongodb/</loc>
+    <loc>https://polarlights.github.io/tags/mongodb/</loc>
     <lastmod>2012-07-30T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/notes-about-mongodb/</loc>
+    <loc>https://polarlights.github.io/post/notes-about-mongodb/</loc>
     <lastmod>2012-07-30T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/nosql/</loc>
+    <loc>https://polarlights.github.io/tags/nosql/</loc>
     <lastmod>2012-07-30T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/metaprograming/</loc>
+    <loc>https://polarlights.github.io/tags/metaprograming/</loc>
     <lastmod>2012-07-05T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/reflection-and-metaprograming/</loc>
+    <loc>https://polarlights.github.io/post/reflection-and-metaprograming/</loc>
     <lastmod>2012-07-05T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/lambda/</loc>
+    <loc>https://polarlights.github.io/tags/lambda/</loc>
     <lastmod>2012-06-24T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/methods-procs-lambdas-and-closures/</loc>
+    <loc>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</loc>
     <lastmod>2012-06-24T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/proc/</loc>
+    <loc>https://polarlights.github.io/tags/proc/</loc>
     <lastmod>2012-06-24T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/gemfile/</loc>
+    <loc>https://polarlights.github.io/tags/gemfile/</loc>
     <lastmod>2012-06-05T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/rails/</loc>
+    <loc>https://polarlights.github.io/tags/rails/</loc>
     <lastmod>2012-06-05T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/modify-the-gemfile-template/</loc>
+    <loc>https://polarlights.github.io/post/modify-the-gemfile-template/</loc>
     <lastmod>2012-06-05T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/ruby-platform/</loc>
+    <loc>https://polarlights.github.io/post/ruby-platform/</loc>
     <lastmod>2012-02-15T04:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

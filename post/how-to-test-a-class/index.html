@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好" />
+  <meta name="description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/how-to-test-a-class/" />
+<link rel="canonical" href="https://polarlights.github.io/post/how-to-test-a-class/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="how_to_test_class_and_module" />
-<meta property="og:description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好" />
+<meta property="og:description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/how-to-test-a-class/" />
+<meta property="og:url" content="https://polarlights.github.io/post/how-to-test-a-class/" />
 <meta property="article:published_time" content="2016-03-24T06:32:49+08:00" />
 <meta property="article:modified_time" content="2016-03-24T06:32:49+08:00" />
 <meta itemprop="name" content="how_to_test_class_and_module">
-<meta itemprop="description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好">
+<meta itemprop="description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都">
 <meta itemprop="datePublished" content="2016-03-24T06:32:49&#43;08:00" />
 <meta itemprop="dateModified" content="2016-03-24T06:32:49&#43;08:00" />
 <meta itemprop="wordCount" content="460">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="ruby,minitest," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="how_to_test_class_and_module"/>
-<meta name="twitter:description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好"/>
+<meta name="twitter:description" content="前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2016-03-24
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/ruby/"> ruby </a>
-            <a href="http://localhost:1313/categories/minitest/"> minitest </a>
+            <a href="https://polarlights.github.io/categories/ruby/"> ruby </a>
+            <a href="https://polarlights.github.io/categories/minitest/"> minitest </a>
             
           </div>
         
@@ -388,8 +388,8 @@ end</code></pre></div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/ruby/">ruby</a>
-          <a href="http://localhost:1313/tags/minitest/">minitest</a>
+          <a href="https://polarlights.github.io/tags/ruby/">ruby</a>
+          <a href="https://polarlights.github.io/tags/minitest/">minitest</a>
           
         </div>
 
@@ -449,7 +449,7 @@ end</code></pre></div>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/how-to-test-a-class/";
+      this.page.url = "https://polarlights.github.io/post/how-to-test-a-class/";
     };
     function load_disqus() {
       
@@ -504,7 +504,7 @@ end</code></pre></div>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

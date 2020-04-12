@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，C" />
+  <meta name="description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，Ctrl&#43;D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl&#43;Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl&#43;D 是不起作用的，因为它的 应用场景不是这样的。被暂停的" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/linux-fg-bg-jobs/" />
+<link rel="canonical" href="https://polarlights.github.io/post/linux-fg-bg-jobs/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="Ctrl-C, Ctrl-D, Ctrl-Z 的区别" />
-<meta property="og:description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，C" />
+<meta property="og:description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，Ctrl&#43;D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl&#43;Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl&#43;D 是不起作用的，因为它的 应用场景不是这样的。被暂停的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/linux-fg-bg-jobs/" />
+<meta property="og:url" content="https://polarlights.github.io/post/linux-fg-bg-jobs/" />
 <meta property="article:published_time" content="2015-08-31T04:00:00+08:00" />
 <meta property="article:modified_time" content="2015-08-31T04:00:00+08:00" />
 <meta itemprop="name" content="Ctrl-C, Ctrl-D, Ctrl-Z 的区别">
-<meta itemprop="description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，C">
+<meta itemprop="description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，Ctrl&#43;D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl&#43;Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl&#43;D 是不起作用的，因为它的 应用场景不是这样的。被暂停的">
 <meta itemprop="datePublished" content="2015-08-31T04:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-08-31T04:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="427">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Linux,bg,fg,jobs," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ctrl-C, Ctrl-D, Ctrl-Z 的区别"/>
-<meta name="twitter:description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，C"/>
+<meta name="twitter:description" content="在 Linux 的日常使用中，Ctrl&#43;C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl&#43;Z 和Ctrl&#43;D 又有什么用途么？ Ctrl&#43;Z 表示暂停一个进程，Ctrl&#43;D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl&#43;Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl&#43;D 是不起作用的，因为它的 应用场景不是这样的。被暂停的"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2015-08-31
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/tech/"> Tech </a>
-            <a href="http://localhost:1313/categories/linux/"> Linux </a>
+            <a href="https://polarlights.github.io/categories/tech/"> Tech </a>
+            <a href="https://polarlights.github.io/categories/linux/"> Linux </a>
             
           </div>
         
@@ -367,10 +367,10 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/linux/">Linux</a>
-          <a href="http://localhost:1313/tags/bg/">bg</a>
-          <a href="http://localhost:1313/tags/fg/">fg</a>
-          <a href="http://localhost:1313/tags/jobs/">jobs</a>
+          <a href="https://polarlights.github.io/tags/linux/">Linux</a>
+          <a href="https://polarlights.github.io/tags/bg/">bg</a>
+          <a href="https://polarlights.github.io/tags/fg/">fg</a>
+          <a href="https://polarlights.github.io/tags/jobs/">jobs</a>
           
         </div>
 
@@ -430,7 +430,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/linux-fg-bg-jobs/";
+      this.page.url = "https://polarlights.github.io/post/linux-fg-bg-jobs/";
     };
     function load_disqus() {
       
@@ -485,7 +485,7 @@ if (!doNotTrack) {
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

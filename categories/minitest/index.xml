@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>minitest on Polarlights</title>
-    <link>http://localhost:1313/categories/minitest/</link>
+    <link>https://polarlights.github.io/categories/minitest/</link>
     <description>Recent content in minitest on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Mar 2016 06:32:49 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/minitest/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/categories/minitest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>how_to_test_class_and_module</title>
-      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <link>https://polarlights.github.io/post/how-to-test-a-class/</link>
       <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
-      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+      <guid>https://polarlights.github.io/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都</description>
     </item>
     
   </channel>

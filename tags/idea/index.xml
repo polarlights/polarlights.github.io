@@ -2,35 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>idea on Polarlights</title>
-    <link>http://localhost:1313/tags/idea/</link>
+    <link>https://polarlights.github.io/tags/idea/</link>
     <description>Recent content in idea on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 19 Sep 2018 23:20:49 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/idea/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>idea popular plugins</title>
-      <link>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</link>
+      <link>https://polarlights.github.io/post/idea-popular-plugins/idea-popular-plugins/</link>
       <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</guid>
-      <description>基本lombok pluginGenerateSerialVersionUID Adds a new action &#39;SerialVersionUID&#39; in the generate menu (alt + ins). The action adds an serialVersionUID field in the current class or updates it if it already exists, and assigns it the same value the standard &#39;serialver&#39; JDK tool would return. The action is only visible when IDEA is not rebuilding its indexes, the class is serializable and either no</description>
+      <guid>https://polarlights.github.io/post/idea-popular-plugins/idea-popular-plugins/</guid>
+      <description>基本lombok pluginGenerateSerialVersionUID Adds a new action &#39;SerialVersionUID&#39; in the generate menu (alt + ins). The action adds an serialVersionUID field in the current class or updates it if it already exists, and assigns it the same value the standard &#39;serialver&#39; JDK tool would return. The action is only visible when IDEA is not rebuilding its indexes, the class is serializable and either no serialVersionUID field exists or its value is different from the one the &#39;serialver&#39; tool would return. 效率篇Jrebel for IDEA JRebel is a productivity tool that allows developers to reload code changes instantly. save actions Supports configurable, Eclipse like, save actions, including &#34;optimize imports&#34;, &#34;reformat code&#34;, &#34;rearrange code&#34;, &#34;compile file&#34; and some quick fixes for Java like &#34;add / remove &#39;this&#39; qualifier&#34;, etc. The plugin executes the configured actions when the file is synchronised (or saved) on disk. ace-jump AceJump allows you to quickly navigate the caret to any position visible in the editor. 代码质量checkstyleFind bugs The FindBugs plugin for IntelliJ IDEA. SonarLint SonarLint is an</description>
     </item>
     
     <item>
       <title>idea productive tips</title>
-      <link>http://localhost:1313/post/idea-productive-tips/</link>
+      <link>https://polarlights.github.io/post/idea-productive-tips/</link>
       <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/idea-productive-tips/</guid>
+      <guid>https://polarlights.github.io/post/idea-productive-tips/</guid>
       <description>This article is wroten according to a youtube video: https://www.youtube.com/watch?v=eq3KiAH4IBI.
 We use Idea programming everyday. How can we use it effectively, now let&amp;#8217;s reading it below:
 Close the tab list of IDE
 Preferences → Editor → Editor Tabs; Change Tab Placement from default Top to None.
-Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift).</description>
+Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift). We can use ⌘+E to explore recent files instead.
+Auto scroll to source
+When we select a file, we want to explore the file content, other than just the file name. If we want to see the source, we have to double click the file in project window, by default. While Idea provides us a feature that when we select a file, Idea will open the source automatically: In the project window, right top of the window, click the config icon, check the &#34;scroll to source&#34; in the dropdown list.
+Create directory or file effectivelly
+If I want to create a nested directory or package, I will select the parent directory and press ⌘+N, then input the directory name, before. There&amp;#8217;s more effective way: Just input the relative directory path, Idea will create the sub directory for us, if it doesn&amp;#8217;t exist.</description>
     </item>
     
   </channel>

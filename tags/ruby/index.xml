@@ -2,85 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruby on Polarlights</title>
-    <link>http://localhost:1313/tags/ruby/</link>
+    <link>https://polarlights.github.io/tags/ruby/</link>
     <description>Recent content in Ruby on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Mar 2016 06:32:49 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>how_to_test_class_and_module</title>
-      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <link>https://polarlights.github.io/post/how-to-test-a-class/</link>
       <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
-      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+      <guid>https://polarlights.github.io/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都</description>
     </item>
     
     <item>
       <title>Class</title>
-      <link>http://localhost:1313/post/class-and-modules/</link>
+      <link>https://polarlights.github.io/post/class-and-modules/</link>
       <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/class-and-modules/</guid>
-      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+      <guid>https://polarlights.github.io/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法，所以不能显式的调用它。 class Point def initialize(x, y) @x = x @y = y end end p = Point.new(2, 4) 上面的实例p并不能直接访问里面的实例变量@x,@y，因为Ruby是面向对象的语言，所以访问这些实例变量实际上是访问与实例变量的方法而已。如果直接使用p.x，Ruby会告诉你:&#34;NoMethodError</description>
     </item>
     
     <item>
       <title>The Difference Of XX-like Methods In Ruby</title>
-      <link>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</link>
+      <link>https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/</link>
       <pubDate>Fri, 23 Oct 2015 21:23:20 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</guid>
-      <description>今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end</description>
+      <guid>https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/</guid>
+      <description>今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end end david = David.new #inspect puts david #to_s print david #to_s p david #inspect 结论: 1. puts obj =&amp;gt; puts obj.to_s 2. p obj =&amp;gt; puts obj.inspect to_s和to_str的区别to_s和to_str在大部分时候是相同的，几乎每个对象都有to_s方法，(why?因为所有对象都继承自Object类)，但是不是每个对象都有to_str方法，这个方法只有在</description>
     </item>
     
     <item>
       <title>再谈Ruby的异常处理(学习笔记)</title>
-      <link>http://localhost:1313/post/let-us-talk-about-exception-again/</link>
+      <link>https://polarlights.github.io/post/let-us-talk-about-exception-again/</link>
       <pubDate>Mon, 16 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/let-us-talk-about-exception-again/</guid>
-      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退</description>
+      <guid>https://polarlights.github.io/post/let-us-talk-about-exception-again/</guid>
+      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退出的功能。 Throw和Catch与Break的区别：除了都可以从循环中退出外，前者还可以沿着调用栈向上传播，使一个位于调用方法中的代码块退出。 throw和catch与raise和recue还是不同的。前者只是进行退出，却不抛出异常；后者是抛出异常的。它们有着相</description>
     </item>
     
     <item>
       <title>Spreadsheet是神马</title>
-      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <link>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
       <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
-      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+      <guid>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spreadsheet基本使用的包括以下几部分(C表示类,M表示模块): Column: &amp;#169;用来指定列的格式化和提供了以列的形式遍历所有单元格的方法。Datatypes: (M)定义了可以将参数转换为Spreadsheet常用的属性的方法(boolean,colors,enu</description>
     </item>
     
     <item>
       <title>定义</title>
-      <link>http://localhost:1313/post/reflection-and-metaprograming/</link>
+      <link>https://polarlights.github.io/post/reflection-and-metaprograming/</link>
       <pubDate>Thu, 05 Jul 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/reflection-and-metaprograming/</guid>
-      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列</description>
+      <guid>https://polarlights.github.io/post/reflection-and-metaprograming/</guid>
+      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。 元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成的工作</description>
     </item>
     
     <item>
       <title>Method</title>
-      <link>http://localhost:1313/post/methods-procs-lambdas-and-closures/</link>
+      <link>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</link>
       <pubDate>Sun, 24 Jun 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/methods-procs-lambdas-and-closures/</guid>
-      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最</description>
+      <guid>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</guid>
+      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线</description>
     </item>
     
     <item>
       <title>Strings</title>
-      <link>http://localhost:1313/post/ruby-platform/</link>
+      <link>https://polarlights.github.io/post/ruby-platform/</link>
       <pubDate>Wed, 15 Feb 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/ruby-platform/</guid>
-      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true</description>
+      <guid>https://polarlights.github.io/post/ruby-platform/</guid>
+      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true s = &#34;hello&#34; s.index(&#39;l&#39;) #2 s.index(?l) #2 s.index(/l+/) #2 s.index(&#39;l&#39;,3) #the first position after position 3 of l s.index(&#39;Ruby&#39;) #nil s.rindex(&#39;l&#39;) #3 s.rindex(&#39;l&#39;,2) #2 index of rightmost l at or before position 2 s.start_with? &#34;hell&#34; #true s.end_with? &#34;bells&#34; #false s.include?(&#39;ll&#39;) #true s.include?(?H) #false s =~ /[aeiou]{2}/ #nil s.match(/[aeiou]/) {|m| m.to_s} #e return first &#34;this is it&#34;.split #this is it &#34;hello&#34;.split(&#39;l&#39;) #[&#39;he&#39;,&#39;&#39;,&#39;o&#39;] &#34;1, 2,3&#34;.split(/,\s*/) #1,2,3 &#34;banana&#34;.partition(&#34;an&#34;) #[&#34;b&#34;, &#34;an&#34;, &#34;ana&#34;] &#34;banana&#34;.rpartition(&#34;an&#34;) #[&#34;ban&#34;, &#34;an&#34;, &#34;a&#34;] &#34;a123b&#34;.partition(/\d+/) #[&#34;a&#34;, &#34;123&#34;, &#34;b&#34;] s = &#34;hello&#34; s.sub(&#39;l&#39;, &#39;L&#39;) #replace the first l to L s.gsub(&#34;l&#34;, &#34;L&#34;) #replace all the l to L s.sub!(/(.)(.)/, &#39;\2\1&#39;) #swap first character s.sub!(/(.)(.)/, &#39;\\2\\1&#39;) #&#34;ehllo&#34; Double backslashes for double quotes &#34;hello world&#34;.gsub(/\b./) { |match| match.upcase } #Hello World s = &#34;hello&#34; s.upcase #HELLO s.downcase #hello s.capitalize #Hello s.swapcase #HELLO s.casecmp(&#34;HELLO&#34;) #0 case</description>
     </item>
     
   </channel>

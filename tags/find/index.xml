@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>find on Polarlights</title>
-    <link>http://localhost:1313/tags/find/</link>
+    <link>https://polarlights.github.io/tags/find/</link>
     <description>Recent content in find on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Aug 2015 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/find/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/find/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Find</title>
-      <link>http://localhost:1313/post/linux-find/</link>
+      <link>https://polarlights.github.io/post/linux-find/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-find/</guid>
-      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找</description>
+      <guid>https://polarlights.github.io/post/linux-find/</guid>
+      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n +n #按文件更改时间来查找文件，-n指n天以内，+n指n天以前 -atime -n +n #按文件访问时间来查GIN: 0px&#34;&amp;gt; -ctime -n +n #按文件创建时间来查找文件，-n指n天以内，+n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group</description>
     </item>
     
   </channel>

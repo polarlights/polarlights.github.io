@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sentry on Polarlights</title>
-    <link>http://localhost:1313/tags/sentry/</link>
+    <link>https://polarlights.github.io/tags/sentry/</link>
     <description>Recent content in sentry on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 12 Nov 2018 21:24:39 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/sentry/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/sentry/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Add release to sentry</title>
-      <link>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</link>
+      <link>https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/</link>
       <pubDate>Mon, 12 Nov 2018 21:24:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</guid>
-      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错</description>
+      <guid>https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/</guid>
+      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value(&#34;${application.host.name:localhost}&#34;) private String hostName; @Value(&#34;${application.module.name}&#34;) private String serviceName; @Value(&#34;${spring.profiles.active}&#34;) private String activeProfile; @Value(&#34;${release.version:local}&#34;) private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value(&#34;${sentry.dsn}&#34;) private String sentryDsn; @Value(&#34;${sentry.timeout}&#34;) private String sentryTimeout; @Override public void afterPropertiesSet() throws</description>
     </item>
     
   </channel>

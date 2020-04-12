@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最" />
+  <meta name="description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/methods-procs-lambdas-and-closures/" />
+<link rel="canonical" href="https://polarlights.github.io/post/methods-procs-lambdas-and-closures/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="Method" />
-<meta property="og:description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最" />
+<meta property="og:description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/methods-procs-lambdas-and-closures/" />
+<meta property="og:url" content="https://polarlights.github.io/post/methods-procs-lambdas-and-closures/" />
 <meta property="article:published_time" content="2012-06-24T04:00:00+08:00" />
 <meta property="article:modified_time" content="2012-06-24T04:00:00+08:00" />
 <meta itemprop="name" content="Method">
-<meta itemprop="description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最">
+<meta itemprop="description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线">
 <meta itemprop="datePublished" content="2012-06-24T04:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2012-06-24T04:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="5133">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Ruby,Lambda,Proc," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Method"/>
-<meta name="twitter:description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最"/>
+<meta name="twitter:description" content="方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2012-06-24
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/tech/"> Tech </a>
-            <a href="http://localhost:1313/categories/ruby/"> Ruby </a>
+            <a href="https://polarlights.github.io/categories/tech/"> Tech </a>
+            <a href="https://polarlights.github.io/categories/ruby/"> Ruby </a>
             
           </div>
         
@@ -577,9 +577,9 @@ result = other_plus.call(5) #8</p></div></div></section></section>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/ruby/">Ruby</a>
-          <a href="http://localhost:1313/tags/lambda/">Lambda</a>
-          <a href="http://localhost:1313/tags/proc/">Proc</a>
+          <a href="https://polarlights.github.io/tags/ruby/">Ruby</a>
+          <a href="https://polarlights.github.io/tags/lambda/">Lambda</a>
+          <a href="https://polarlights.github.io/tags/proc/">Proc</a>
           
         </div>
 
@@ -639,7 +639,7 @@ result = other_plus.call(5) #8</p></div></div></section></section>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/methods-procs-lambdas-and-closures/";
+      this.page.url = "https://polarlights.github.io/post/methods-procs-lambdas-and-closures/";
     };
     function load_disqus() {
       
@@ -694,7 +694,7 @@ result = other_plus.call(5) #8</p></div></div></section></section>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

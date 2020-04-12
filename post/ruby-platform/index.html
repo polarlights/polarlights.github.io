@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true" />
+  <meta name="description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true s = &#34;hello&#34; s.index(&#39;l&#39;) #2 s.index(?l) #2 s.index(/l&#43;/) #2 s.index(&#39;l&#39;,3) #the first position after position 3 of l s.index(&#39;Ruby&#39;) #nil s.rindex(&#39;l&#39;) #3 s.rindex(&#39;l&#39;,2) #2 index of rightmost l at or before position 2 s.start_with? &#34;hell&#34; #true s.end_with? &#34;bells&#34; #false s.include?(&#39;ll&#39;) #true s.include?(?H) #false s =~ /[aeiou]{2}/ #nil s.match(/[aeiou]/) {|m| m.to_s} #e return first &#34;this is it&#34;.split #this is it &#34;hello&#34;.split(&#39;l&#39;) #[&#39;he&#39;,&#39;&#39;,&#39;o&#39;] &#34;1, 2,3&#34;.split(/,\s*/) #1,2,3 &#34;banana&#34;.partition(&#34;an&#34;) #[&#34;b&#34;, &#34;an&#34;, &#34;ana&#34;] &#34;banana&#34;.rpartition(&#34;an&#34;) #[&#34;ban&#34;, &#34;an&#34;, &#34;a&#34;] &#34;a123b&#34;.partition(/\d&#43;/) #[&#34;a&#34;, &#34;123&#34;, &#34;b&#34;] s = &#34;hello&#34; s.sub(&#39;l&#39;, &#39;L&#39;) #replace the first l to L s.gsub(&#34;l&#34;, &#34;L&#34;) #replace all the l to L s.sub!(/(.)(.)/, &#39;\2\1&#39;) #swap first character s.sub!(/(.)(.)/, &#39;\\2\\1&#39;) #&#34;ehllo&#34; Double backslashes for double quotes &#34;hello world&#34;.gsub(/\b./) { |match| match.upcase } #Hello World s = &#34;hello&#34; s.upcase #HELLO s.downcase #hello s.capitalize #Hello s.swapcase #HELLO s.casecmp(&#34;HELLO&#34;) #0 case" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/ruby-platform/" />
+<link rel="canonical" href="https://polarlights.github.io/post/ruby-platform/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="Strings" />
-<meta property="og:description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &lt;&lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true" />
+<meta property="og:description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &lt;&lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true s = &#34;hello&#34; s.index(&#39;l&#39;) #2 s.index(?l) #2 s.index(/l&#43;/) #2 s.index(&#39;l&#39;,3) #the first position after position 3 of l s.index(&#39;Ruby&#39;) #nil s.rindex(&#39;l&#39;) #3 s.rindex(&#39;l&#39;,2) #2 index of rightmost l at or before position 2 s.start_with? &#34;hell&#34; #true s.end_with? &#34;bells&#34; #false s.include?(&#39;ll&#39;) #true s.include?(?H) #false s =~ /[aeiou]{2}/ #nil s.match(/[aeiou]/) {|m| m.to_s} #e return first &#34;this is it&#34;.split #this is it &#34;hello&#34;.split(&#39;l&#39;) #[&#39;he&#39;,&#39;&#39;,&#39;o&#39;] &#34;1, 2,3&#34;.split(/,\s*/) #1,2,3 &#34;banana&#34;.partition(&#34;an&#34;) #[&#34;b&#34;, &#34;an&#34;, &#34;ana&#34;] &#34;banana&#34;.rpartition(&#34;an&#34;) #[&#34;ban&#34;, &#34;an&#34;, &#34;a&#34;] &#34;a123b&#34;.partition(/\d&#43;/) #[&#34;a&#34;, &#34;123&#34;, &#34;b&#34;] s = &#34;hello&#34; s.sub(&#39;l&#39;, &#39;L&#39;) #replace the first l to L s.gsub(&#34;l&#34;, &#34;L&#34;) #replace all the l to L s.sub!(/(.)(.)/, &#39;\2\1&#39;) #swap first character s.sub!(/(.)(.)/, &#39;\\2\\1&#39;) #&#34;ehllo&#34; Double backslashes for double quotes &#34;hello world&#34;.gsub(/\b./) { |match| match.upcase } #Hello World s = &#34;hello&#34; s.upcase #HELLO s.downcase #hello s.capitalize #Hello s.swapcase #HELLO s.casecmp(&#34;HELLO&#34;) #0 case" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/ruby-platform/" />
+<meta property="og:url" content="https://polarlights.github.io/post/ruby-platform/" />
 <meta property="article:published_time" content="2012-02-15T04:00:00+08:00" />
 <meta property="article:modified_time" content="2012-02-15T04:00:00+08:00" />
 <meta itemprop="name" content="Strings">
-<meta itemprop="description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &lt;&lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true">
+<meta itemprop="description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &lt;&lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true s = &#34;hello&#34; s.index(&#39;l&#39;) #2 s.index(?l) #2 s.index(/l&#43;/) #2 s.index(&#39;l&#39;,3) #the first position after position 3 of l s.index(&#39;Ruby&#39;) #nil s.rindex(&#39;l&#39;) #3 s.rindex(&#39;l&#39;,2) #2 index of rightmost l at or before position 2 s.start_with? &#34;hell&#34; #true s.end_with? &#34;bells&#34; #false s.include?(&#39;ll&#39;) #true s.include?(?H) #false s =~ /[aeiou]{2}/ #nil s.match(/[aeiou]/) {|m| m.to_s} #e return first &#34;this is it&#34;.split #this is it &#34;hello&#34;.split(&#39;l&#39;) #[&#39;he&#39;,&#39;&#39;,&#39;o&#39;] &#34;1, 2,3&#34;.split(/,\s*/) #1,2,3 &#34;banana&#34;.partition(&#34;an&#34;) #[&#34;b&#34;, &#34;an&#34;, &#34;ana&#34;] &#34;banana&#34;.rpartition(&#34;an&#34;) #[&#34;ban&#34;, &#34;an&#34;, &#34;a&#34;] &#34;a123b&#34;.partition(/\d&#43;/) #[&#34;a&#34;, &#34;123&#34;, &#34;b&#34;] s = &#34;hello&#34; s.sub(&#39;l&#39;, &#39;L&#39;) #replace the first l to L s.gsub(&#34;l&#34;, &#34;L&#34;) #replace all the l to L s.sub!(/(.)(.)/, &#39;\2\1&#39;) #swap first character s.sub!(/(.)(.)/, &#39;\\2\\1&#39;) #&#34;ehllo&#34; Double backslashes for double quotes &#34;hello world&#34;.gsub(/\b./) { |match| match.upcase } #Hello World s = &#34;hello&#34; s.upcase #HELLO s.downcase #hello s.capitalize #Hello s.swapcase #HELLO s.casecmp(&#34;HELLO&#34;) #0 case">
 <meta itemprop="datePublished" content="2012-02-15T04:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2012-02-15T04:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="1236">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Ruby," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Strings"/>
-<meta name="twitter:description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &lt;&lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true"/>
+<meta name="twitter:description" content="s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &lt;&lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true s = &#34;hello&#34; s.index(&#39;l&#39;) #2 s.index(?l) #2 s.index(/l&#43;/) #2 s.index(&#39;l&#39;,3) #the first position after position 3 of l s.index(&#39;Ruby&#39;) #nil s.rindex(&#39;l&#39;) #3 s.rindex(&#39;l&#39;,2) #2 index of rightmost l at or before position 2 s.start_with? &#34;hell&#34; #true s.end_with? &#34;bells&#34; #false s.include?(&#39;ll&#39;) #true s.include?(?H) #false s =~ /[aeiou]{2}/ #nil s.match(/[aeiou]/) {|m| m.to_s} #e return first &#34;this is it&#34;.split #this is it &#34;hello&#34;.split(&#39;l&#39;) #[&#39;he&#39;,&#39;&#39;,&#39;o&#39;] &#34;1, 2,3&#34;.split(/,\s*/) #1,2,3 &#34;banana&#34;.partition(&#34;an&#34;) #[&#34;b&#34;, &#34;an&#34;, &#34;ana&#34;] &#34;banana&#34;.rpartition(&#34;an&#34;) #[&#34;ban&#34;, &#34;an&#34;, &#34;a&#34;] &#34;a123b&#34;.partition(/\d&#43;/) #[&#34;a&#34;, &#34;123&#34;, &#34;b&#34;] s = &#34;hello&#34; s.sub(&#39;l&#39;, &#39;L&#39;) #replace the first l to L s.gsub(&#34;l&#34;, &#34;L&#34;) #replace all the l to L s.sub!(/(.)(.)/, &#39;\2\1&#39;) #swap first character s.sub!(/(.)(.)/, &#39;\\2\\1&#39;) #&#34;ehllo&#34; Double backslashes for double quotes &#34;hello world&#34;.gsub(/\b./) { |match| match.upcase } #Hello World s = &#34;hello&#34; s.upcase #HELLO s.downcase #hello s.capitalize #Hello s.swapcase #HELLO s.casecmp(&#34;HELLO&#34;) #0 case"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2012-02-15
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/tech/"> Tech </a>
-            <a href="http://localhost:1313/categories/ruby/"> Ruby </a>
+            <a href="https://polarlights.github.io/categories/tech/"> Tech </a>
+            <a href="https://polarlights.github.io/categories/ruby/"> Ruby </a>
             
           </div>
         
@@ -507,7 +507,7 @@ end</code></pre></div></section></section></section>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/ruby/">Ruby</a>
+          <a href="https://polarlights.github.io/tags/ruby/">Ruby</a>
           
         </div>
 
@@ -554,7 +554,7 @@ end</code></pre></div></section></section></section>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/ruby-platform/";
+      this.page.url = "https://polarlights.github.io/post/ruby-platform/";
     };
     function load_disqus() {
       
@@ -609,7 +609,7 @@ end</code></pre></div></section></section></section>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

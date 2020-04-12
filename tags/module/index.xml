@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Module on Polarlights</title>
-    <link>http://localhost:1313/tags/module/</link>
+    <link>https://polarlights.github.io/tags/module/</link>
     <description>Recent content in Module on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 23 Mar 2016 20:22:28 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/module/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/module/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Class</title>
-      <link>http://localhost:1313/post/class-and-modules/</link>
+      <link>https://polarlights.github.io/post/class-and-modules/</link>
       <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/class-and-modules/</guid>
-      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+      <guid>https://polarlights.github.io/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法，所以不能显式的调用它。 class Point def initialize(x, y) @x = x @y = y end end p = Point.new(2, 4) 上面的实例p并不能直接访问里面的实例变量@x,@y，因为Ruby是面向对象的语言，所以访问这些实例变量实际上是访问与实例变量的方法而已。如果直接使用p.x，Ruby会告诉你:&#34;NoMethodError</description>
     </item>
     
   </channel>

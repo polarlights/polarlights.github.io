@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错" />
+  <meta name="description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value(&#34;${application.host.name:localhost}&#34;) private String hostName; @Value(&#34;${application.module.name}&#34;) private String serviceName; @Value(&#34;${spring.profiles.active}&#34;) private String activeProfile; @Value(&#34;${release.version:local}&#34;) private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value(&#34;${sentry.dsn}&#34;) private String sentryDsn; @Value(&#34;${sentry.timeout}&#34;) private String sentryTimeout; @Override public void afterPropertiesSet() throws" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/" />
+<link rel="canonical" href="https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="Add release to sentry" />
-<meta property="og:description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错" />
+<meta property="og:description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value(&#34;${application.host.name:localhost}&#34;) private String hostName; @Value(&#34;${application.module.name}&#34;) private String serviceName; @Value(&#34;${spring.profiles.active}&#34;) private String activeProfile; @Value(&#34;${release.version:local}&#34;) private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value(&#34;${sentry.dsn}&#34;) private String sentryDsn; @Value(&#34;${sentry.timeout}&#34;) private String sentryTimeout; @Override public void afterPropertiesSet() throws" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/" />
+<meta property="og:url" content="https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/" />
 <meta property="article:published_time" content="2018-11-12T21:24:39+08:00" />
 <meta property="article:modified_time" content="2018-11-12T21:24:39+08:00" />
 <meta itemprop="name" content="Add release to sentry">
-<meta itemprop="description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错">
+<meta itemprop="description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value(&#34;${application.host.name:localhost}&#34;) private String hostName; @Value(&#34;${application.module.name}&#34;) private String serviceName; @Value(&#34;${spring.profiles.active}&#34;) private String activeProfile; @Value(&#34;${release.version:local}&#34;) private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value(&#34;${sentry.dsn}&#34;) private String sentryDsn; @Value(&#34;${sentry.timeout}&#34;) private String sentryTimeout; @Override public void afterPropertiesSet() throws">
 <meta itemprop="datePublished" content="2018-11-12T21:24:39&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-12T21:24:39&#43;08:00" />
 <meta itemprop="wordCount" content="981">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="java,sentry," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Add release to sentry"/>
-<meta name="twitter:description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错"/>
+<meta name="twitter:description" content="Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value(&#34;${application.host.name:localhost}&#34;) private String hostName; @Value(&#34;${application.module.name}&#34;) private String serviceName; @Value(&#34;${spring.profiles.active}&#34;) private String activeProfile; @Value(&#34;${release.version:local}&#34;) private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value(&#34;${sentry.dsn}&#34;) private String sentryDsn; @Value(&#34;${sentry.timeout}&#34;) private String sentryTimeout; @Override public void afterPropertiesSet() throws"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,7 +306,7 @@ if (!doNotTrack) {
           2018-11-12
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/java/"> java </a>
+            <a href="https://polarlights.github.io/categories/java/"> java </a>
             
           </div>
         
@@ -492,8 +492,8 @@ gitProperties {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/java/">java</a>
-          <a href="http://localhost:1313/tags/sentry/">sentry</a>
+          <a href="https://polarlights.github.io/tags/java/">java</a>
+          <a href="https://polarlights.github.io/tags/sentry/">sentry</a>
           
         </div>
 
@@ -553,7 +553,7 @@ gitProperties {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/";
+      this.page.url = "https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/";
     };
     function load_disqus() {
       
@@ -608,7 +608,7 @@ gitProperties {
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

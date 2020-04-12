@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和" />
+  <meta name="description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和我有一样的疑惑，我正好梳理一下思路，写下本文。如果你也对jquery中眼花缭乱的事件绑定方法不太明白的话，你来对地方了。 继续阅读前，我认为你需要先知道以下几点基础知识： dom对象是树形结构的dom中的事件会从触发事件的目标节点开始逐级向上冒泡 每当我们想给某个元" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/jquery-event/" />
+<link rel="canonical" href="https://polarlights.github.io/post/jquery-event/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="bind,live,delegate还是on ？" />
-<meta property="og:description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和" />
+<meta property="og:description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和我有一样的疑惑，我正好梳理一下思路，写下本文。如果你也对jquery中眼花缭乱的事件绑定方法不太明白的话，你来对地方了。 继续阅读前，我认为你需要先知道以下几点基础知识： dom对象是树形结构的dom中的事件会从触发事件的目标节点开始逐级向上冒泡 每当我们想给某个元" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/jquery-event/" />
+<meta property="og:url" content="https://polarlights.github.io/post/jquery-event/" />
 <meta property="article:published_time" content="2015-02-15T04:00:00+08:00" />
 <meta property="article:modified_time" content="2015-02-15T04:00:00+08:00" />
 <meta itemprop="name" content="bind,live,delegate还是on ？">
-<meta itemprop="description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和">
+<meta itemprop="description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和我有一样的疑惑，我正好梳理一下思路，写下本文。如果你也对jquery中眼花缭乱的事件绑定方法不太明白的话，你来对地方了。 继续阅读前，我认为你需要先知道以下几点基础知识： dom对象是树形结构的dom中的事件会从触发事件的目标节点开始逐级向上冒泡 每当我们想给某个元">
 <meta itemprop="datePublished" content="2015-02-15T04:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-02-15T04:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="1875">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="jquery,bind,live,delegate,true," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="bind,live,delegate还是on ？"/>
-<meta name="twitter:description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和"/>
+<meta name="twitter:description" content="转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和我有一样的疑惑，我正好梳理一下思路，写下本文。如果你也对jquery中眼花缭乱的事件绑定方法不太明白的话，你来对地方了。 继续阅读前，我认为你需要先知道以下几点基础知识： dom对象是树形结构的dom中的事件会从触发事件的目标节点开始逐级向上冒泡 每当我们想给某个元"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2015-02-15
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/tech/"> Tech </a>
-            <a href="http://localhost:1313/categories/javascript/"> Javascript </a>
+            <a href="https://polarlights.github.io/categories/tech/"> Tech </a>
+            <a href="https://polarlights.github.io/categories/javascript/"> Javascript </a>
             
           </div>
         
@@ -393,11 +393,11 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/jquery/">jquery</a>
-          <a href="http://localhost:1313/tags/bind/">bind</a>
-          <a href="http://localhost:1313/tags/live/">live</a>
-          <a href="http://localhost:1313/tags/delegate/">delegate</a>
-          <a href="http://localhost:1313/tags/true/">true</a>
+          <a href="https://polarlights.github.io/tags/jquery/">jquery</a>
+          <a href="https://polarlights.github.io/tags/bind/">bind</a>
+          <a href="https://polarlights.github.io/tags/live/">live</a>
+          <a href="https://polarlights.github.io/tags/delegate/">delegate</a>
+          <a href="https://polarlights.github.io/tags/true/">true</a>
           
         </div>
 
@@ -457,7 +457,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/jquery-event/";
+      this.page.url = "https://polarlights.github.io/post/jquery-event/";
     };
     function load_disqus() {
       
@@ -512,7 +512,7 @@ if (!doNotTrack) {
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

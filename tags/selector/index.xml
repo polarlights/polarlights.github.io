@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>selector on Polarlights</title>
-    <link>http://localhost:1313/tags/selector/</link>
+    <link>https://polarlights.github.io/tags/selector/</link>
     <description>Recent content in selector on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 15 Feb 2015 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/selector/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/selector/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jquery选择器简介</title>
-      <link>http://localhost:1313/post/jqurty-selector/</link>
+      <link>https://polarlights.github.io/post/jqurty-selector/</link>
       <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jqurty-selector/</guid>
-      <description>(1) Jquery中的选择器完全继承了CSS的风格，利用Jquery选择器，可以非常便捷和快速的找出特定的Dom元素，然后为他们添加相应的行为，</description>
+      <guid>https://polarlights.github.io/post/jqurty-selector/</guid>
+      <description>(1) Jquery中的选择器完全继承了CSS的风格，利用Jquery选择器，可以非常便捷和快速的找出特定的Dom元素，然后为他们添加相应的行为，而无需担心浏览器是否支持这一选择器，学会使用选择器是学习Jqeury的基础，Jquery的行为规则都必须在获取到元素后才能生效。 jquery选择器的优势 (1) 简洁的写法，$()函数 (2)支持CSS1到CSS3选择器 (3)完善的处理机制 下面我们主要来说一下Jquer</description>
     </item>
     
   </channel>

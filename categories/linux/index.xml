@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Polarlights</title>
-    <link>http://localhost:1313/categories/linux/</link>
+    <link>https://polarlights.github.io/categories/linux/</link>
     <description>Recent content in Linux on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Aug 2015 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ctrl-C, Ctrl-D, Ctrl-Z 的区别</title>
-      <link>http://localhost:1313/post/linux-fg-bg-jobs/</link>
+      <link>https://polarlights.github.io/post/linux-fg-bg-jobs/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-fg-bg-jobs/</guid>
-      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，C</description>
+      <guid>https://polarlights.github.io/post/linux-fg-bg-jobs/</guid>
+      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，Ctrl+D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl+Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl+D 是不起作用的，因为它的 应用场景不是这样的。被暂停的</description>
     </item>
     
     <item>
       <title>du 的基本含义和参数</title>
-      <link>http://localhost:1313/post/linux-du/</link>
+      <link>https://polarlights.github.io/post/linux-du/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-du/</guid>
-      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执</description>
+      <guid>https://polarlights.github.io/post/linux-du/</guid>
+      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执行的权限忽略(Ignore) 文件和目录。 -gkm 分别按 GB、KB 和 MB 为单位显示文件大小。 -s 只显示每个特定文件的总和`-d 0`等效。 举个栗子显示总的文件大小 du -s 显示2层的文件大小 du -h -d 2 显示/var/demo 文件的统计信息 du -ah /var/demo du 和 df 的区别du 和df 只有一个字母之差。</description>
     </item>
     
     <item>
       <title>Find</title>
-      <link>http://localhost:1313/post/linux-find/</link>
+      <link>https://polarlights.github.io/post/linux-find/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-find/</guid>
-      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找</description>
+      <guid>https://polarlights.github.io/post/linux-find/</guid>
+      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n +n #按文件更改时间来查找文件，-n指n天以内，+n指n天以前 -atime -n +n #按文件访问时间来查GIN: 0px&#34;&amp;gt; -ctime -n +n #按文件创建时间来查找文件，-n指n天以内，+n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group</description>
     </item>
     
     <item>
       <title>netstat</title>
-      <link>http://localhost:1313/post/linux-netstat-lsof/</link>
+      <link>https://polarlights.github.io/post/linux-netstat-lsof/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-netstat-lsof/</guid>
-      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all</description>
+      <guid>https://polarlights.github.io/post/linux-netstat-lsof/</guid>
+      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all)显示所有选项，默认不显示LISTEN相关 -t (tcp)仅显示tcp相关选项 -u (udp)仅显示udp相关选项 -n 拒绝显示别名，能显示数字的全部转化成数字。 -l 仅列出有在 Listen (监听) 的服務状态 -p 显示建立相关链接的程序名 -r 显示路由信息，路由表 -e 显示扩展信息，例如uid等 -s</description>
     </item>
     
   </channel>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intellij on Polarlights</title>
-    <link>http://localhost:1313/categories/intellij/</link>
+    <link>https://polarlights.github.io/categories/intellij/</link>
     <description>Recent content in Intellij on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 06 Jan 2018 17:12:09 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/intellij/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/categories/intellij/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Enable reload chagned java and template files In IntelliJ</title>
-      <link>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</link>
+      <link>https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/</link>
       <pubDate>Sat, 06 Jan 2018 17:12:09 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</guid>
-      <description>最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app</description>
+      <guid>https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/</guid>
+      <description>最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app/views`下的文件在修改后也会立即产生效果。 但是在 Java 世界里，就没有全家桶了。开始的时候很不习惯，需要各种重启，每次重启8-10秒，几乎时时刻刻在和重启打交道。 还好在 Java 世界里是有解决方法的。 *.javajava 文件可以使用 spring-boot-devtools，但是，但是，</description>
     </item>
     
   </channel>

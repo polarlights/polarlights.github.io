@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当" />
+  <meta name="description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当前元素前一个兄弟节点 $(selector).prevaAll() 当前元素之前所有的兄弟节点 $(selector).next() 当前元素之后第一个兄弟节点 $(selector).nextAll() 当前元素之后所有的兄弟节点" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/jquery-selector-find-siblings/" />
+<link rel="canonical" href="https://polarlights.github.io/post/jquery-selector-find-siblings/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="jquery 获取兄弟节点" />
-<meta property="og:description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当" />
+<meta property="og:description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当前元素前一个兄弟节点 $(selector).prevaAll() 当前元素之前所有的兄弟节点 $(selector).next() 当前元素之后第一个兄弟节点 $(selector).nextAll() 当前元素之后所有的兄弟节点" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/jquery-selector-find-siblings/" />
+<meta property="og:url" content="https://polarlights.github.io/post/jquery-selector-find-siblings/" />
 <meta property="article:published_time" content="2015-02-15T04:00:00+08:00" />
 <meta property="article:modified_time" content="2015-02-15T04:00:00+08:00" />
 <meta itemprop="name" content="jquery 获取兄弟节点">
-<meta itemprop="description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当">
+<meta itemprop="description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当前元素前一个兄弟节点 $(selector).prevaAll() 当前元素之前所有的兄弟节点 $(selector).next() 当前元素之后第一个兄弟节点 $(selector).nextAll() 当前元素之后所有的兄弟节点">
 <meta itemprop="datePublished" content="2015-02-15T04:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-02-15T04:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="122">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="jquery,sibling node," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="jquery 获取兄弟节点"/>
-<meta name="twitter:description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当"/>
+<meta name="twitter:description" content="之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当前元素前一个兄弟节点 $(selector).prevaAll() 当前元素之前所有的兄弟节点 $(selector).next() 当前元素之后第一个兄弟节点 $(selector).nextAll() 当前元素之后所有的兄弟节点"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2015-02-15
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/tech/"> Tech </a>
-            <a href="http://localhost:1313/categories/javascript/"> Javascript </a>
+            <a href="https://polarlights.github.io/categories/tech/"> Tech </a>
+            <a href="https://polarlights.github.io/categories/javascript/"> Javascript </a>
             
           </div>
         
@@ -367,8 +367,8 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/jquery/">jquery</a>
-          <a href="http://localhost:1313/tags/sibling-node/">sibling node</a>
+          <a href="https://polarlights.github.io/tags/jquery/">jquery</a>
+          <a href="https://polarlights.github.io/tags/sibling-node/">sibling node</a>
           
         </div>
 
@@ -428,7 +428,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/jquery-selector-find-siblings/";
+      this.page.url = "https://polarlights.github.io/post/jquery-selector-find-siblings/";
     };
     function load_disqus() {
       
@@ -483,7 +483,7 @@ if (!doNotTrack) {
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

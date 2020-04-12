@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>great tools on Polarlights</title>
-    <link>http://localhost:1313/categories/great-tools/</link>
+    <link>https://polarlights.github.io/categories/great-tools/</link>
     <description>Recent content in great tools on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 18 Sep 2018 20:03:32 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/great-tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/categories/great-tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>那些好用的工具之 Tmux 篇</title>
-      <link>http://localhost:1313/post/tmux-tutorial/tmux-tutorial/</link>
+      <link>https://polarlights.github.io/post/tmux-tutorial/tmux-tutorial/</link>
       <pubDate>Tue, 18 Sep 2018 20:03:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/tmux-tutorial/tmux-tutorial/</guid>
-      <description>工欲善其事，必先利其器。突然来了兴致，想利用一下睡觉前的时间，整理一下自己用过的，感觉很棒的命令行工具，作为一个系列。其中有的工具会比较复杂</description>
+      <guid>https://polarlights.github.io/post/tmux-tutorial/tmux-tutorial/</guid>
+      <description>工欲善其事，必先利其器。突然来了兴致，想利用一下睡觉前的时间，整理一下自己用过的，感觉很棒的命令行工具，作为一个系列。其中有的工具会比较复杂，有的会比较简单。复杂的，多写一些。简单的，拼盘拼成一篇。 今天的主题是 Tmux。 一. Tmux 是什么？Tmux 是一个终端复用工具。它可以允许在一个窗口创建、访问以及控制的多个终端。 二. Tmux 解决了什么问题？Alice SSH 登录到远程机器，对机器进行维护。她要跑一个任务耗时很久</description>
     </item>
     
   </channel>

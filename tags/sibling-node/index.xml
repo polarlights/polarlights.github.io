@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sibling node on Polarlights</title>
-    <link>http://localhost:1313/tags/sibling-node/</link>
+    <link>https://polarlights.github.io/tags/sibling-node/</link>
     <description>Recent content in sibling node on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 15 Feb 2015 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/sibling-node/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/sibling-node/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jquery 获取兄弟节点</title>
-      <link>http://localhost:1313/post/jquery-selector-find-siblings/</link>
+      <link>https://polarlights.github.io/post/jquery-selector-find-siblings/</link>
       <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jquery-selector-find-siblings/</guid>
-      <description>之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当</description>
+      <guid>https://polarlights.github.io/post/jquery-selector-find-siblings/</guid>
+      <description>之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当前元素前一个兄弟节点 $(selector).prevaAll() 当前元素之前所有的兄弟节点 $(selector).next() 当前元素之后第一个兄弟节点 $(selector).nextAll() 当前元素之后所有的兄弟节点</description>
     </item>
     
   </channel>

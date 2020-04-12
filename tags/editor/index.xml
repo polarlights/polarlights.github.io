@@ -2,26 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>editor on Polarlights</title>
-    <link>http://localhost:1313/tags/editor/</link>
+    <link>https://polarlights.github.io/tags/editor/</link>
     <description>Recent content in editor on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 19 Sep 2018 23:20:49 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/editor/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>idea productive tips</title>
-      <link>http://localhost:1313/post/idea-productive-tips/</link>
+      <link>https://polarlights.github.io/post/idea-productive-tips/</link>
       <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/idea-productive-tips/</guid>
+      <guid>https://polarlights.github.io/post/idea-productive-tips/</guid>
       <description>This article is wroten according to a youtube video: https://www.youtube.com/watch?v=eq3KiAH4IBI.
 We use Idea programming everyday. How can we use it effectively, now let&amp;#8217;s reading it below:
 Close the tab list of IDE
 Preferences → Editor → Editor Tabs; Change Tab Placement from default Top to None.
-Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift).</description>
+Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift). We can use ⌘+E to explore recent files instead.
+Auto scroll to source
+When we select a file, we want to explore the file content, other than just the file name. If we want to see the source, we have to double click the file in project window, by default. While Idea provides us a feature that when we select a file, Idea will open the source automatically: In the project window, right top of the window, click the config icon, check the &#34;scroll to source&#34; in the dropdown list.
+Create directory or file effectivelly
+If I want to create a nested directory or package, I will select the parent directory and press ⌘+N, then input the directory name, before. There&amp;#8217;s more effective way: Just input the relative directory path, Idea will create the sub directory for us, if it doesn&amp;#8217;t exist.</description>
     </item>
     
   </channel>

@@ -2,197 +2,201 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Polarlights</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://polarlights.github.io/post/</link>
     <description>Recent content in Posts on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 Aug 2019 23:50:02 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>bean validation tutorial</title>
-      <link>http://localhost:1313/post/bean-validation-tutorial/</link>
+      <link>https://polarlights.github.io/post/bean-validation-tutorial/</link>
       <pubDate>Sat, 03 Aug 2019 23:50:02 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/bean-validation-tutorial/</guid>
-      <description>Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接</description>
+      <guid>https://polarlights.github.io/post/bean-validation-tutorial/</guid>
+      <description>Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接口之外，我们写的方法、DAO 对象都有类似的需求。也就是校验的需求贯穿服务的各个层。 简单粗暴一点的可以在每一层这样写： if (param.getName() == null) { throw BadRequestException(&#34;name can not be null&#34;); } if (param.getAge() &amp;lt; 1) { throw BadRequestException(&#34;age can not less than 1&#34;); } 如果遇到错误，我想最后统一抛出，用户可以一次知道哪些输入是有问题。那么我们可以这样写: List&amp;lt;String&amp;gt; errorMessages = new</description>
     </item>
     
     <item>
       <title>hibernate-best-practice</title>
-      <link>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</link>
+      <link>https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/</link>
       <pubDate>Thu, 06 Dec 2018 18:08:59 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</guid>
-      <description>1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国</description>
+      <guid>https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/</guid>
+      <description>1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。 Hibernate 在时间的存取的时候，会调用PreparedStatement.setTimestamp()/ResultSet.getTimestamp，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链</description>
     </item>
     
     <item>
       <title>Add release to sentry</title>
-      <link>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</link>
+      <link>https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/</link>
       <pubDate>Mon, 12 Nov 2018 21:24:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</guid>
-      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错</description>
+      <guid>https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/</guid>
+      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value(&#34;${application.host.name:localhost}&#34;) private String hostName; @Value(&#34;${application.module.name}&#34;) private String serviceName; @Value(&#34;${spring.profiles.active}&#34;) private String activeProfile; @Value(&#34;${release.version:local}&#34;) private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value(&#34;${sentry.dsn}&#34;) private String sentryDsn; @Value(&#34;${sentry.timeout}&#34;) private String sentryTimeout; @Override public void afterPropertiesSet() throws</description>
     </item>
     
     <item>
       <title>JPA stream query with java8</title>
-      <link>http://localhost:1313/post/jpa-stream-query/jpa-stream-query/</link>
+      <link>https://polarlights.github.io/post/jpa-stream-query/jpa-stream-query/</link>
       <pubDate>Sun, 11 Nov 2018 16:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jpa-stream-query/jpa-stream-query/</guid>
-      <description>最近有小伙伴在做批量导出数据的功能，原来是这样写的： image::15417517310823.jpg[] 后来在看其他代码的时候，有个类似功能，突然意识到那个代码在数据量很大的时候，会存在性能</description>
+      <guid>https://polarlights.github.io/post/jpa-stream-query/jpa-stream-query/</guid>
+      <description>最近有小伙伴在做批量导出数据的功能，原来是这样写的： image::15417517310823.jpg[] 后来在看其他代码的时候，有个类似功能，突然意识到那个代码在数据量很大的时候，会存在性能问题（最坏会OOM，导致不可用)。后面在交流过程中，小伙伴突然想到上面那个代码也会有类似问题。 在 Rails 的 ActiveRecord 中有find_in_batches功能，它会生成select ... from XX where id &amp;gt; ? limit N offset M类似的 SQL，实现批量查询。 在 Java 中，首先想到的是使用 Pagable 翻页查找，但是这个不是</description>
     </item>
     
     <item>
       <title>Mac mail app tricks</title>
-      <link>http://localhost:1313/post/mac-mail-tricks/mac-mail-tricks/</link>
+      <link>https://polarlights.github.io/post/mac-mail-tricks/mac-mail-tricks/</link>
       <pubDate>Fri, 09 Nov 2018 10:05:12 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/mac-mail-tricks/mac-mail-tricks/</guid>
-      <description>常用设置1.修改邮件的一些默认设置 # Disable send and reply animations in Mail.app defaults write com.apple.mail DisableReplyAnimations -bool true defaults write com.apple.mail DisableSendAnimations -bool true # Copy email addresses as `foo@example.com` instead of `Foo Bar &amp;lt;foo@example.com&amp;gt;` in Mail.app defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app</description>
+      <guid>https://polarlights.github.io/post/mac-mail-tricks/mac-mail-tricks/</guid>
+      <description>常用设置1.修改邮件的一些默认设置 # Disable send and reply animations in Mail.app defaults write com.apple.mail DisableReplyAnimations -bool true defaults write com.apple.mail DisableSendAnimations -bool true # Copy email addresses as `foo@example.com` instead of `Foo Bar &amp;lt;foo@example.com&amp;gt;` in Mail.app defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app defaults write com.apple.mail NSUserKeyEquivalents -dict-add &#34;Send&#34; &#34;@\U21a9&#34; # Display emails in threaded mode, sorted by date (oldest at the top) defaults write com.apple.mail DraftsViewerAttributes -dict-add &#34;DisplayInThreadedMode&#34; -string &#34;yes&#34; defaults write com.apple.mail DraftsViewerAttributes -dict-add &#34;SortedDescending&#34; -string &#34;yes&#34; defaults write com.apple.mail DraftsViewerAttributes -dict-add &#34;SortOrder&#34; -string &#34;received-date&#34; # Disable inline attachments (just show the icons) defaults write com.apple.mail DisableInlineAttachmentViewing -bool true # Disable automatic spell checking defaults write com.apple.mail SpellCheckingBehavior -string &#34;NoSpellCheckingEnabled&#34; 邮件分类放在不同目录下邮件全部放在收件箱里面，不做分类的话，随着邮件越积越多，邮件非常杂乱。我们可以在邮件中添加目录(ma</description>
     </item>
     
     <item>
       <title>idea popular plugins</title>
-      <link>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</link>
+      <link>https://polarlights.github.io/post/idea-popular-plugins/idea-popular-plugins/</link>
       <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/idea-popular-plugins/idea-popular-plugins/</guid>
-      <description>基本lombok pluginGenerateSerialVersionUID Adds a new action &#39;SerialVersionUID&#39; in the generate menu (alt + ins). The action adds an serialVersionUID field in the current class or updates it if it already exists, and assigns it the same value the standard &#39;serialver&#39; JDK tool would return. The action is only visible when IDEA is not rebuilding its indexes, the class is serializable and either no</description>
+      <guid>https://polarlights.github.io/post/idea-popular-plugins/idea-popular-plugins/</guid>
+      <description>基本lombok pluginGenerateSerialVersionUID Adds a new action &#39;SerialVersionUID&#39; in the generate menu (alt + ins). The action adds an serialVersionUID field in the current class or updates it if it already exists, and assigns it the same value the standard &#39;serialver&#39; JDK tool would return. The action is only visible when IDEA is not rebuilding its indexes, the class is serializable and either no serialVersionUID field exists or its value is different from the one the &#39;serialver&#39; tool would return. 效率篇Jrebel for IDEA JRebel is a productivity tool that allows developers to reload code changes instantly. save actions Supports configurable, Eclipse like, save actions, including &#34;optimize imports&#34;, &#34;reformat code&#34;, &#34;rearrange code&#34;, &#34;compile file&#34; and some quick fixes for Java like &#34;add / remove &#39;this&#39; qualifier&#34;, etc. The plugin executes the configured actions when the file is synchronised (or saved) on disk. ace-jump AceJump allows you to quickly navigate the caret to any position visible in the editor. 代码质量checkstyleFind bugs The FindBugs plugin for IntelliJ IDEA. SonarLint SonarLint is an</description>
     </item>
     
     <item>
       <title>idea productive tips</title>
-      <link>http://localhost:1313/post/idea-productive-tips/</link>
+      <link>https://polarlights.github.io/post/idea-productive-tips/</link>
       <pubDate>Wed, 19 Sep 2018 23:20:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/idea-productive-tips/</guid>
+      <guid>https://polarlights.github.io/post/idea-productive-tips/</guid>
       <description>This article is wroten according to a youtube video: https://www.youtube.com/watch?v=eq3KiAH4IBI.
 We use Idea programming everyday. How can we use it effectively, now let&amp;#8217;s reading it below:
 Close the tab list of IDE
 Preferences → Editor → Editor Tabs; Change Tab Placement from default Top to None.
-Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift).</description>
+Tab is annoying when many files are opened. It&amp;#8217;s hard to find file when opening to many files, which it&amp;#8217;s inevitable. Use recent files window or search everywhere (Double Shift). We can use ⌘+E to explore recent files instead.
+Auto scroll to source
+When we select a file, we want to explore the file content, other than just the file name. If we want to see the source, we have to double click the file in project window, by default. While Idea provides us a feature that when we select a file, Idea will open the source automatically: In the project window, right top of the window, click the config icon, check the &#34;scroll to source&#34; in the dropdown list.
+Create directory or file effectivelly
+If I want to create a nested directory or package, I will select the parent directory and press ⌘+N, then input the directory name, before. There&amp;#8217;s more effective way: Just input the relative directory path, Idea will create the sub directory for us, if it doesn&amp;#8217;t exist.</description>
     </item>
     
     <item>
       <title>那些好用的工具之 Tmux 篇</title>
-      <link>http://localhost:1313/post/tmux-tutorial/tmux-tutorial/</link>
+      <link>https://polarlights.github.io/post/tmux-tutorial/tmux-tutorial/</link>
       <pubDate>Tue, 18 Sep 2018 20:03:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/tmux-tutorial/tmux-tutorial/</guid>
-      <description>工欲善其事，必先利其器。突然来了兴致，想利用一下睡觉前的时间，整理一下自己用过的，感觉很棒的命令行工具，作为一个系列。其中有的工具会比较复杂</description>
+      <guid>https://polarlights.github.io/post/tmux-tutorial/tmux-tutorial/</guid>
+      <description>工欲善其事，必先利其器。突然来了兴致，想利用一下睡觉前的时间，整理一下自己用过的，感觉很棒的命令行工具，作为一个系列。其中有的工具会比较复杂，有的会比较简单。复杂的，多写一些。简单的，拼盘拼成一篇。 今天的主题是 Tmux。 一. Tmux 是什么？Tmux 是一个终端复用工具。它可以允许在一个窗口创建、访问以及控制的多个终端。 二. Tmux 解决了什么问题？Alice SSH 登录到远程机器，对机器进行维护。她要跑一个任务耗时很久</description>
     </item>
     
     <item>
       <title>Enable reload chagned java and template files In IntelliJ</title>
-      <link>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</link>
+      <link>https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/</link>
       <pubDate>Sat, 06 Jan 2018 17:12:09 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</guid>
-      <description>最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app</description>
+      <guid>https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/</guid>
+      <description>最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app/views`下的文件在修改后也会立即产生效果。 但是在 Java 世界里，就没有全家桶了。开始的时候很不习惯，需要各种重启，每次重启8-10秒，几乎时时刻刻在和重启打交道。 还好在 Java 世界里是有解决方法的。 *.javajava 文件可以使用 spring-boot-devtools，但是，但是，</description>
     </item>
     
     <item>
       <title>how_to_test_class_and_module</title>
-      <link>http://localhost:1313/post/how-to-test-a-class/</link>
+      <link>https://polarlights.github.io/post/how-to-test-a-class/</link>
       <pubDate>Thu, 24 Mar 2016 06:32:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how-to-test-a-class/</guid>
-      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好</description>
+      <guid>https://polarlights.github.io/post/how-to-test-a-class/</guid>
+      <description>前面我们简要介绍了Minitest的运行原理。知其然而知其所以然，如果了解了 别人好的代码是如何设计的，对于自己编码技术的提升会有促进作用。 好了，我们接下来继续了解如何使用Minitest测试我们的类、模块、model及钩子、控制器和试图。 后面还会涉及mock和使用种子数据、定制minitest等内容。 本文主要讲如何测试我们写的类。 Ruby是一种面向对象语言非常高的语言，因为即使像数字、纯字符串等都</description>
     </item>
     
     <item>
       <title>Class</title>
-      <link>http://localhost:1313/post/class-and-modules/</link>
+      <link>https://polarlights.github.io/post/class-and-modules/</link>
       <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/class-and-modules/</guid>
-      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+      <guid>https://polarlights.github.io/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法，所以不能显式的调用它。 class Point def initialize(x, y) @x = x @y = y end end p = Point.new(2, 4) 上面的实例p并不能直接访问里面的实例变量@x,@y，因为Ruby是面向对象的语言，所以访问这些实例变量实际上是访问与实例变量的方法而已。如果直接使用p.x，Ruby会告诉你:&#34;NoMethodError</description>
     </item>
     
     <item>
       <title>How Minitest Works Part 2</title>
-      <link>http://localhost:1313/post/how_minitest_works_part_2/</link>
+      <link>https://polarlights.github.io/post/how_minitest_works_part_2/</link>
       <pubDate>Sun, 21 Feb 2016 18:40:42 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how_minitest_works_part_2/</guid>
-      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+      <guid>https://polarlights.github.io/post/how_minitest_works_part_2/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 在上一节我们留下了以下几个问题，本节我们透过对Minitest源码的分析来一探究竟: minitest/autorun 到底做了什么？继承Minitest::Test的目的何在，它内部有什么特殊方法？为什么以test_ 开头的方法执行了，而普通的方法没</description>
     </item>
     
     <item>
       <title>How Minitest Works Part 1</title>
-      <link>http://localhost:1313/post/how_minitest_works_part_1/</link>
+      <link>https://polarlights.github.io/post/how_minitest_works_part_1/</link>
       <pubDate>Sun, 21 Feb 2016 03:02:42 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/how_minitest_works_part_1/</guid>
-      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_sour</description>
+      <guid>https://polarlights.github.io/post/how_minitest_works_part_1/</guid>
+      <description>注：本文以 minitest 的最新master 分支 baf6010 ，版本为5.8.4为基础。 所有代码可以在https://github.com/minitest_source[minitest_source] 找到. 一个简单的测试# 代码 1.1 # dog.rb class Dog def spark &#39;Spark!&#39; end end # dog_test.rb require &#39;minitest/autorun&#39; require_relative &#39;./dog&#39; class DogTest &amp;lt; Minitest::Test def setup @dog = Dog.new end def test_dog_should_spark assert_respond_to @dog, :spark assert_equal &#39;Spark!&#39;, @dog.spark end def ordiary_method assert true end end 如何执行测试呢？ $ ruby dog_test.rb Run options: --seed 24057 # Running: . Finished in 0.001039s, 962.5723 runs/s, 1925.1446 assertions/s. 1 runs, 2 assertions, 0 failures, 0 errors, 0 skips 如果我们把require &#39;minitest/autorun&#39; 这一行注释掉，然后</description>
     </item>
     
     <item>
       <title>写在前面</title>
-      <link>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</link>
+      <link>https://polarlights.github.io/post/introduction_to_minitest/introduction_to_minitest/</link>
       <pubDate>Sat, 20 Feb 2016 03:19:33 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</guid>
-      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;</description>
+      <guid>https://polarlights.github.io/post/introduction_to_minitest/introduction_to_minitest/</guid>
+      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;#8230;&amp;#8203;过了，可以放心继续下面的工作了。直到维护一个个前辈们的项目，而且功能不断添加，添加。问题接着出现了：按下葫芦浮起瓢，改了一个 Bug，引出了其它的 Bug。代码在修改过程中，越来越心里没底。更别说重构了。。。。 为什么要写测试？现在的 Coder 应该</description>
     </item>
     
     <item>
       <title>The Difference Of XX-like Methods In Ruby</title>
-      <link>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</link>
+      <link>https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/</link>
       <pubDate>Fri, 23 Oct 2015 21:23:20 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/what-is-the-difference-in-to_s-to_str_inspect/</guid>
-      <description>今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end</description>
+      <guid>https://polarlights.github.io/post/what-is-the-difference-in-to_s-to_str_inspect/</guid>
+      <description>今日打开ruby-china发现Hooopo分享的一篇文章，感觉非常好，故记录之。 to_s和inspect的区别class David def to_s &#34;to_s&#34; end def inspect &#34;inspect&#34; end end david = David.new #inspect puts david #to_s print david #to_s p david #inspect 结论: 1. puts obj =&amp;gt; puts obj.to_s 2. p obj =&amp;gt; puts obj.inspect to_s和to_str的区别to_s和to_str在大部分时候是相同的，几乎每个对象都有to_s方法，(why?因为所有对象都继承自Object类)，但是不是每个对象都有to_str方法，这个方法只有在</description>
     </item>
     
     <item>
       <title>当前 App 切换窗口</title>
-      <link>http://localhost:1313/post/mac-shortcut/</link>
+      <link>https://polarlights.github.io/post/mac-shortcut/</link>
       <pubDate>Tue, 01 Sep 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/mac-shortcut/</guid>
+      <guid>https://polarlights.github.io/post/mac-shortcut/</guid>
       <description>向后切换窗口： Ctrl + Tab；Cmd + Shift + ] 向前切换窗口： Ctrl + Shift + Tab；Cmd + Shift + [</description>
     </item>
     
     <item>
       <title>Ctrl-C, Ctrl-D, Ctrl-Z 的区别</title>
-      <link>http://localhost:1313/post/linux-fg-bg-jobs/</link>
+      <link>https://polarlights.github.io/post/linux-fg-bg-jobs/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-fg-bg-jobs/</guid>
-      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，C</description>
+      <guid>https://polarlights.github.io/post/linux-fg-bg-jobs/</guid>
+      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，Ctrl+D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl+Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl+D 是不起作用的，因为它的 应用场景不是这样的。被暂停的</description>
     </item>
     
     <item>
       <title>du 的基本含义和参数</title>
-      <link>http://localhost:1313/post/linux-du/</link>
+      <link>https://polarlights.github.io/post/linux-du/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-du/</guid>
-      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执</description>
+      <guid>https://polarlights.github.io/post/linux-du/</guid>
+      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执行的权限忽略(Ignore) 文件和目录。 -gkm 分别按 GB、KB 和 MB 为单位显示文件大小。 -s 只显示每个特定文件的总和`-d 0`等效。 举个栗子显示总的文件大小 du -s 显示2层的文件大小 du -h -d 2 显示/var/demo 文件的统计信息 du -ah /var/demo du 和 df 的区别du 和df 只有一个字母之差。</description>
     </item>
     
     <item>
       <title>Find</title>
-      <link>http://localhost:1313/post/linux-find/</link>
+      <link>https://polarlights.github.io/post/linux-find/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-find/</guid>
-      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找</description>
+      <guid>https://polarlights.github.io/post/linux-find/</guid>
+      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n +n #按文件更改时间来查找文件，-n指n天以内，+n指n天以前 -atime -n +n #按文件访问时间来查GIN: 0px&#34;&amp;gt; -ctime -n +n #按文件创建时间来查找文件，-n指n天以内，+n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group</description>
     </item>
     
     <item>
       <title>netstat</title>
-      <link>http://localhost:1313/post/linux-netstat-lsof/</link>
+      <link>https://polarlights.github.io/post/linux-netstat-lsof/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-netstat-lsof/</guid>
-      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all</description>
+      <guid>https://polarlights.github.io/post/linux-netstat-lsof/</guid>
+      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all)显示所有选项，默认不显示LISTEN相关 -t (tcp)仅显示tcp相关选项 -u (udp)仅显示udp相关选项 -n 拒绝显示别名，能显示数字的全部转化成数字。 -l 仅列出有在 Listen (监听) 的服務状态 -p 显示建立相关链接的程序名 -r 显示路由信息，路由表 -e 显示扩展信息，例如uid等 -s</description>
     </item>
     
   </channel>

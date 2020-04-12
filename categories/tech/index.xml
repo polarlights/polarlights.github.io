@@ -2,157 +2,157 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on Polarlights</title>
-    <link>http://localhost:1313/categories/tech/</link>
+    <link>https://polarlights.github.io/categories/tech/</link>
     <description>Recent content in Tech on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 23 Mar 2016 20:22:28 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Class</title>
-      <link>http://localhost:1313/post/class-and-modules/</link>
+      <link>https://polarlights.github.io/post/class-and-modules/</link>
       <pubDate>Wed, 23 Mar 2016 20:22:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/class-and-modules/</guid>
-      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法</description>
+      <guid>https://polarlights.github.io/post/class-and-modules/</guid>
+      <description>一个类的实例可以使用类名.new来初始化，new方法会自动调用该类的initialize方法，但是由于initialize方法是类的私有方法，所以不能显式的调用它。 class Point def initialize(x, y) @x = x @y = y end end p = Point.new(2, 4) 上面的实例p并不能直接访问里面的实例变量@x,@y，因为Ruby是面向对象的语言，所以访问这些实例变量实际上是访问与实例变量的方法而已。如果直接使用p.x，Ruby会告诉你:&#34;NoMethodError</description>
     </item>
     
     <item>
       <title>当前 App 切换窗口</title>
-      <link>http://localhost:1313/post/mac-shortcut/</link>
+      <link>https://polarlights.github.io/post/mac-shortcut/</link>
       <pubDate>Tue, 01 Sep 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/mac-shortcut/</guid>
+      <guid>https://polarlights.github.io/post/mac-shortcut/</guid>
       <description>向后切换窗口： Ctrl + Tab；Cmd + Shift + ] 向前切换窗口： Ctrl + Shift + Tab；Cmd + Shift + [</description>
     </item>
     
     <item>
       <title>Ctrl-C, Ctrl-D, Ctrl-Z 的区别</title>
-      <link>http://localhost:1313/post/linux-fg-bg-jobs/</link>
+      <link>https://polarlights.github.io/post/linux-fg-bg-jobs/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-fg-bg-jobs/</guid>
-      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，C</description>
+      <guid>https://polarlights.github.io/post/linux-fg-bg-jobs/</guid>
+      <description>在 Linux 的日常使用中，Ctrl+C 应该是用的最多的，他的用途是终止当前进程。那么Ctrl+Z 和Ctrl+D 又有什么用途么？ Ctrl+Z 表示暂停一个进程，Ctrl+D 表示文件结束符(EOF)。 假如我们有一个会长期执行的程序，如果它原来就是在前台运行的话(bundle exec sidekiq)， 如果使用Ctrl+Z，会在终端输出susppended bundle exec sidekiq。当然 Ctrl+D 是不起作用的，因为它的 应用场景不是这样的。被暂停的</description>
     </item>
     
     <item>
       <title>du 的基本含义和参数</title>
-      <link>http://localhost:1313/post/linux-du/</link>
+      <link>https://polarlights.github.io/post/linux-du/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-du/</guid>
-      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执</description>
+      <guid>https://polarlights.github.io/post/linux-du/</guid>
+      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执行的权限忽略(Ignore) 文件和目录。 -gkm 分别按 GB、KB 和 MB 为单位显示文件大小。 -s 只显示每个特定文件的总和`-d 0`等效。 举个栗子显示总的文件大小 du -s 显示2层的文件大小 du -h -d 2 显示/var/demo 文件的统计信息 du -ah /var/demo du 和 df 的区别du 和df 只有一个字母之差。</description>
     </item>
     
     <item>
       <title>Find</title>
-      <link>http://localhost:1313/post/linux-find/</link>
+      <link>https://polarlights.github.io/post/linux-find/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-find/</guid>
-      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找</description>
+      <guid>https://polarlights.github.io/post/linux-find/</guid>
+      <description>Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n +n #按文件更改时间来查找文件，-n指n天以内，+n指n天以前 -atime -n +n #按文件访问时间来查GIN: 0px&#34;&amp;gt; -ctime -n +n #按文件创建时间来查找文件，-n指n天以内，+n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group</description>
     </item>
     
     <item>
       <title>netstat</title>
-      <link>http://localhost:1313/post/linux-netstat-lsof/</link>
+      <link>https://polarlights.github.io/post/linux-netstat-lsof/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-netstat-lsof/</guid>
-      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all</description>
+      <guid>https://polarlights.github.io/post/linux-netstat-lsof/</guid>
+      <description>Netstat 命令用于显示各种网络相关信息，如网络连接，路由表，接口状态 (Interface Statistics)，masquerade 连接，多播成员 (Multicast Memberships) 等等。 -a (all)显示所有选项，默认不显示LISTEN相关 -t (tcp)仅显示tcp相关选项 -u (udp)仅显示udp相关选项 -n 拒绝显示别名，能显示数字的全部转化成数字。 -l 仅列出有在 Listen (监听) 的服務状态 -p 显示建立相关链接的程序名 -r 显示路由信息，路由表 -e 显示扩展信息，例如uid等 -s</description>
     </item>
     
     <item>
       <title>再谈Ruby的异常处理(学习笔记)</title>
-      <link>http://localhost:1313/post/let-us-talk-about-exception-again/</link>
+      <link>https://polarlights.github.io/post/let-us-talk-about-exception-again/</link>
       <pubDate>Mon, 16 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/let-us-talk-about-exception-again/</guid>
-      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退</description>
+      <guid>https://polarlights.github.io/post/let-us-talk-about-exception-again/</guid>
+      <description>Throw &amp;amp; Catchthrow和catch是Kernel中的方法，它们定义了一种可以从代码块中，穿过多次的代码级数，与catch一同定义的代码块退出的功能。 Throw和Catch与Break的区别：除了都可以从循环中退出外，前者还可以沿着调用栈向上传播，使一个位于调用方法中的代码块退出。 throw和catch与raise和recue还是不同的。前者只是进行退出，却不抛出异常；后者是抛出异常的。它们有着相</description>
     </item>
     
     <item>
       <title>bind,live,delegate还是on ？</title>
-      <link>http://localhost:1313/post/jquery-event/</link>
+      <link>https://polarlights.github.io/post/jquery-event/</link>
       <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jquery-event/</guid>
-      <description>转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和</description>
+      <guid>https://polarlights.github.io/post/jquery-event/</guid>
+      <description>转自 最近写项目页面用了不少jquery的东西，过程当中对jquery的事件绑定方法有些疑惑，经过学习各种资料，现在终于明白不少。恰巧有同学和我有一样的疑惑，我正好梳理一下思路，写下本文。如果你也对jquery中眼花缭乱的事件绑定方法不太明白的话，你来对地方了。 继续阅读前，我认为你需要先知道以下几点基础知识： dom对象是树形结构的dom中的事件会从触发事件的目标节点开始逐级向上冒泡 每当我们想给某个元</description>
     </item>
     
     <item>
       <title>jquery 获取兄弟节点</title>
-      <link>http://localhost:1313/post/jquery-selector-find-siblings/</link>
+      <link>https://polarlights.github.io/post/jquery-selector-find-siblings/</link>
       <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jquery-selector-find-siblings/</guid>
-      <description>之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当</description>
+      <guid>https://polarlights.github.io/post/jquery-selector-find-siblings/</guid>
+      <description>之前对 js 了解不多，看得懂却不会怎么用，最近正好项目中用到，需要用 js获取一些数据，于是搜索之，记录之，以便查阅。 $(selector).siblings() 当前元素所有的兄弟节点 $(selector).prev() 当前元素前一个兄弟节点 $(selector).prevaAll() 当前元素之前所有的兄弟节点 $(selector).next() 当前元素之后第一个兄弟节点 $(selector).nextAll() 当前元素之后所有的兄弟节点</description>
     </item>
     
     <item>
       <title>Jquery选择器简介</title>
-      <link>http://localhost:1313/post/jqurty-selector/</link>
+      <link>https://polarlights.github.io/post/jqurty-selector/</link>
       <pubDate>Sun, 15 Feb 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jqurty-selector/</guid>
-      <description>(1) Jquery中的选择器完全继承了CSS的风格，利用Jquery选择器，可以非常便捷和快速的找出特定的Dom元素，然后为他们添加相应的行为，</description>
+      <guid>https://polarlights.github.io/post/jqurty-selector/</guid>
+      <description>(1) Jquery中的选择器完全继承了CSS的风格，利用Jquery选择器，可以非常便捷和快速的找出特定的Dom元素，然后为他们添加相应的行为，而无需担心浏览器是否支持这一选择器，学会使用选择器是学习Jqeury的基础，Jquery的行为规则都必须在获取到元素后才能生效。 jquery选择器的优势 (1) 简洁的写法，$()函数 (2)支持CSS1到CSS3选择器 (3)完善的处理机制 下面我们主要来说一下Jquer</description>
     </item>
     
     <item>
       <title>版本控制概念</title>
-      <link>http://localhost:1313/post/pro-git-learning-notes/</link>
+      <link>https://polarlights.github.io/post/pro-git-learning-notes/</link>
       <pubDate>Wed, 04 Feb 2015 19:20:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/pro-git-learning-notes/</guid>
-      <description>版本控制(Reversion Control)是一种记录文件若干文件内容变化，以便将来直接查阅特定版本的系统。 版本控制系统的发展本地版本控制系</description>
+      <guid>https://polarlights.github.io/post/pro-git-learning-notes/</guid>
+      <description>版本控制(Reversion Control)是一种记录文件若干文件内容变化，以便将来直接查阅特定版本的系统。 版本控制系统的发展本地版本控制系统本地控制系统是比较早的版本控制系统，它使用简单的数据库来记录文件的历次更新差异。最流行的为rcs；在许多计算机系统中都还可以砍到它的影子。 集中化的版本控制系统本地版本控制系统只是在本地用作版本控制，而对于多人协同工作却无法做到，于是出现了集中化的版本控制系统</description>
     </item>
     
     <item>
       <title>Spreadsheet是神马</title>
-      <link>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
+      <link>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</link>
       <pubDate>Mon, 20 Aug 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
-      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spre</description>
+      <guid>https://polarlights.github.io/post/the-usage-of-spreadsheet-and-read-write-excel-files/</guid>
+      <description>Spreadsheet是一个Ruby实现的gem，它可以使我们很方便的使用它对excel进行操作。 如何安装gem install spreadsheet #你懂得 简单使用Spreadsheet基本使用的包括以下几部分(C表示类,M表示模块): Column: &amp;#169;用来指定列的格式化和提供了以列的形式遍历所有单元格的方法。Datatypes: (M)定义了可以将参数转换为Spreadsheet常用的属性的方法(boolean,colors,enu</description>
     </item>
     
     <item>
       <title>定义</title>
-      <link>http://localhost:1313/post/reflection-and-metaprograming/</link>
+      <link>https://polarlights.github.io/post/reflection-and-metaprograming/</link>
       <pubDate>Thu, 05 Jul 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/reflection-and-metaprograming/</guid>
-      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列</description>
+      <guid>https://polarlights.github.io/post/reflection-and-metaprograming/</guid>
+      <description>反射(Reflection)也称为内省(introspection)，表示一个程序可以审视自身的状态和结构。如Ruby可以获得类定义的方法列表，实例变量的值，可以修改自身的状态和结构，动态地增加方法和变量。 元编程(Metaprograming)可以被粗略定义为程序帮助你写程序。在百度百科上的定义为：某类计算机程序编写或操纵其它程序或自身作为它们的数据，或者在变异时完成部分本应在运行时应该完成的工作</description>
     </item>
     
     <item>
       <title>Method</title>
-      <link>http://localhost:1313/post/methods-procs-lambdas-and-closures/</link>
+      <link>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</link>
       <pubDate>Sun, 24 Jun 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/methods-procs-lambdas-and-closures/</guid>
-      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最</description>
+      <guid>https://polarlights.github.io/post/methods-procs-lambdas-and-closures/</guid>
+      <description>方法是一个有名代码块，与一个或多个对象相关联的参数化代码。调用方法时需要给出方法名、所在对象以及零个或多个与有名参数对应的参数值。方法中的最后一个表达式作为方法的返回值。 取消方法的定义取消方法的定义可以使用undef，但是如果想要取消单例方法，不能使用它。在方法或模块中可以使用undef_method。 def hello &#34;hello world&#34; end undef hello 定义方法的习惯方法的名词一般都是以小写字母命名的，如果方法是多个名词，那么用下划线</description>
     </item>
     
     <item>
       <title>修改Rails默认生成的Gemfile的source</title>
-      <link>http://localhost:1313/post/modify-the-gemfile-template/</link>
+      <link>https://polarlights.github.io/post/modify-the-gemfile-template/</link>
       <pubDate>Tue, 05 Jun 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/modify-the-gemfile-template/</guid>
-      <description>由于大陆的&#34;`特殊情况`&#34;，rails默认生成的Gemfile的源 https://rubygems.org很慢甚至被重置，所以适应国情，要修</description>
+      <guid>https://polarlights.github.io/post/modify-the-gemfile-template/</guid>
+      <description>由于大陆的&#34;`特殊情况`&#34;，rails默认生成的Gemfile的源 https://rubygems.org很慢甚至被重置，所以适应国情，要修改下Rails默认生成的Gemfile文件。 如何做呢？ 很简单，切换到Rails的默认模板路径下，修改Gemfile文件的source: 1.cd $rvm_path/gems/ruby-1.9.3-p194@rails32/gems/railties-3.2.5/lib/rails/generators/rails/app/templates/ 2.修改Gemfile文件，替换https://rubygems.org为http://ruby.taobao.org Over~~ 分</description>
     </item>
     
     <item>
       <title>Strings</title>
-      <link>http://localhost:1313/post/ruby-platform/</link>
+      <link>https://polarlights.github.io/post/ruby-platform/</link>
       <pubDate>Wed, 15 Feb 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/ruby-platform/</guid>
-      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true</description>
+      <guid>https://polarlights.github.io/post/ruby-platform/</guid>
+      <description>s = &#34;hello&#34; s.concat(&#34; world&#34;) #the same as &amp;lt;&amp;lt; s.insert(5, &#34; there&#34;) #s[5] = &#34; there&#34; s.slice(0,5) #the same as s[0,5] s.slice!(5,6) #same as s[5,6] = &#34;&#34; s.eql?(&#34;hello world&#34;) #true #the length of string s = &#34;hello&#34; s.length #5 s.bytesize #5 中文为每字3byte,ASCII为1byte s.size # 5 s.empty? #false &#34;&#34;.empty? #true s = &#34;hello&#34; s.index(&#39;l&#39;) #2 s.index(?l) #2 s.index(/l+/) #2 s.index(&#39;l&#39;,3) #the first position after position 3 of l s.index(&#39;Ruby&#39;) #nil s.rindex(&#39;l&#39;) #3 s.rindex(&#39;l&#39;,2) #2 index of rightmost l at or before position 2 s.start_with? &#34;hell&#34; #true s.end_with? &#34;bells&#34; #false s.include?(&#39;ll&#39;) #true s.include?(?H) #false s =~ /[aeiou]{2}/ #nil s.match(/[aeiou]/) {|m| m.to_s} #e return first &#34;this is it&#34;.split #this is it &#34;hello&#34;.split(&#39;l&#39;) #[&#39;he&#39;,&#39;&#39;,&#39;o&#39;] &#34;1, 2,3&#34;.split(/,\s*/) #1,2,3 &#34;banana&#34;.partition(&#34;an&#34;) #[&#34;b&#34;, &#34;an&#34;, &#34;ana&#34;] &#34;banana&#34;.rpartition(&#34;an&#34;) #[&#34;ban&#34;, &#34;an&#34;, &#34;a&#34;] &#34;a123b&#34;.partition(/\d+/) #[&#34;a&#34;, &#34;123&#34;, &#34;b&#34;] s = &#34;hello&#34; s.sub(&#39;l&#39;, &#39;L&#39;) #replace the first l to L s.gsub(&#34;l&#34;, &#34;L&#34;) #replace all the l to L s.sub!(/(.)(.)/, &#39;\2\1&#39;) #swap first character s.sub!(/(.)(.)/, &#39;\\2\\1&#39;) #&#34;ehllo&#34; Double backslashes for double quotes &#34;hello world&#34;.gsub(/\b./) { |match| match.upcase } #Hello World s = &#34;hello&#34; s.upcase #HELLO s.downcase #hello s.capitalize #Hello s.swapcase #HELLO s.casecmp(&#34;HELLO&#34;) #0 case</description>
     </item>
     
   </channel>

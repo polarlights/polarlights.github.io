@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找" />
+  <meta name="description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n &#43;n #按文件更改时间来查找文件，-n指n天以内，&#43;n指n天以前 -atime -n &#43;n #按文件访问时间来查GIN: 0px&#34;&amp;gt; -ctime -n &#43;n #按文件创建时间来查找文件，-n指n天以内，&#43;n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/linux-find/" />
+<link rel="canonical" href="https://polarlights.github.io/post/linux-find/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="Find" />
-<meta property="og:description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找" />
+<meta property="og:description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n &#43;n #按文件更改时间来查找文件，-n指n天以内，&#43;n指n天以前 -atime -n &#43;n #按文件访问时间来查GIN: 0px&#34;&gt; -ctime -n &#43;n #按文件创建时间来查找文件，-n指n天以内，&#43;n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/linux-find/" />
+<meta property="og:url" content="https://polarlights.github.io/post/linux-find/" />
 <meta property="article:published_time" content="2015-08-31T04:00:00+08:00" />
 <meta property="article:modified_time" content="2015-08-31T04:00:00+08:00" />
 <meta itemprop="name" content="Find">
-<meta itemprop="description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找">
+<meta itemprop="description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n &#43;n #按文件更改时间来查找文件，-n指n天以内，&#43;n指n天以前 -atime -n &#43;n #按文件访问时间来查GIN: 0px&#34;&gt; -ctime -n &#43;n #按文件创建时间来查找文件，-n指n天以内，&#43;n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group">
 <meta itemprop="datePublished" content="2015-08-31T04:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-08-31T04:00:00&#43;08:00" />
 <meta itemprop="wordCount" content="1581">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Linux,find," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Find"/>
-<meta name="twitter:description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找"/>
+<meta name="twitter:description" content="Find的基本用法：find [path] -option [-print] [-exec -ok command {} \;] -print将匹配的文件输出到标准输出。 -name filename #查找名为filename的文件 -perm #按执行权限来查找 -user username #按文件属主来查找 -group groupname #按组来查找 -mtime -n &#43;n #按文件更改时间来查找文件，-n指n天以内，&#43;n指n天以前 -atime -n &#43;n #按文件访问时间来查GIN: 0px&#34;&gt; -ctime -n &#43;n #按文件创建时间来查找文件，-n指n天以内，&#43;n指n天以前 -nogroup #查无有效属组的文件，即文件的属组在/etc/group"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2015-08-31
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/tech/"> Tech </a>
-            <a href="http://localhost:1313/categories/linux/"> Linux </a>
+            <a href="https://polarlights.github.io/categories/tech/"> Tech </a>
+            <a href="https://polarlights.github.io/categories/linux/"> Linux </a>
             
           </div>
         
@@ -431,8 +431,8 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/linux/">Linux</a>
-          <a href="http://localhost:1313/tags/find/">find</a>
+          <a href="https://polarlights.github.io/tags/linux/">Linux</a>
+          <a href="https://polarlights.github.io/tags/find/">find</a>
           
         </div>
 
@@ -492,7 +492,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/linux-find/";
+      this.page.url = "https://polarlights.github.io/post/linux-find/";
     };
     function load_disqus() {
       
@@ -547,7 +547,7 @@ if (!doNotTrack) {
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

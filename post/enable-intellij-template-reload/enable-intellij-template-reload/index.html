@@ -24,7 +24,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="polarlights" />
-  <meta name="description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app" />
+  <meta name="description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app/views`下的文件在修改后也会立即产生效果。 但是在 Java 世界里，就没有全家桶了。开始的时候很不习惯，需要各种重启，每次重启8-10秒，几乎时时刻刻在和重启打交道。 还好在 Java 世界里是有解决方法的。 *.javajava 文件可以使用 spring-boot-devtools，但是，但是，" />
 
   <meta name="keywords" content="ruby, java, go, microservice, spring" />
 
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/" />
+<link rel="canonical" href="https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/" />
 
 
 
@@ -67,13 +67,13 @@
 
 
 <meta property="og:title" content="Enable reload chagned java and template files In IntelliJ" />
-<meta property="og:description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app" />
+<meta property="og:description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app/views`下的文件在修改后也会立即产生效果。 但是在 Java 世界里，就没有全家桶了。开始的时候很不习惯，需要各种重启，每次重启8-10秒，几乎时时刻刻在和重启打交道。 还好在 Java 世界里是有解决方法的。 *.javajava 文件可以使用 spring-boot-devtools，但是，但是，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/" />
+<meta property="og:url" content="https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/" />
 <meta property="article:published_time" content="2018-01-06T17:12:09+08:00" />
 <meta property="article:modified_time" content="2018-01-06T17:12:09+08:00" />
 <meta itemprop="name" content="Enable reload chagned java and template files In IntelliJ">
-<meta itemprop="description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app">
+<meta itemprop="description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app/views`下的文件在修改后也会立即产生效果。 但是在 Java 世界里，就没有全家桶了。开始的时候很不习惯，需要各种重启，每次重启8-10秒，几乎时时刻刻在和重启打交道。 还好在 Java 世界里是有解决方法的。 *.javajava 文件可以使用 spring-boot-devtools，但是，但是，">
 <meta itemprop="datePublished" content="2018-01-06T17:12:09&#43;08:00" />
 <meta itemprop="dateModified" content="2018-01-06T17:12:09&#43;08:00" />
 <meta itemprop="wordCount" content="733">
@@ -82,7 +82,7 @@
 
 <meta itemprop="keywords" content="Java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Enable reload chagned java and template files In IntelliJ"/>
-<meta name="twitter:description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app"/>
+<meta name="twitter:description" content="最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app/views`下的文件在修改后也会立即产生效果。 但是在 Java 世界里，就没有全家桶了。开始的时候很不习惯，需要各种重启，每次重启8-10秒，几乎时时刻刻在和重启打交道。 还好在 Java 世界里是有解决方法的。 *.javajava 文件可以使用 spring-boot-devtools，但是，但是，"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,28 +129,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -253,7 +253,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -264,7 +264,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -275,7 +275,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -306,8 +306,8 @@ if (!doNotTrack) {
           2018-01-06
         </time>
         <div class="post-category">
-            <a href="http://localhost:1313/categories/intellij/"> Intellij </a>
-            <a href="http://localhost:1313/categories/java/"> Java </a>
+            <a href="https://polarlights.github.io/categories/intellij/"> Intellij </a>
+            <a href="https://polarlights.github.io/categories/java/"> Java </a>
             
           </div>
         
@@ -391,7 +391,7 @@ Windows : CTRL+ALT+SHIFT+/</pre></div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="http://localhost:1313/tags/java/">Java</a>
+          <a href="https://polarlights.github.io/tags/java/">Java</a>
           
         </div>
 
@@ -451,7 +451,7 @@ Windows : CTRL+ALT+SHIFT+/</pre></div>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/";
+      this.page.url = "https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/";
     };
     function load_disqus() {
       
@@ -506,7 +506,7 @@ Windows : CTRL+ALT+SHIFT+/</pre></div>
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

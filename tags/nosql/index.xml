@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nosql on Polarlights</title>
-    <link>http://localhost:1313/tags/nosql/</link>
+    <link>https://polarlights.github.io/tags/nosql/</link>
     <description>Recent content in nosql on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 30 Jul 2012 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MongoDB特点</title>
-      <link>http://localhost:1313/post/notes-about-mongodb/</link>
+      <link>https://polarlights.github.io/post/notes-about-mongodb/</link>
       <pubDate>Mon, 30 Jul 2012 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/notes-about-mongodb/</guid>
-      <description>数据类型丰富。 MongoDB是面向文档的数据库，不是关系型数据库。它将原来关系型数据库的&#34;`行`&#34;概念变换为更为灵活的&#34;`文档`&#34;模型。面向</description>
+      <guid>https://polarlights.github.io/post/notes-about-mongodb/</guid>
+      <description>数据类型丰富。 MongoDB是面向文档的数据库，不是关系型数据库。它将原来关系型数据库的&#34;`行`&#34;概念变换为更为灵活的&#34;`文档`&#34;模型。面向文档的方式可以将文档或数组内嵌进来，用一条记录表示可能需要关系数据库多个表关联的数据。扩展容易 MongoDB采用面向文档的数据模型可以很方便的在多台服务器之间分割数据，环科院实现集群的数据和负载，自动重排文档。功能丰富 MongoDB支持通用辅助索引，能进行多种</description>
     </item>
     
   </channel>

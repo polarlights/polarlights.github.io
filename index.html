@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.67.0" />
 
 
-<link rel="canonical" href="http://localhost:1313/" />
+<link rel="canonical" href="https://polarlights.github.io/" />
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Polarlights" />
 
 
@@ -68,7 +68,7 @@
 <meta property="og:title" content="Polarlights" />
 <meta property="og:description" content="Rise like the sun." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/" />
+<meta property="og:url" content="https://polarlights.github.io/" />
 <meta property="og:updated_time" content="2019-08-03T23:50:02+08:00" />
 <meta itemprop="name" content="Polarlights">
 <meta itemprop="description" content="Rise like the sun."><meta name="twitter:card" content="summary"/>
@@ -120,28 +120,28 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
         
       </li>
@@ -233,7 +233,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/">Home</a>
           
 
         
@@ -244,7 +244,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/post/">Archives</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/post/">Archives</a>
           
 
         
@@ -255,7 +255,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/tags/">Tags</a>
           
 
         
@@ -266,7 +266,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+            <a class="menu-item-link" href="https://polarlights.github.io/categories/">Categories</a>
           
 
         
@@ -307,7 +307,7 @@ if (!doNotTrack) {
         2019-08-03
       </time>
       <div class="post-category">
-          <a href="http://localhost:1313/categories/java/"> java </a>
+          <a href="https://polarlights.github.io/categories/java/"> java </a>
           
         </div>
       
@@ -319,7 +319,7 @@ if (!doNotTrack) {
   <div class="post-content">
     
     <div class="post-summary">
-      Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接
+      Preface在开发 Web 接口的时候，客户端给到的输入参数往往是不可控，亦不可信的；需要在 server 端做一些校验，以使处理数据符合业务预期；除了web 接口之外，我们写的方法、DAO 对象都有类似的需求。也就是校验的需求贯穿服务的各个层。 简单粗暴一点的可以在每一层这样写： if (param.getName() == null) { throw BadRequestException("name can not be null"); } if (param.getAge() &lt; 1) { throw BadRequestException("age can not less than 1"); } 如果遇到错误，我想最后统一抛出，用户可以一次知道哪些输入是有问题。那么我们可以这样写: List&lt;String&gt; errorMessages = new
     </div>
     <div class="read-more">
       <a href="/post/bean-validation-tutorial/" class="read-more-link">Read more</a>
@@ -341,9 +341,9 @@ if (!doNotTrack) {
         2018-12-06
       </time>
       <div class="post-category">
-          <a href="http://localhost:1313/categories/java/"> java </a>
-          <a href="http://localhost:1313/categories/hibernate/"> hibernate </a>
-          <a href="http://localhost:1313/categories/jpa/"> jpa </a>
+          <a href="https://polarlights.github.io/categories/java/"> java </a>
+          <a href="https://polarlights.github.io/categories/hibernate/"> hibernate </a>
+          <a href="https://polarlights.github.io/categories/jpa/"> jpa </a>
           
         </div>
       
@@ -355,7 +355,7 @@ if (!doNotTrack) {
   <div class="post-content">
     
     <div class="post-summary">
-      1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国
+      1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。 Hibernate 在时间的存取的时候，会调用PreparedStatement.setTimestamp()/ResultSet.getTimestamp，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链
     </div>
     <div class="read-more">
       <a href="/post/hibernate-best-practice/hibernate-best-practice/" class="read-more-link">Read more</a>
@@ -377,7 +377,7 @@ if (!doNotTrack) {
         2018-11-12
       </time>
       <div class="post-category">
-          <a href="http://localhost:1313/categories/java/"> java </a>
+          <a href="https://polarlights.github.io/categories/java/"> java </a>
           
         </div>
       
@@ -389,7 +389,7 @@ if (!doNotTrack) {
   <div class="post-content">
     
     <div class="post-summary">
-      Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错
+      Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value("${application.host.name:localhost}") private String hostName; @Value("${application.module.name}") private String serviceName; @Value("${spring.profiles.active}") private String activeProfile; @Value("${release.version:local}") private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value("${sentry.dsn}") private String sentryDsn; @Value("${sentry.timeout}") private String sentryTimeout; @Override public void afterPropertiesSet() throws
     </div>
     <div class="read-more">
       <a href="/post/add-release-to-sentry/add-release-to-sentry/" class="read-more-link">Read more</a>
@@ -411,8 +411,8 @@ if (!doNotTrack) {
         2018-11-11
       </time>
       <div class="post-category">
-          <a href="http://localhost:1313/categories/jpa/"> JPA </a>
-          <a href="http://localhost:1313/categories/java/"> Java </a>
+          <a href="https://polarlights.github.io/categories/jpa/"> JPA </a>
+          <a href="https://polarlights.github.io/categories/java/"> Java </a>
           
         </div>
       
@@ -424,7 +424,7 @@ if (!doNotTrack) {
   <div class="post-content">
     
     <div class="post-summary">
-      最近有小伙伴在做批量导出数据的功能，原来是这样写的： image::15417517310823.jpg[] 后来在看其他代码的时候，有个类似功能，突然意识到那个代码在数据量很大的时候，会存在性能
+      最近有小伙伴在做批量导出数据的功能，原来是这样写的： image::15417517310823.jpg[] 后来在看其他代码的时候，有个类似功能，突然意识到那个代码在数据量很大的时候，会存在性能问题（最坏会OOM，导致不可用)。后面在交流过程中，小伙伴突然想到上面那个代码也会有类似问题。 在 Rails 的 ActiveRecord 中有find_in_batches功能，它会生成select ... from XX where id &gt; ? limit N offset M类似的 SQL，实现批量查询。 在 Java 中，首先想到的是使用 Pagable 翻页查找，但是这个不是
     </div>
     <div class="read-more">
       <a href="/post/jpa-stream-query/jpa-stream-query/" class="read-more-link">Read more</a>
@@ -446,7 +446,7 @@ if (!doNotTrack) {
         2018-11-09
       </time>
       <div class="post-category">
-          <a href="http://localhost:1313/categories/mac/"> Mac </a>
+          <a href="https://polarlights.github.io/categories/mac/"> Mac </a>
           
         </div>
       
@@ -458,7 +458,7 @@ if (!doNotTrack) {
   <div class="post-content">
     
     <div class="post-summary">
-      常用设置1.修改邮件的一些默认设置 # Disable send and reply animations in Mail.app defaults write com.apple.mail DisableReplyAnimations -bool true defaults write com.apple.mail DisableSendAnimations -bool true # Copy email addresses as `foo@example.com` instead of `Foo Bar &lt;foo@example.com&gt;` in Mail.app defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
+      常用设置1.修改邮件的一些默认设置 # Disable send and reply animations in Mail.app defaults write com.apple.mail DisableReplyAnimations -bool true defaults write com.apple.mail DisableSendAnimations -bool true # Copy email addresses as `foo@example.com` instead of `Foo Bar &lt;foo@example.com&gt;` in Mail.app defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9" # Display emails in threaded mode, sorted by date (oldest at the top) defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes" defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes" defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date" # Disable inline attachments (just show the icons) defaults write com.apple.mail DisableInlineAttachmentViewing -bool true # Disable automatic spell checking defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled" 邮件分类放在不同目录下邮件全部放在收件箱里面，不做分类的话，随着邮件越积越多，邮件非常杂乱。我们可以在邮件中添加目录(ma
     </div>
     <div class="read-more">
       <a href="/post/mac-mail-tricks/mac-mail-tricks/" class="read-more-link">Read more</a>
@@ -561,7 +561,7 @@ if (!doNotTrack) {
     </a>
 
 
-<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://polarlights.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

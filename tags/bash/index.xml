@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bash on Polarlights</title>
-    <link>http://localhost:1313/tags/bash/</link>
+    <link>https://polarlights.github.io/tags/bash/</link>
     <description>Recent content in Bash on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Aug 2015 04:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>du 的基本含义和参数</title>
-      <link>http://localhost:1313/post/linux-du/</link>
+      <link>https://polarlights.github.io/post/linux-du/</link>
       <pubDate>Mon, 31 Aug 2015 04:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux-du/</guid>
-      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执</description>
+      <guid>https://polarlights.github.io/post/linux-du/</guid>
+      <description>du 用来显示文件的磁盘使用情况。 -a 根据目录层级显示所有的文件。 -c 显示总的大小 -d [depth] 特定深度的所有文件大小 -h 以 Human 可读的格式输出，自动带 B/KB/MB/GB/TB/PB -I mask 根据执行的权限忽略(Ignore) 文件和目录。 -gkm 分别按 GB、KB 和 MB 为单位显示文件大小。 -s 只显示每个特定文件的总和`-d 0`等效。 举个栗子显示总的文件大小 du -s 显示2层的文件大小 du -h -d 2 显示/var/demo 文件的统计信息 du -ah /var/demo du 和 df 的区别du 和df 只有一个字母之差。</description>
     </item>
     
   </channel>

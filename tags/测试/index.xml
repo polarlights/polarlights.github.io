@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>测试 on Polarlights</title>
-    <link>http://localhost:1313/tags/%E6%B5%8B%E8%AF%95/</link>
+    <link>https://polarlights.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
     <description>Recent content in 测试 on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 20 Feb 2016 03:19:33 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>写在前面</title>
-      <link>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</link>
+      <link>https://polarlights.github.io/post/introduction_to_minitest/introduction_to_minitest/</link>
       <pubDate>Sat, 20 Feb 2016 03:19:33 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/introduction_to_minitest/introduction_to_minitest/</guid>
-      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;</description>
+      <guid>https://polarlights.github.io/post/introduction_to_minitest/introduction_to_minitest/</guid>
+      <description>之前几乎不写测试，嗯，我属于那一类人。很多时候是自己先写一个功能，然后输入一些简单案例跑一跑，如果过了，那么就&amp;#8230;&amp;#8203;&amp;#8230;&amp;#8203;过了，可以放心继续下面的工作了。直到维护一个个前辈们的项目，而且功能不断添加，添加。问题接着出现了：按下葫芦浮起瓢，改了一个 Bug，引出了其它的 Bug。代码在修改过程中，越来越心里没底。更别说重构了。。。。 为什么要写测试？现在的 Coder 应该</description>
     </item>
     
   </channel>

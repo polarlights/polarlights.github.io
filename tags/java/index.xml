@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on Polarlights</title>
-    <link>http://localhost:1313/tags/java/</link>
+    <link>https://polarlights.github.io/tags/java/</link>
     <description>Recent content in java on Polarlights</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 06 Dec 2018 18:08:59 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://polarlights.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hibernate-best-practice</title>
-      <link>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</link>
+      <link>https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/</link>
       <pubDate>Thu, 06 Dec 2018 18:08:59 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/hibernate-best-practice/hibernate-best-practice/</guid>
-      <description>1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国</description>
+      <guid>https://polarlights.github.io/post/hibernate-best-practice/hibernate-best-practice/</guid>
+      <description>1. 设置数据库存储时间的时区如果某个应用考虑到国际化，服务会部署在多个时区，或者用户会和不同时区的人打交道；存储的时间建议使用 UTC 时间。比如美国有夏令时，会根据季节调整时间。使用 UTC 时间会更好地适应变化。 Hibernate 在时间的存取的时候，会调用PreparedStatement.setTimestamp()/ResultSet.getTimestamp，默认情况下，会 fall back 为 JVM 所在的时区。为了能够存储 UTC 时间，将 JDBC 的链</description>
     </item>
     
     <item>
       <title>Add release to sentry</title>
-      <link>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</link>
+      <link>https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/</link>
       <pubDate>Mon, 12 Nov 2018 21:24:39 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/add-release-to-sentry/add-release-to-sentry/</guid>
-      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错</description>
+      <guid>https://polarlights.github.io/post/add-release-to-sentry/add-release-to-sentry/</guid>
+      <description>Sentry 是一个开源的，用来帮助开发监控异常和跟进错误修复的服务。 Java 集成 Sentry 十分地方便，很方便地就可以实现异常的监控。如果我们想更加精细化地区分某个错误是在哪个版本中出现的，需要我们额外将 release 信息告知 Sentry。具体怎么操作呢？ 1. 添加SentryConfig配置类，将相关信息注入到 Sentry@Configration public class SentryConfig implements InitializingBean { @Value(&#34;${application.host.name:localhost}&#34;) private String hostName; @Value(&#34;${application.module.name}&#34;) private String serviceName; @Value(&#34;${spring.profiles.active}&#34;) private String activeProfile; @Value(&#34;${release.version:local}&#34;) private String releaseVersion; // 将 sentry 的配置放到 application.properties 中， // 可以根据环境配置到不同 sentry 服务地址 @Value(&#34;${sentry.dsn}&#34;) private String sentryDsn; @Value(&#34;${sentry.timeout}&#34;) private String sentryTimeout; @Override public void afterPropertiesSet() throws</description>
     </item>
     
     <item>
       <title>JPA stream query with java8</title>
-      <link>http://localhost:1313/post/jpa-stream-query/jpa-stream-query/</link>
+      <link>https://polarlights.github.io/post/jpa-stream-query/jpa-stream-query/</link>
       <pubDate>Sun, 11 Nov 2018 16:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jpa-stream-query/jpa-stream-query/</guid>
-      <description>最近有小伙伴在做批量导出数据的功能，原来是这样写的： image::15417517310823.jpg[] 后来在看其他代码的时候，有个类似功能，突然意识到那个代码在数据量很大的时候，会存在性能</description>
+      <guid>https://polarlights.github.io/post/jpa-stream-query/jpa-stream-query/</guid>
+      <description>最近有小伙伴在做批量导出数据的功能，原来是这样写的： image::15417517310823.jpg[] 后来在看其他代码的时候，有个类似功能，突然意识到那个代码在数据量很大的时候，会存在性能问题（最坏会OOM，导致不可用)。后面在交流过程中，小伙伴突然想到上面那个代码也会有类似问题。 在 Rails 的 ActiveRecord 中有find_in_batches功能，它会生成select ... from XX where id &amp;gt; ? limit N offset M类似的 SQL，实现批量查询。 在 Java 中，首先想到的是使用 Pagable 翻页查找，但是这个不是</description>
     </item>
     
     <item>
       <title>Enable reload chagned java and template files In IntelliJ</title>
-      <link>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</link>
+      <link>https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/</link>
       <pubDate>Sat, 06 Jan 2018 17:12:09 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/enable-intellij-template-reload/enable-intellij-template-reload/</guid>
-      <description>最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app</description>
+      <guid>https://polarlights.github.io/post/enable-intellij-template-reload/enable-intellij-template-reload/</guid>
+      <description>最近在学习 Spring Boot 的时候发现真心不如 Ruby on Rails 爽，其中一点是：RoR 在 开发模式下默认可以自动 reload 相关路径下的文件： $ bin/rails r &#39;puts ActiveSupport::Dependencies.autoload_paths&#39; .../app/assets .../app/controllers .../app/helpers .../app/mailers .../app/models .../app/controllers/concerns .../app/models/concerns .../test/mailers/previews 在 `app/views`下的文件在修改后也会立即产生效果。 但是在 Java 世界里，就没有全家桶了。开始的时候很不习惯，需要各种重启，每次重启8-10秒，几乎时时刻刻在和重启打交道。 还好在 Java 世界里是有解决方法的。 *.javajava 文件可以使用 spring-boot-devtools，但是，但是，</description>
     </item>
     
   </channel>
