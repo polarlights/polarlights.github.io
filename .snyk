@@ -1,0 +1,12 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - hexo-related-popular-posts > cheerio > lodash:
+        patched: '2020-04-30T21:37:05.280Z'
+    - hexo-leancloud-counter-security > leancloud-storage > leancloud-realtime > lodash:
+        patched: '2020-04-30T21:37:05.280Z'
+    - hexo-related-popular-posts > kuromoji > async > lodash:
+        patched: '2020-04-30T21:37:05.280Z'
